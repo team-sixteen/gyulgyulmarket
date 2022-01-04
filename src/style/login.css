@@ -1,0 +1,57 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: #fcf9e9;
+}
+
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-top: 20rem;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+form {
+  padding-bottom: 20px;
+}
+.text-field {
+  display: block;
+  width: 50rem;
+  height: 3rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+  line-height: 3rem;
+}
+
+button {
+  width: 30rem;
+  height: 3rem;
+  background: #ffc7a7;
+  border-radius: 44px;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.join-email {
+  width: 30rem;
+  height: 3rem;
+  background: #ffc7a7;
+  border-radius: 44px;
+  border: 1px solid black;
+  text-align: center;
+}
+.join-email a {
+  line-height: 3rem;
+  font-size: 1.3rem;
+}

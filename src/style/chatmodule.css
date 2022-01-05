@@ -1,0 +1,40 @@
+/* user-search, user-follow */
+.item-user-chat li {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border: 1px solid gray;
+  margin: 20px 0;
+}
+.item-user-chat img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 4px 16px 0 16px;
+}
+.item-user-chat > ul > li {
+  position: relative;
+}
+.chat-text__wrapper {
+  margin: 8px 0;
+}
+.chat-text__wrapper em {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+.chat-text__wrapper p {
+  font-size: 12px;
+  line-height: 15px;
+  color: #767676;
+}
+
+.item-user-chat li::after {
+  content: "2020.10.25";
+  position: absolute;
+  right: 16px;
+  bottom: 4px;
+  font-size: 10px;
+  line-height: 13px;
+  color: #dbdbdb;
+}

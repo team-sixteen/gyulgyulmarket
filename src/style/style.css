@@ -1,0 +1,23 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    background-color: #fcf9e9;
+  }
+
+.profile-menu-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-follow-number {
+    display: flex;
+    align-items: center;
+}

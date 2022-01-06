@@ -11,26 +11,27 @@
   </head>
   <body>
     <div class="login-wrap">
+      <h2>로그인</h2>
     <fieldset>
-      <legend><img src="./src/images/logo/m-icon-tangerine.png" alt="로고"></legend>
+      <legend class="hide-text">로그인 페이지</legend>
       <ul>
         <li>
           <div class="block-input">
           <label for="input1">이메일</label>
-          <input type="text" name="email" placeholder="@" id="input1" class="text-field"/>
+          <input type="text" name="email" id="input1" class="text-field"/>
         </div>
         </li>
 
         <li>
           <div class="block-input">
           <label for="input2">비밀번호</label>
-          <input type="text" name="password" placeholder="비밀번호"id="input2" class="text-field"/>
+          <input type="text" name="password" id="input2" class="text-field"/>
           <p class="login-error"> *이메일 또는 비밀번호가 일치하지 않습니다.</p>
         </div>
-          
+      </fieldset>
         </li>
       </ul>
-      <div class="login-btn">
+      <div class="btn-for-login">
         <button type="submit">로그인</button>
         <div class="join-email">
           <a href="#">이메일로 회원가입</a>

@@ -2,7 +2,8 @@ html, body {
     width: 100%;
     height: 100%;
     font-size: 10px;
-    background-color: #fcf9e9;
+    font-family: Spoqa Han Sans Neo;
+    background-color: #fff;
   }
 
 .profile-menu-wrap {
@@ -15,9 +16,76 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.followers-num {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.followings-num {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
 }
 
 .user-follow-number {
     display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.profile-img {
+    margin: 20px 35px;
+} 
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile-name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.user-profile-id {
+
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 14px;
+    color: #767676;
+}
+
+.user-profile-info {
+    font-size: 14px;
+    line-height: 18px;
+    color: #767676;
+}
+
+.user-contact {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.contact-icon {
+    width: 35px;
+    height: 35px;
+    border: 1.8px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 4px;
+}
+
+.m-btn {
+    margin: 18px;
 }

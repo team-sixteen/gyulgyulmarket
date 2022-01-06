@@ -5,71 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>your profile</title>
-    <link rel="stylesheet" href="src/style/style.css">
     <link rel="stylesheet" href="src/style/reset.css">
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="stylesheet" href="src/style/style_module.css">
 </head>
 
 <body>
-    <nav id="top-menu">
-        <ul class="profile-menu-wrap">
-            <li>
-                <a class="menu-move">
-                    <img src="src/images/icon/icon-arrow-left.png" alt="페이지 뒤로가기 이미지">
-                </a>
-            </li>
-            <li>
-                <a class="menu-move">
-                    <img src="src/images/icon/icon-more-vertical.png" alt="로그인 설정 및 로그아웃 메뉴 이동">
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="nav-top">
+        <a href="#" class="nav-top__btn--goback">
+            <img src="src/images/icon/icon-arrow-left.png" alt="뒤로 가기" class="nav-top__img-icon-arrow-left">
+        </a>
+
+        <a href="#" class="nav-top__btn--more">
+            <img src="src/images/icon/icon-more-vertical.png" alt="메뉴 더보기" class="nav-top__img-icon-more">
+        </a>
+    </div> 
 
     <section class="user-info">
         <div class="user-follow-number">
-            <div class="followers-wrap">
-                <p class="followers-num">2950</p>
-                <p clsss="followers-txt">followers</p>
-            </div>
+            <dl class="followers-wrap">
+                <dt class="followers-num">2950</dt>
+                <dd clsss="followers-txt">followers</dd>
+            </dl>
+        
+        <img src="src/images/basic-profile-img.png" alt="사용자 프로필 이미지" class="profile-img">
 
-        <img src="src/images/basic-profile-img.png" alt="사용자 프로필 이미지">
-
-            <div class="followings-wrap">
-                <p class="followings-num">128</p>
-                <p clsss="followings-txt">followers</p>
-            </div>
+            <dl class="followings-wrap">
+                <dt class="followings-num">128</dt>
+                <dd clsss="followings-txt">followers</dd>
+            </dl>
         </div>
         
+        
+        <div class="user-profile">
+            <h1 class="user-profile-name">애월읍 위니브 감귤농장</h1>
+            <p class="user-profile-id">@weniv_Mandarin</p>
+            <p class="user-profile-info">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
+        </div>
 
-        <h1 class="user-profile-name">애월읍 위니브 감귤농장</h1>
-        <p casss="user-profile-id">@weniv_Mandarin</p>
-        <p class="user-profile-info">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
+        <div class="user-contact">
+            <a href="#">
+                <img src="src/images/icon/icon-message-circle.png" alt="현재 프로필 사용자에게 메시지 전송하기" class="contact-icon"></a>
 
-        <img src="src/images/icon/icon-message-circle.png" alt="현재 프로필 사용자에게 메시지 전송하기">
-        <!-- <img src="/src/" alt="사용자 팔로우"> -->
-        <img src="src/images/icon/icon-share.png" alt="현재 프로필을 SNS에 공유하기">
+            <button type="button" class="m-btn">팔로우</button>
+        
+            <a href="#">
+                <img src="src/images/icon/icon-share.png" alt="현재 프로필을 SNS에 공유하기" class="contact-icon"></a>
+        </div>
     </section>
 
     <section class="product">
         <h2 class="product-sale">판매 중인 상품</h2>
+        <ul>
+            <li class="product-item">
+                <a href="#">
+                    <img src="src/images/product-img-example.png" alt="상품: 애월읍 노지 감귤">
+                    <p class="product-txt">애월읍 노지 감귤</p>
+                    <p class="product-price">35,000원</p>
+                </a>
+            </li>
 
-        <article class="product-item">
-            <img src="src/images/product-img-example.png" alt="상품: 애월읍 노지 감귤">
-            <p class="product-txt">애월읍 노지 감귤</p>
-            <p class="product-price">35,000원</p>
-        </article>
+            <li class="product-item">
+                <a href="#">
+                    <img src="src/images/product-img-example.png" alt="상품: 애월읍 한라봉 10kg">
+                    <p class="product-txt">애월읍 노지 감귤</p>
+                    <p class="product-price">35,000원</p>
+                </a>
+            </li>
 
-        <article class="product-item">
-            <img src="src/images/product-img-example.png" alt="상품: 애월읍 한라봉 10kg">
-            <p class="product-txt">애월읍 노지 감귤</p>
-            <p class="product-price">35,000원</p>
-        </article>
-
-        <article class="product-item">
-            <img src="src/images/product-img-example.png" alt="상품: 감귤 파치">
-            <p class="product-txt">감귤 파치</p>
-            <p class="product-price">25,000원</p>
-        </article>
+            <li class="product-item">
+                <a href="#">
+                    <img src="src/images/product-img-example.png" alt="상품: 감귤 파치">
+                    <p class="product-txt">감귤 파치</p>
+                    <p class="product-price">25,000원</p>
+                </a>
+            </li>
+        </ul>
     </section>
 
     <section>
@@ -77,12 +88,12 @@
             <ul class="product-menu-wrap">
                 <li>
                     <a class="product-list">
-                        <img src="src/images/icon/icon-post-list-on.png">
+                        <img src="src/images/icon/icon-post-list-on.png" alt="글 리스트 형식으로 보기">
                     </a>
                 </li>
                 <li>
                     <a class="product-album">
-                        <img src="src/images/icon/icon-post-album-off.png">
+                        <img src="src/images/icon/icon-post-album-off.png" alt="글 앨범 형식으로 보기">
                     </a>
                 </li>
             </ul>

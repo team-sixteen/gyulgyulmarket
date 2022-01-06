@@ -36,11 +36,7 @@ fieldset {
 fieldset > ul {
   margin-top: 15px;
 }
-.explain-profile {
-  margin: 20px 0 30px 0;
-  font-size: 14px;
-  line-height: 14px;
-}
+
 
 .block-input {
   margin-bottom: 10px;

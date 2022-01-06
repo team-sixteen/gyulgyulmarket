@@ -1,0 +1,58 @@
+.nav-top {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 9999;
+}
+
+.nav-top .ms-btn--disabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav-top .ms-btn--disabled:active {
+  opacity: 0.5;
+}
+
+.upload-container {
+  margin-top: 48px;
+  padding: 20px 16px 0;
+}
+
+.upload-userimg {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+}
+
+.upload-contents {
+  padding-left: 52px;
+}
+
+#upload-content-input {
+  width: 100%;
+  padding-top: 12px;
+  resize: none;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.upload-content-img {
+  height: 100%;
+}
+
+.upload-file {
+  display: inline-block;
+  position: fixed;
+  z-index: 9999;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  bottom: 16px;
+  right: 16px;
+}
+
+#avatar {
+  display: none;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>귤귤마켓 - 게시글 작성</title>
+  <link rel="stylesheet" href="src/style/reset.css">
+  <link rel="stylesheet" href="src/style/style_module.css">
+  <link rel="stylesheet" href="src/style/upload.css">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <div class="nav-top">
+    <a href="#" class="nav-top__btn--goback">
+      <img src="src/images/icon/icon-arrow-left.png" alt="업로드 취소">
+    </a>
+    <button type="button" class="ms-btn ms-btn--disabled">업로드</button>
+  </div>
+  <main class="upload-container">
+    <h1 class="hide-text">게시글 업로드 페이지</h1>
+    <img
+      src="src/images/basic-profile-img.png"
+      alt="유저의 프로필 이미지"
+      class="upload-userimg">
+    <section class="upload-contents">
+      <textarea id="upload-content-input" placeholder="게시글 입력하기.."></textarea>
+      <ul class="upload-content-slider">
+        <li class="upload-content-item">
+          <img
+            src="src/images/chat-exapmle.png"
+            alt=""
+            class="upload-content-img">
+        </li>  
+      </ul>
+    </section>
+  </main>
+  <label for="avatar" class="upload-file">
+    <img src="src/images/upload-file.png">
+  </label>
+  <input
+    type="file" 
+    id="avatar" 
+    name="avatar" 
+    accept="image/png, image/jpeg">
+  <script>
+    $(document).ready(function () {
+      $('.upload-contents').on('keyup', 'textarea', function (e) {
+        $(this).css('height', 'auto');
+        $(this).height(this.scrollHeight);
+      });
+      $('.upload-contents').find('textarea').keyup();
+    });
+  </script>
+</body>
+</html>

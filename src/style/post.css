@@ -1,4 +1,4 @@
-.nav-top, .nav-tab-menu {
+.nav-top, .module-inp-cmmt {
   position: fixed;
   z-index: 9000;
   background-color: white;
@@ -7,7 +7,7 @@
 .nav-top {
   top: 0;
 }
-.nav-tab-menu {
+.module-inp-cmmt {
   bottom: 0;
 }
 

@@ -132,10 +132,6 @@
     align-items: center;
 }
 
-.module-inp-cmmt img {
-    margin: auto 0;
-}
-
 .module-inp-cmmt__form {
     width: 100vw;
 }

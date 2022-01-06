@@ -109,7 +109,8 @@ body {
   line-height: 1;
 }
 ol,
-ul {
+ul,
+li {
   list-style: none;
 }
 blockquote,
@@ -135,7 +136,6 @@ table {
   margin: -1px;
   overflow: hidden;
 }
-
 a {
   text-decoration: none;
   color: inherit;

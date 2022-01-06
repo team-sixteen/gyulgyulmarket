@@ -7,19 +7,26 @@
     <title></title>
     <link rel="stylesheet" href="./src/style/reset.css" />
     <link rel="stylesheet" href="./src/style/common.css" />
-    <link rel="stylesheet" href="./src/style/login.css" />
+    <link rel="stylesheet" href="./src/style/join_email.css" />
     <style></style>
   </head>
   <body>
     <div class="login-wrap">
-      <h2>로그인</h2>
+      <h2>이메일로 회원가입</h2>
       <fieldset>
-        <legend class="hide-text">로그인 페이지</legend>
+        <legend class="hide-text">이메일로 회원가입</legend>
         <ul>
           <li>
             <div class="block-input">
               <label for="input1">이메일</label>
-              <input type="email" name="email" id="input1" class="text-field" />
+              <input
+                type="email"
+                name="email"
+                placeholder="이메일 주소를 입력해 주세요."
+                id="input1"
+                class="text-field"
+              />
+              <p class="join-error">*이미 가입된 이메일 주소입니다.</p>
             </div>
           </li>
 
@@ -29,21 +36,17 @@
               <input
                 type="password"
                 name="password"
+                placeholder="비밀번호를 설정해 주세요."
                 id="input2"
                 class="text-field"
               />
-              <p class="login-error">
-                *이메일 또는 비밀번호가 일치하지 않습니다.
-              </p>
+              <p class="join-error">*비밀번호는 6자 이상이어야 합니다.</p>
             </div>
           </li>
         </ul>
       </fieldset>
-      <div class="btn-for-login">
-        <button type="submit">로그인</button>
-        <div class="join-email">
-          <a href="#">이메일로 회원가입</a>
-        </div>
+      <div class="btn-for-join">
+        <button type="submit">다음</button>
       </div>
     </div>
   </body>

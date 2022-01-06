@@ -3,10 +3,10 @@ body {
   width: 100%;
   height: 100%;
   font-size: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
-.login-wrap {
+.profile-setting-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,13 +15,21 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
-.login-wrap h2 {
+.profile-setting-wrap h2 {
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
   color: #000000;
 }
-
+.explain-profile {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #767676;
+}
+.profile-img-btn {
+  margin-bottom: 15px;
+}
 fieldset {
   display: flex;
   flex-direction: column;
@@ -29,59 +37,44 @@ fieldset {
   width: 70%;
   min-width: 350px;
   max-width: 500px;
+  padding: 20px 0;
   align-items: center;
   text-align: left;
-  padding: 20px 0;
 }
 fieldset > ul {
   margin-top: 15px;
 }
 
-.block-input {
+li .block-input {
   margin-bottom: 10px;
 }
-
-.block-input > label {
+li > label {
+  float: left;
   color: #767676;
 }
-
-.text-field {
+li .text-field {
   display: block;
   width: 322px;
   height: 33px;
   padding: 5px 10px;
+  box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #dbdbdb;
-  box-sizing: border-box;
   outline: none;
 }
-input {
+/* input {
   width: 70%;
-}
-.login-error {
+} */
+.profile-error {
   margin-top: 5px;
   color: red;
 }
-
-.btn-for-login > button {
+.login-btn {
+}
+.btn-for-start > button {
   width: 322px;
   height: 48px;
-  margin-top: 10px;
-  margin-bottom: 20px;
   border-radius: 44px;
   background: #f26e22;
   color: #ffffff;
-}
-
-.join-email {
-  width: 300px;
-  height: 30px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 15px;
-  color: #767676;
-}
-.join-email a {
-  font-size: 12px;
-  line-height: 15px;
 }

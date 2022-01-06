@@ -37,8 +37,15 @@ fieldset > ul {
   margin-top: 15px;
 }
 
+
 .block-input {
   margin-bottom: 10px;
+}
+input::placeholder::before {
+  content: '';
+  font-size: 14px;
+  line-height: 14px;
+  color: #dbdbdb;
 }
 
 .block-input > label {
@@ -58,12 +65,12 @@ fieldset > ul {
 input {
   width: 70%;
 }
-.login-error {
+.join-error {
   margin-top: 5px;
   color: red;
 }
 
-.btn-for-login > button {
+.btn-for-join > button {
   width: 322px;
   height: 48px;
   margin-top: 10px;
@@ -73,15 +80,3 @@ input {
   color: #ffffff;
 }
 
-.join-email {
-  width: 300px;
-  height: 30px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 15px;
-  color: #767676;
-}
-.join-email a {
-  font-size: 12px;
-  line-height: 15px;
-}

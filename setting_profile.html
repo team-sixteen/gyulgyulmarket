@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./src/style/reset.css" />
+    <link rel="stylesheet" href="./src/style/common.css" />
+    <link rel="stylesheet" href="./src/style/setting_profile.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="profile-setting-wrap">
+      <h2>프로필 설정</h2>
+    <fieldset>
+      <legend class="hide-text">프로필 이름, id, 소개 설정</legend>
+      <p class="explain-profile">나중에 언제든지 변경할 수 있습니다.</p>
+      <button class="profile-img-btn">
+        <img src="./src/images/join_profile.png" alt="프로필 이미지 설정" >
+      </button>
+      
+      <ul>
+        <li>
+          <div class="block-input">
+          <label for="input1">사용자 이름</label>
+          <input type="text" name="email" placeholder="2~10자 이내여야 합니다." id="input1" class="text-field"/>
+          
+        </div>
+        </li>
+        <li>
+          <div class="block-input">
+          <label for="input1">계정 ID</label>
+          <input type="text" name="email" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." id="input2" class="text-field"/>
+          <p class="profile-error"> *영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.</p>
+          <p class="profile-error"> *이미 사용 중인 ID입니다.</p>
+        </div>
+        </li>
+
+        <li>
+          <div class="block-input">
+          <label for="input2">소개</label>
+          <input type="text" name="password" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" id="input3" class="text-field"/>
+        </div>
+        </li>
+      </ul>
+    </fieldset>
+      <div class="btn-for-start">
+        <button type="submit">감귤마켓 시작하기</button>
+    </div>
+  </div>
+    </div>
+  </body>
+</html>

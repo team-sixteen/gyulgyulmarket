@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 12px 0 16px;
-    background-color: #FCF9E9;
 }
 
 .nav-top .nav-top__btn--goback {
@@ -55,7 +54,6 @@
     border-top: solid 1px #DBDBDB;
     height: 60px;
     width: 100%;
-    background-color: #FCF9E9;
 }
 .nav-tab-menu .nav-tab-menu__list {
     display: flex;
@@ -132,10 +130,6 @@
     color: #c4c4c4;
     display: flex;
     align-items: center;
-}
-
-.module-inp-cmmt img {
-    margin: auto 0;
 }
 
 .module-inp-cmmt__form {

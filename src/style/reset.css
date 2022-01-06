@@ -109,7 +109,8 @@ body {
   line-height: 1;
 }
 ol,
-ul {
+ul,
+li {
   list-style: none;
 }
 blockquote,
@@ -134,10 +135,6 @@ table {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-}
-img {
-  width: 100%;
-  vertical-align: top;
 }
 a {
   text-decoration: none;

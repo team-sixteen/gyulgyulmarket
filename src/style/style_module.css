@@ -91,32 +91,34 @@
 }
 
 .nav-tab-menu__wrapper.nav-tab-menu__home:before {
-    background-image: url("../images-module/icon-home.png");
+    background-image: url("../images/icon/icon-home.png");
 }
 .nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
-    background-image: url("../images-module/icon-home-fill.png");
+    background-image: url("../images/icon/icon-home-fill.png");
 }
 
 .nav-tab-menu__wrapper.nav-tab-menu__chat:before {
-    background-image: url("../images-module/icon-message-circle.png");
+    background-image: url("../images/icon/icon-message-circle.png");
 }
 .nav-tab-menu__wrapper.nav-tab-menu__chat.nav-tab-menu__chat--active:before {
-    background-image: url("../images-module/icon-message-circle-fill.png");
+    background-image: url("../images/icon/icon-message-circle-fill.png");
 }
 
 .nav-tab-menu__wrapper.nav-tab-menu__post:before {
-    background-image: url("../images-module/icon-edit.png");
+    background-size: contain;
+    background-image: url("../images/icon/icon-edit.png");
 }
 
 .nav-tab-menu__wrapper.nav-tab-menu__profile:before {
-    background-image: url("../images-module/icon-user.png");
+    background-size: contain;
+    background-image: url("../images/icon/icon-user.png");
 }
 .nav-tab-menu__wrapper.nav-tab-menu__profile.nav-tab-menu__profile--active:before {
-    background-image: url("../images-module/icon-user-fill.png");
+    background-image: url("../images/icon/icon-user-fill.png");
 }
 
 .nav-tab-menu__txt.nav-tab-menu__txt--active {
-    color: #8D334C;
+    color: #F26E22;
 }
 
 
@@ -143,6 +145,11 @@
     margin-left: 18px;
     height: 18px;
     width: calc(100% - 100px);
+}
+
+.module-inp-cmmt .module-inp-cmmt__inp:focus {
+    outline: none;
+    border-bottom: solid 1px #000;
 }
 
 .module-inp-cmmt .module-inp-cmmt__btn-upload {
@@ -225,13 +232,12 @@
     padding-bottom: 8px;
 }
 .module-inp__inp.module-inp__inp--active {
-    border-bottom: solid 1px #f99d84;
+    border-bottom: solid 1px #F26E22;
 }
 
 /* delete-alert */
 .module-alert {
     width: 252px;
-    height: 110px;
     /* border: solid 1px red; */
     border-radius: 15px;
     overflow: hidden;
@@ -258,7 +264,6 @@
     display: block;
     height: inherit;
     background-color: #fff;
-    text-align: center;
     width: inherit;
     border: none;
     font-size: 14px;
@@ -269,7 +274,7 @@
 }
 .module-alert .module-alert__btn-delete {
     border-left: solid 1px #DBDBDB;
-    color: #f99d84;
+    color: #F26E22;
 }
 
 
@@ -278,9 +283,9 @@
 .m-btn,
 .ms-btn,
 .s-btn {
-    background-color: #8D334C;
-    border: solid 1px #8D334C;
-    color: #FEF5E6;
+    background-color: #F26E22;
+    border: solid 1px #F26E22;
+    color: #FFF;
     font-size: 14px;
 }
 

@@ -1,0 +1,94 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: #fcf9e9;
+}
+
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* padding-top: 20rem; */
+  box-sizing: border-box;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  min-width: 350px;
+  max-width: 500px;
+  height: 500px;
+  border: 3px double rgb(128, 127, 127);
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+.block-input {
+  margin-bottom: 10px;
+}
+legend {
+  margin: 30px 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+fieldset > ul {
+  margin-top: 15px;
+}
+li > label {
+  float: left;
+}
+
+.text-field {
+  display: block;
+  width: 30rem;
+  height: 3rem;
+  box-sizing: border-box;
+  border: 3px double rgb(180, 180, 180);
+  border-radius: 5px;
+  line-height: 3rem;
+}
+input {
+  width: 70%;
+}
+.login-error {
+  margin-top: 5px;
+  color: red;
+}
+.login-btn {
+  margin-top: 80px;
+}
+button {
+  width: 30rem;
+  height: 3rem;
+  background: #ffc7a7;
+  border-radius: 44px;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.join-email {
+  width: 30rem;
+  height: 3rem;
+  background: #ffc7a7;
+  border-radius: 44px;
+  border: 1px solid black;
+  text-align: center;
+}
+.join-email a {
+  line-height: 3rem;
+  font-size: 1.3rem;
+}
+img {
+  display: block;
+  bottom: 30px;
+  width: 8rem;
+  height: 8rem;
+}

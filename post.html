@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="src/style/reset.css">
+  <link rel="stylesheet" href="src/style/style_module.css">
+  <link rel="stylesheet" href="src/style/post.css">
+</head>
+<body>
+
+  <nav class="nav-top">
+    <a href="#" class="nav-top__btn--goback">
+      <img src="src/images/icon/icon-arrow-left.png"  alt="뒤로 가기" class="nav-top__img-icon-arrow-left">
+    </a>
+    <a href="#" class="nav-top__btn--more">
+      <img src="src/images/icon/icon-more-vertical.png"  alt="메뉴 더보기" class="nav-top__img-icon-more">
+    </a>
+  </nav>
+
+  <main class="container">
+
+    <article class="post">
+      <div class="post-header">
+        <!-- TODO: 클릭시 해당 유저의 프로필로 이동 -->
+        <a href="#" class="post-user-wrap">
+          <div class="post-user-info">
+            <!-- TODO: alt => 로그인 유저 닉네임 가져와서 ${닉네임}의 프로필 이미지로 변경하기 -->
+            <img src="src/images/basic-profile-img.png" alt="프로필 이미지" class="post-user-img">
+            <ul class="post-user-info-details">
+              <li class="post-username">애월읍 위니브 감귤농장</li>
+              <li class="post-userid">@weniv_mandarin</li>
+            </ul>
+          </div>
+        </a>
+        <!-- TODO: 클릭시 아래에서 모달 띄우기 -->
+        <button class="post-details">
+          <img
+            src="src/images/icon/icon-more-vertical.png"
+            alt="게시글 옵션 더보기">
+        </button>
+      </div>
+      <div class="post-contents">
+        <section class="post-content">
+          옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
+          이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다.
+          대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.
+        </section>
+        <!-- TODO: slide -->
+        <section class="post-img-slide">
+          <ul class="post-imgs">
+            <li class="post-img">
+              <img src="src/images/chat-exapmle.png" alt="">
+            </li>
+          </ul>
+          <!-- TODO: slide points -->
+          <ul class="post-img-slide-pointer">
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+          </ul>
+        </section>
+        <section class="post-active">
+          <div class="post-active-like">
+            <!-- TODO: active 시 heart-fill로 변경 -->
+            <!-- TODO: active 시 alt 변경 -->
+            <img src="src/images/icon/icon-heart.png" alt="게시글 좋아요 등록" class="post-active-like-off">
+            <div class="post-active-like-cnt">58</div>
+          </div>
+          <div class="post-active-comment">
+            <img src="src/images/icon/icon-message-circle.png" alt="게시글 댓글 확인" class="post-active-comment-off">
+            <div class="post-active-comment-cnt">12</div>
+          </div>
+        </section>
+        <section class="post-date">
+          2020년 10월 21일
+        </section>
+      </div>
+
+      <article class="post-comment-wrap">
+        <ul class="post-comments">
+          <li class="post-comment">
+            <div class="post-comment-header">
+              <div class="post-comment-user">
+                <img src="src/images/chat-exapmle.png" alt="유저 프로필 이미지" class="post-comment-userimg">
+                <div class="post-comment-username">
+                  서귀포시 무슨 농장
+                </div>
+              </div>
+              <button class="post-comment-details">
+                <img src="src/images/icon/icon-more-vertical.png" alt="댓글 옵션 더보기">
+              </button>
+            </div>
+            <div class="post-comment-content">
+              안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...
+            </div>
+          </li>
+          <li class="post-comment">
+            <div class="post-comment-header">
+              <div class="post-comment-user">
+                <img src="src/images/chat-exapmle.png" alt="유저 프로필 이미지" class="post-comment-userimg">
+                <div class="post-comment-username">
+                  서귀포시 무슨 농장
+                </div>
+              </div>
+              <button class="post-comment-details">
+                <img src="src/images/icon/icon-more-vertical.png" alt="댓글 옵션 더보기">
+              </button>
+            </div>
+            <div class="post-comment-content">
+              안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...
+            </div>
+          </li>
+          <li class="post-comment">
+            <div class="post-comment-header">
+              <div class="post-comment-user">
+                <img src="src/images/chat-exapmle.png" alt="유저 프로필 이미지" class="post-comment-userimg">
+                <div class="post-comment-username">
+                  서귀포시 무슨 농장
+                </div>
+              </div>
+              <button class="post-comment-details">
+                <img src="src/images/icon/icon-more-vertical.png" alt="댓글 옵션 더보기">
+              </button>
+            </div>
+            <div class="post-comment-content">
+              안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...
+            </div>
+          </li>
+          <li class="post-comment">
+            <div class="post-comment-header">
+              <div class="post-comment-user">
+                <img src="src/images/chat-exapmle.png" alt="유저 프로필 이미지" class="post-comment-userimg">
+                <div class="post-comment-username">
+                  서귀포시 무슨 농장
+                </div>
+              </div>
+              <button class="post-comment-details">
+                <img src="src/images/icon/icon-more-vertical.png" alt="댓글 옵션 더보기">
+              </button>
+            </div>
+            <div class="post-comment-content">
+              안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...
+            </div>
+          </li>
+        </ul>
+      </article>
+    </article>
+
+  </main>
+
+  <nav class="nav-tab-menu">
+    <ul class="nav-tab-menu__list">
+      <li class="nav-tab-menu__item">
+        <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active">
+          <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+        </a>
+      </li>
+      <li class="nav-tab-menu__item">
+        <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__chat">
+          <p class="nav-tab-menu__txt">채팅</p>
+        </a>
+      </li>
+      <li class="nav-tab-menu__item">
+        <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__post">
+          <p class="nav-tab-menu__txt">게시물 작성</p>
+        </a>
+      </li>
+      <li class="nav-tab-menu__item">
+        <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__profile">
+          <p class="nav-tab-menu__txt">프로필</p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -135,10 +135,7 @@ table {
   margin: -1px;
   overflow: hidden;
 }
-img {
-  width: 100%;
-  vertical-align: top;
-}
+
 a {
   text-decoration: none;
   color: inherit;

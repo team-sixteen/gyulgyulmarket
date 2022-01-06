@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>your profile</title>
     <link rel="stylesheet" href="src/style/reset.css">
-    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="stylesheet" href="src/style/profile.css">
     <link rel="stylesheet" href="src/style/style_module.css">
 </head>
 
@@ -54,9 +54,10 @@
         </div>
     </section>
 
+    <div class="container">
     <section class="product">
         <h2 class="product-sale">판매 중인 상품</h2>
-        <ul>
+        <ul class="product-list">
             <li class="product-item">
                 <a href="#">
                     <img src="src/images/product-img-example.png" alt="상품: 애월읍 노지 감귤">
@@ -82,22 +83,14 @@
             </li>
         </ul>
     </section>
+    </div>
 
     <section>
-        <nav id="product-menu">
-            <ul class="product-menu-wrap">
-                <li>
-                    <a class="product-list">
-                        <img src="src/images/icon/icon-post-list-on.png" alt="글 리스트 형식으로 보기">
-                    </a>
-                </li>
-                <li>
-                    <a class="product-album">
-                        <img src="src/images/icon/icon-post-album-off.png" alt="글 앨범 형식으로 보기">
-                    </a>
-                </li>
-            </ul>
-        </nav> 
+        <div class="product-menu">
+            <a href="#" class="product-view"><img src="src/images/icon/icon-post-list-on.png" alt="글 리스트 형식으로 보기"></a>
+
+            <a href="#" class="product-album"><img src="src/images/icon/icon-post-album-off.png" alt="글 앨범 형식으로 보기"></a>
+        </div> 
 
     <div class="product-feed">
         <div class="product-seller">

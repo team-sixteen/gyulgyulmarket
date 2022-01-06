@@ -19,18 +19,19 @@ html, body {
     align-items: center;
 }
 
-.followers-num {
-    font-style: normal;
+.followings-wrap,.followwers-wrap {
+    text-align: center;
+}
+
+.followers-num, .followings-num {
     font-weight: bold;
     font-size: 18px;
     line-height: 23px;
 }
 
 .followings-num {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 23px;
+    color: #767676
+    ;
 }
 
 .user-follow-number {

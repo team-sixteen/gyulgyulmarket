@@ -134,6 +134,12 @@ html, body {
     margin: 5px;
 }
 
+.container-feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .product-menu {
     box-sizing: border-box;
     width: 100%;
@@ -150,3 +156,124 @@ html, body {
     height: 26px;
     margin: 5px;
 }
+
+.post {
+    background-color: #fff;
+    border-top: 0.5px solid #dbdbdb;
+}
+.post-view {
+    text-align: end;
+    padding: 9px 16px;
+    border-bottom: .5px solid #dbdbdb;
+}
+.btn-list img,
+.btn-album img {
+    width: 26px;
+    height: 26px;
+}
+
+.post-list {
+    padding: 16px;
+}
+
+.post-list-item {
+    display: flex;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.post-profile-img {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.post-profile-text {
+    padding: 4px 0 4px 0;
+    margin-bottom: 12px;
+}
+
+.post-writer {
+    display: block;
+    font-weight: 500;
+    line-height: 17.53px;
+}
+
+.post-writer-id {
+    font-size: 12px;
+    line-height: 14px;
+    color: #767676;
+}
+
+.post-text {
+    line-height: 17.53px;
+    margin-bottom: 16px;
+}
+
+.post-img {
+    width: 304px;
+    height: 228px;
+    border: 0.5px solid #dbdbdb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.post-utils {
+    margin-bottom: 16px;
+}
+
+.btn-like img,
+.btn-comment img {
+    width: 20px;
+    height: 20px;
+}
+
+.count-like,
+.count-comment {
+    font-size: 12px;
+    line-height: 12px;
+    margin-right: 16px;
+}
+
+.post-date {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.btn-post-menu {
+    position: absolute;
+    top: 4px;
+    right: 0;
+}
+
+.btn-post-menu img {
+    width: 18px;
+    height: 18px;
+}
+
+.post-album {
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 16px;
+}
+
+.post-album-item {
+    width: 100%;
+    position: relative;
+}
+
+.post-album-img {
+    width: 114px;
+    height: 114px;
+}
+
+.icon-multi-image {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+

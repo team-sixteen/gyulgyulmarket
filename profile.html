@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="src/style/reset.css">
     <link rel="stylesheet" href="src/style/profile.css">
     <link rel="stylesheet" href="src/style/style_module.css">
+    <link rel="stylesheet" href="src/style/common.css">
 </head>
 
 <body>
@@ -85,41 +86,132 @@
     </section>
     </div>
 
-    <section>
+    <section class="container-feed">
         <div class="product-menu">
             <a href="#" class="product-view"><img src="src/images/icon/icon-post-list-on.png" alt="글 리스트 형식으로 보기"></a>
 
             <a href="#" class="product-album"><img src="src/images/icon/icon-post-album-off.png" alt="글 앨범 형식으로 보기"></a>
         </div> 
 
-    <div class="product-feed">
-        <div class="product-seller">
-            <img src="src/images/Ellipse 6.png" alt="사용자 프로필 이미지">
-            <p class="user-profile-name">애월읍 위니브 감귤농장</p>
-            <p class="user-profile-id">@weniv_Mandarin</p>
-        </div>
-        <p class="feed-content-txt">옷을 인생을 그러므로 없으면 것은 이상은 것은 우리 <br>
-        의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그들의 <br>
-        와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 <br>
-        힘있다.</p>
-        <img src="src/images/post-img-example.png" alt="감귤농장 이미지">
-
-    <div>        
-    <div class="product-response">
-        <button type="button" class="btn-heart">
-        <img src="src/images/icon/icon-heart.png" alt="좋아요 버튼 이미지">
-        </button>
-        58
-
-        <button type="button" class="btn-message">
-        <img src="src/images/icon/icon-message-circle.png" alt="댓글 버튼 이미지">
-        </button>
-        12
-    </div>
-    <p class="produnt-uploadday">2020년 10월 21일</p>
-    </div>
+        <ul class="post-list">
+            <li class="post-list-item">
+                <img
+                    src="src/images/s-basic-profile-img.png"
+                    class="post-profile-img"
+                />
+                <div>
+                    <div class="post-profile-text">
+                        <strong class="post-writer"
+                            >애월읍 위니브 감귤농장</strong
+                        >
+                        <span class="post-writer-id"
+                            >@ weniv_Mandarin</span
+                        >
+                    </div>
+                    <p class="post-text">
+                        옷을 인생을 그러므로 없으면 것은 이상은 것은
+                        우리의 위하여, 뿐이다. 이상의 청춘의 뼈
+                        따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
+                        풍부하게 뛰노는 인생의 힘있다.
+                    </p>
+                    <img
+                        src="src/images/post-img-example.png"
+                        class="post-img"
+                    />
+                    <div class="post-utils">
+                        <button class="btn-like">
+                            <img
+                                src="src/images/icon/icon-heart.png"
+                                alt="좋아요 수"
+                            />
+                        </button>
+                        <span class="count-like">58</span>
+                        <button class="btn-comment">
+                            <img
+                                src="src/images/icon/icon-message-circle.png"
+                                alt="댓글 수"
+                            />
+                        </button>
+                        <span class="count-comment">12</span>
+                    </div>
+                    <span class="post-date">2020년 10월 21일</span>
+                </div>
+                <button class="btn-post-menu">
+                    <img
+                        src="src/images/icon/s-icon-more-vertical.png"
+                        alt="게시글 메뉴 열기"
+                    />
+                </button>
+            </li>
+            <ul class="post-album">
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-1.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-2.png"
+                        class="post-album-img"
+                    />
+                    <img
+                        src="src/images/post-img/iccon-img-layers.png"
+                        class="icon-multi-image"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-3.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-4.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-5.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-6.png"
+                        class="post-album-img"
+                    />
+                    <img
+                        src="src/images/post-img/iccon-img-layers.png"
+                        class="icon-multi-image"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-7.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-8.png"
+                        class="post-album-img"
+                    />
+                </li>
+                <li class="post-album-item">
+                    <img
+                        src="src/images/post-img/post-img-9.png"
+                        class="post-album-img"
+                    />
+                    <img
+                        src="src/images/post-img/iccon-img-layers.png"
+                        class="icon-multi-image"
+                    />
+                </li>
+            </ul>
 
     </section> 
 </body>
 </html>
-`

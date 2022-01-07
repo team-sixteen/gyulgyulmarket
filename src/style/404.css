@@ -1,0 +1,30 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+.error-page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.black-logo {
+  filter: grayscale(100%);
+}
+.error-400 {
+  position: absolute;
+  top: 43%;
+  width: 73px;
+  height: 34px;
+  /* background-color: blue; */
+  text-shadow: 2px 2px 2px black;
+}
+.error-explain {
+  margin-top: 10px;
+}
+.m-btn--disabled,
+.m-btn--active {
+  margin-top: 10px;
+}

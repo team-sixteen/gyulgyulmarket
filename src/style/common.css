@@ -1,7 +1,6 @@
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
+/* 사이즈 */
+body {
+  max-width: 440px;
 }
 .chat-list-wrap {
   position: relative;
@@ -10,6 +9,7 @@ button {
 }
 .nav-tab-menu {
   position: absolute;
+  width: 100%;
   bottom: 0;
   left: 0;
   right: 0;

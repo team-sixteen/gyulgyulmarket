@@ -65,9 +65,14 @@ input::placeholder::before {
 input {
   width: 70%;
 }
-.join-error {
+.error-id, .error-password {
   margin-top: 5px;
   color: red;
+  display: none;
+}
+
+.error-id.on , .error-password.on {
+  display: block;
 }
 
 .btn-for-join > button {

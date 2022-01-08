@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="./src/style/reset.css" />
     <link rel="stylesheet" href="./src/style/common.css" />
-    <link rel="stylesheet" href="./src/style/join_email.css" />
+    <link rel="stylesheet" href="./src/style/signup.css" />
     <style></style>
   </head>
   <body>
@@ -24,9 +24,9 @@
                 name="email"
                 placeholder="이메일 주소를 입력해 주세요."
                 id="input1"
-                class="text-field"
+                class="text-field email"
               />
-              <p class="join-error">*이미 가입된 이메일 주소입니다.</p>
+              <p class="error-id"></p>
             </div>
           </li>
 
@@ -38,9 +38,9 @@
                 name="password"
                 placeholder="비밀번호를 설정해 주세요."
                 id="input2"
-                class="text-field"
+                class="text-field pw"
               />
-              <p class="join-error">*비밀번호는 6자 이상이어야 합니다.</p>
+              <p class="error-password">*비밀번호는 6자 이상이어야 합니다.</p>
             </div>
           </li>
         </ul>
@@ -49,5 +49,7 @@
         <button type="submit">다음</button>
       </div>
     </div>
+
+    <script src="src/js/user/email.js" type="module"></script>
   </body>
 </html>

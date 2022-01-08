@@ -61,6 +61,11 @@ input {
 .login-error {
   margin-top: 5px;
   color: red;
+  display: none;
+}
+
+.login-error.email.on, .login-error.password.on {
+  display: block;
 }
 
 .btn-for-login > button {

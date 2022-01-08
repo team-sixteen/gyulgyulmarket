@@ -19,7 +19,12 @@
           <li>
             <div class="block-input">
               <label for="input1">이메일</label>
-              <input type="email" name="email" id="input1" class="text-field" />
+              <input 
+                type="email" 
+                name="email" 
+                id="input1" 
+                class="text-field email" />
+                <p class="login-error email">* 이메일을 입력하세요.</p>
             </div>
           </li>
 
@@ -30,11 +35,9 @@
                 type="password"
                 name="password"
                 id="input2"
-                class="text-field"
+                class="text-field password"
               />
-              <p class="login-error">
-                *이메일 또는 비밀번호가 일치하지 않습니다.
-              </p>
+              <p class="login-error password"></p>
             </div>
           </li>
         </ul>
@@ -42,9 +45,10 @@
       <div class="btn-for-login">
         <button type="submit">로그인</button>
         <div class="join-email">
-          <a href="#">이메일로 회원가입</a>
+          <a href="./signup.html">이메일로 회원가입</a>
         </div>
       </div>
     </div>
+    <script src="src/js/user/login.js" type="module"></script>
   </body>
 </html>

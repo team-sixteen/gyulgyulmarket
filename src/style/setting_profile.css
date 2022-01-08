@@ -27,9 +27,35 @@ body {
   line-height: 14px;
   color: #767676;
 }
-.profile-img-btn {
+.profile-img-wrap {
+  width: 110px;
   margin-bottom: 15px;
+  cursor: auto;
+  position: relative;
 }
+
+.profile-img {
+  width: 100%;
+}
+
+.upload-img-btn {
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.upload-img-btn img {
+  height: 100%;
+}
+
+#upload-img {
+  display: none;
+}
+
 fieldset {
   display: flex;
   flex-direction: column;
@@ -62,15 +88,17 @@ li .text-field {
   border-bottom: 1px solid #dbdbdb;
   outline: none;
 }
-/* input {
-  width: 70%;
-} */
+
 .profile-error {
+  display: none;
   margin-top: 5px;
   color: red;
 }
-.login-btn {
+
+.profile-error.username.on, .profile-error.accountname.on {
+  display: block;
 }
+
 .btn-for-start > button {
   width: 322px;
   height: 48px;

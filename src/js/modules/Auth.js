@@ -53,6 +53,36 @@ export default class Auth {
     }
   }
 
+  static setProfile(user) {
+    const token = this.getToken();
+    if(!token) {
+      return {
+        message: '토큰 없음'
+      }
+    }
+
+    return fetch(`${BASE_URL}/user`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({user})
+    })
+    .then(res => res.json())
+    .then(res => {
+      if(!res.message) { // SUCCESS
+        localStorage.setItem(ACCOUNT_NAME, user.accountname);
+        return {
+          ...res,
+          message: '프로필 수정 성공'
+        }
+      } else {
+        return res;
+      }
+    })
+  }
+
   static async getProfile() {
     const token = this.getToken();
     const accountname = localStorage.getItem(ACCOUNT_NAME);

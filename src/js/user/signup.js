@@ -31,13 +31,14 @@ class SignUpEmail {
       const email = this.$inputEmail.value;
       const password = this.$inputPassword.value;
       const validate = this.validation(email, password);
-      
+      console.log(validate);
+      console.log(email, password);
       if (validate.result) {
 
         try {
           const result = await Auth.SignUp(email, password);
           const message = result.message;
-
+          console.log(message);
           if (message === '회원가입 성공') {
             
             alert('회원가입을 성공했습니다.');
@@ -52,8 +53,6 @@ class SignUpEmail {
             });
 
           } else {
-            
-            const message = result.message;
             switch (message) {
               case '잘못된 이메일 형식입니다.': {
                 if (!errorID.classList.contains('on')) {
@@ -99,7 +98,7 @@ class SignUpEmail {
 
   validation(email, password) {
     if (!email.length) return {result: false, email: false, password: false};
-    if (!password.length < 6) return {result: false, email: true, password: false};
+    if (password.length < 6) return {result: false, email: true, password: false};
     return {result: true}
   }
 }

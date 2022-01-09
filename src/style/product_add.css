@@ -36,16 +36,16 @@ nav-top {
   }
 
   .product-item {
-    width: 322px;
+    width: 100%;
   }
 
-  .product-item.more-photos {
+  .product-item {
     position: relative;
   }
 
-  .product-item.more-photos::after {
+  .product-item::after {
     position: absolute;
-    top: 3px;
+    top: 60px;
     right: 6px;
     content: '';
     width: 22px;

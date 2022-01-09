@@ -1,0 +1,41 @@
+/* delete-alert */
+.module-alert {
+    width: 252px;
+    /* border: solid 1px red; */
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .module-alert .module-alert__wrapper {
+    display: flex;
+  }
+  .module-alert .module-alert__wrapper-txt {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: solid 1px #dbdbdb;
+  }
+  .module-alert .module-alert__choice {
+    height: 46px;
+    width: 100%;
+  }
+  .module-alert .module-alert__btn-cancel,
+  .module-alert .module-alert__btn-delete {
+    display: block;
+    height: inherit;
+    background-color: #fff;
+    width: inherit;
+    border: none;
+    font-size: 14px;
+  }
+  .module-alert .module-alert__btn-cancel:hover,
+  .module-alert .module-alert__btn-delete:hover {
+    cursor: pointer;
+  }
+  .module-alert .module-alert__btn-delete {
+    border-left: solid 1px #dbdbdb;
+    color: #f26e22;
+  }

@@ -16,6 +16,11 @@
             <strong>김다님</strong>
         </td>
         <td align="center" width="150px">
+            <a href="https://github.com/skgml0"><img height="120px" width="120px" src="https://github.com/jma1020.png"/></a>
+            <br />
+            <strong>김정민</strong>
+        </td>
+        <td align="center" width="150px">
             <a href="https://github.com/junho0956"><img height="120px" width="120px" src="https://github.com/junho0956.png"/></a>
             <br />
             <strong>김준호</strong>

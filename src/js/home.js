@@ -2,35 +2,7 @@ import Auth from './modules/Auth.js';
 // fetch();
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
 
-//  1.  해당함수 변수 선언
-console.log('home.js입장');
-let search_btn = document.querySelector('button.m-btn');
-let nav_top = document.querySelector('button.nav-top');
-let nav_new_top = document.querySelector('form.search-nav');
-let home_zero_wrap = document.querySelector('div.cont-user-follow__wrapper');
-
-//  1. 해당함수 시작
-function search() {
-  alert('안녕?');
-  nav_top.style.display = 'none';
-  nav_new_top.classList.remove('hide');
-  home_zero_wrap.classList.add('hide');
-}
-// 1.  해당함수 호출
-search_btn.addEventListener('click', search);
-nav_top.addEventListener('click', search);
-
-//  2.  해당함수 변수 선언
-const findUserForm = document.querySelector('#findUser-form');
-const findUserInput = document.querySelector('#findUser-input');
-// 2. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
-function findUser(event) {
-//   event.preventDefault();
-  console.log(loginInput.value);
-}
-findUserForm.addEventListener('submit', onLoginSubmit);
-https://www.lesstif.com/gitbook/git-delete-remote-branch-20776547.html
-// 로그인 유지 확인 함수 + 데이터 불러오는 함수
+// 0. 로그인 유지 확인 함수 + 데이터 불러오는 함수
 async function init() {
   // getProfile 의 기능
   // 토큰과 accountname을 파악해서
@@ -63,5 +35,35 @@ async function init() {
       console.error(error);
     });
 }
+
+//  1. 해당함수 시작
+function search() {
+  alert('안녕?');
+  nav_top.style.display = 'none';
+  nav_new_top.classList.remove('hide');
+  home_zero_wrap.classList.add('hide');
+  findUserInput.focus();
+}
+// 2. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
+function findUser(event) {
+  //   event.preventDefault();
+  console.log(loginInput.value);
+}
+//  1.  해당함수 변수 선언
+console.log('home.js입장');
+let search_btn = document.querySelector('button.m-btn');
+let nav_top = document.querySelector('button.nav-top');
+let nav_new_top = document.querySelector('form.search-nav');
+let home_zero_wrap = document.querySelector('div.cont-user-follow__wrapper');
+
+// 1.  해당함수 호출
+search_btn.addEventListener('click', search);
+nav_top.addEventListener('click', search);
+
+//  2.  해당함수 변수 선언
+// const findUserForm = document.querySelector('form.nav-top');
+const findUserInput = document.querySelector('input.nav-top__inp-sch');
+
+// findUserInput.addEventListener('submit', findUser);
 
 init();

@@ -13,55 +13,61 @@ async function init() {
   // isLogin: false
   const user = await Auth.getProfile();
   console.log(user);
-  const find_search = document.querySelector('#inpSch');
   console.log('-----');
   if (!user.isLogin) {
     // 로그아웃
     window.location.href = './login.html';
   }
-  // console.log('222 ----------222 ');
-  // console.log(`${BASE_URL}`);
-  // fetch(`${BASE_URL}/user`, {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify({ user }),
-  // })
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res))
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
   console.log('로그인은 성공');
 }
 
 //  1. 해당함수 시작
 function search() {
-  alert('안녕?');
   nav_top.style.display = 'none';
   nav_new_top.classList.remove('hide');
   home_zero_wrap.classList.add('hide');
   findUserInput.focus();
   findUser();
 }
-// 2. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
-function findUser() {
+//  2.  해당함수 변수 선언
+const findUserInput = document.querySelector('input.nav-top__inp-sch');
+const resultUser = document.querySelector('div.cont-user-search');
+
+// 3. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
+async function findUser() {
   console.log('aaa');
   console.log(findUserInput.value);
-  // console.log(`${BASE_URL}`);
-  fetch(`${BASE_URL}/user/searchuser/?keyword=${findUserInput.value}`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0Njk5MzQwNywiaWF0IjoxNjQxODA5NDA3fQ.dGIX-ETnyex9NbxDRVTC_7owkVgghpoL4d74AEekr2Q`,
-      'Content-Type': 'application/json',
+  const res = await fetch(
+    `${BASE_URL}/user/searchuser/?keyword=${findUserInput.value}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${Auth.getToken()}`,
+        'Content-Type': 'application/json',
+      },
     },
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch((error) => {
-      console.error(error);
-    });
+  );
+  const searchData = await res.json();
+  console.log(searchData);
+  searchData.forEach((searchData) => {
+    const search_username = searchData.username;
+    const search_accountname = searchData.accountname;
+    const search_image = searchData.image;
+    console.log(search_accountname);
+    document.querySelector('.item-user-search__list').innerHTML += `
+      <li class="item-user-search">
+        <a href="#" class="item-user-search__wrapper">
+        <img
+          src="${search_image}"
+          onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지"
+          class="item-user-search__img-user"/>
+      <span class="item-user-search-box">
+      <span class="item-user-search__username">${search_username}</span>
+      <span class="item-user-search__userid">${search_accountname}</span>
+      </span>
+    </a>
+  </li>`;
+  });
 }
 
 //  1.  해당함수 변수 선언
@@ -75,9 +81,6 @@ let home_zero_wrap = document.querySelector('div.cont-user-follow__wrapper');
 search_btn.addEventListener('click', search);
 nav_top.addEventListener('click', search);
 
-//  2.  해당함수 변수 선언
-const findUserInput = document.querySelector('input.nav-top__inp-sch');
-const resultUser = document.querySelector('div.cont-user-search');
 //  키 누를때 2. 함수호출
 findUserInput.addEventListener('keydown', findUser);
 

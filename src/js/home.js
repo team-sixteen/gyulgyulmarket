@@ -15,25 +15,25 @@ async function init() {
   console.log(user);
   const find_search = document.querySelector('#inpSch');
   console.log('-----');
-  console.log(find_search);
   if (!user.isLogin) {
     // 로그아웃
     window.location.href = './login.html';
   }
+  // console.log('222 ----------222 ');
+  // console.log(`${BASE_URL}`);
+  // fetch(`${BASE_URL}/user`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({ user }),
+  // })
+  //   .then((res) => res.json())
+  //   .then((res) => console.log(res))
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
   console.log('로그인은 성공');
-  console.log(`${BASE_URL}`);
-  fetch(`${BASE_URL}/user`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ user }),
-  })
-    .then((res) => res.json())
-    .then((res) => alert(res))
-    .catch((error) => {
-      console.error(error);
-    });
 }
 
 //  1. 해당함수 시작
@@ -43,12 +43,27 @@ function search() {
   nav_new_top.classList.remove('hide');
   home_zero_wrap.classList.add('hide');
   findUserInput.focus();
+  findUser();
 }
 // 2. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
-function findUser(event) {
-  //   event.preventDefault();
-  console.log(loginInput.value);
+function findUser() {
+  console.log('aaa');
+  console.log(findUserInput.value);
+  // console.log(`${BASE_URL}`);
+  fetch(`${BASE_URL}/user/searchuser/?keyword=${findUserInput.value}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0Njk5MzQwNywiaWF0IjoxNjQxODA5NDA3fQ.dGIX-ETnyex9NbxDRVTC_7owkVgghpoL4d74AEekr2Q`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+    .catch((error) => {
+      console.error(error);
+    });
 }
+
 //  1.  해당함수 변수 선언
 console.log('home.js입장');
 let search_btn = document.querySelector('button.m-btn');
@@ -61,9 +76,9 @@ search_btn.addEventListener('click', search);
 nav_top.addEventListener('click', search);
 
 //  2.  해당함수 변수 선언
-// const findUserForm = document.querySelector('form.nav-top');
 const findUserInput = document.querySelector('input.nav-top__inp-sch');
-
-// findUserInput.addEventListener('submit', findUser);
+const resultUser = document.querySelector('div.cont-user-search');
+//  키 누를때 2. 함수호출
+findUserInput.addEventListener('keydown', findUser);
 
 init();

@@ -9,6 +9,8 @@
 }
 .module-inp-cmmt {
   bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .post {
@@ -132,3 +134,28 @@
 .post-comment-details img {
   width: 16px;
 }
+.module-inp-cmmt {
+  display: block;
+  padding: 0 12px;
+}
+
+.module-inp-cmmt__inp {
+  border: none;
+  width: calc(100% - 120px);
+  font-size: 15px;
+}
+
+.module-inp-cmmt__btn-upload {
+  float: right;
+  padding: 7px 11px;
+  margin-top: 11px;
+  background-color: blue;
+  border-radius: 26px;
+  color: white;
+}
+
+/* .module-inp-cmmt__btn-upload::after {
+  content: ' ';
+  display: block;
+  clear: both;
+} */

@@ -7,7 +7,6 @@ export default class Slider {
     this.idx = 0;
     this.arrow_left = this.$container.querySelector('.slide-arrow-left');
     this.arrow_right = this.$container.querySelector('.slide-arrow-right');
-    this.close = this.$container.querySelector('.upload-slide');
     this.points = this.$container.querySelector('.slide-points');
     this.initEvent();
     this.render();
@@ -54,12 +53,7 @@ export default class Slider {
         else p.style.backgroundColor = 'white';
       });
     });
-    this.close.addEventListener('click', (e) => {
-      const closeBtn = e.target.closest('.upload-slide-img-delete');
-      if (closeBtn) {
-        this.removeImg(closeBtn.id);
-      }
-    });
+    
   }
 
   initialize() {
@@ -76,7 +70,6 @@ export default class Slider {
   }
 
   render() {
-    console.log(this.imgs);
     this.$ul.innerHTML = this.imgs.map((img, idx) => {
       return `
         <li class="upload-slide-item">

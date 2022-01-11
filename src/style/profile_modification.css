@@ -1,78 +1,11 @@
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-size: 10px;
-  background-color: #ffffff;
+.ms-btn:active {
+  opacity: 0.5;
 }
 
-nav-top {
-    position: fixed;
-    top: 0;
-    background-color: white;
-    z-index: 9999;
-  }
-  
-  .nav-top .ms-btn--disabled {
-    opacity: 1;
-    cursor: pointer;
-  }
-  
-  .nav-top .ms-btn--disabled:active {
-    opacity: 0.5;
-  }
+.profile-setting-wrap {
+  justify-content: flex-start;
+}
 
-  .profile-modification-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .btn-upload {
-      margin: 30px;
-  }
-
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 70%;
-    min-width: 350px;
-    max-width: 500px;
-    padding: 20px 0;
-    align-items: center;
-    text-align: left;
-  }
-  fieldset > ul {
-    margin-top: 15px;
-  }
-  
-  li .block-input {
-    margin-bottom: 10px;
-  }
-  li > label {
-    float: left;
-    color: #767676;
-  }
-  li .text-field {
-    display: block;
-    width: 322px;
-    height: 33px;
-    padding: 5px 10px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #dbdbdb;
-    outline: none;
-  }
-  /* input {
-    width: 70%;
-  } */
-  
-  .btn-for-start > button {
-    width: 322px;
-    height: 48px;
-    border-radius: 44px;
-    background: #f26e22;
-    color: #ffffff;
-  }
+.nav-top__btn--goback {
+  cursor: pointer;
+}

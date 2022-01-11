@@ -4,43 +4,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>profile_modification</title>
+  <title>프로필 수정</title>
   <link rel="stylesheet" href="src/style/reset.css">
   <link rel="stylesheet" href="src/style/style_module.css">
+  <link rel="stylesheet" href="src/style/setting_profile.css">
   <link rel="stylesheet" href="src/style/profile_modification.css">
 </head>
 <body>
   <div class="nav-top">
-    <a href="#" class="nav-top__btn--goback"><img src="./src/images/icon/icon-arrow-left.png" alt="뒤로 가기"></a>
-    <button type="button" class="ms-btn ms-btn--disabled">저장</button>
-</div>
-
-  <div class="profile-modification-container">
-  <div class="img-profile">
-      <img class="btn-upload" src="src/images/join_profile.png" alt="프로필 업로드하기">
+    <a class="nav-top__btn--goback"><img src="./src/images/icon/icon-arrow-left.png" alt="뒤로 가기"></a>
+    <button type="button" class="ms-btn">저장</button>
   </div>
-  <ul>
-    <li>
-      <div class="block-input">
-      <label for="input1">사용자 이름</label>
-      <input type="text" name="email" placeholder="2~10자 이내여야 합니다." id="input1" class="text-field"/>
-      
-    </div>
-    </li>
-    <li>
-      <div class="block-input">
-      <label for="input1">계정 ID</label>
-      <input type="text" name="email" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." id="input2" class="text-field"/>
-    </div>
-    </li>
 
-    <li>
-      <div class="block-input">
-      <label for="input2">소개</label>
-      <input type="text" name="password" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" id="input3" class="text-field"/>
-    </div>
-    </li>
-  </ul>
-</div>
+  <div class="profile-setting-wrap">
+    <fieldset>
+      <legend class="hide-text">프로필 이름, id, 소개 설정</legend>
+      <div class="profile-img-wrap">
+        <img src="./src/images/basic-profile-img.png" alt="프로필 이미지 설정" class="profile-img">
+        <label for="upload-img" class="upload-img-btn">
+          <img src="src/images/upload-file.png" alt="">
+        </label>
+        <input type="file" id="upload-img" accept="image/png, image/jpeg">
+      </div>
+  
+      <ul>
+        <li>
+          <div class="block-input">
+            <label for="input1">사용자 이름</label>
+            <input type="text" name="email" placeholder="2~10자 이내여야 합니다." id="input1" class="text-field username" />
+            <p class="profile-error username">* 2~10자 이내여야 합니다.</p>
+          </div>
+        </li>
+        <li>
+          <div class="block-input">
+            <label for="input1">계정 ID</label>
+            <input type="text" name="email" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다." id="input2"
+              class="text-field accountname" />
+            <p class="profile-error accountname"></p>
+          </div>
+        </li>
+  
+        <li>
+          <div class="block-input">
+            <label for="input2">소개</label>
+            <input type="text" name="password" placeholder="자신과 판매할 상품에 대해 소개해 주세요!" id="input3"
+              class="text-field intro" />
+          </div>
+        </li>
+      </ul>
+    </fieldset>
+  <script src="src/js/user/setProfile.js" type="module"></script>
+  <script>
+    document.querySelector('.nav-top__btn--goback')
+    .addEventListener('click', () => history.back());
+  </script>
 </body>
 </html>

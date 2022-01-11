@@ -30,8 +30,8 @@ export default class Auth {
       const user = {
         email,
         password,
-        username: 'username',
-        accountname: String(Math.floor(Math.random()*9999999999)),
+        username: 'deaultUserName',
+        accountname: 'user'+String(Math.floor(Math.random()*99999999999)),
         intro: 'intro',
         image: null
       }

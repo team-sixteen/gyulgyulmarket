@@ -1,9 +1,9 @@
 html,
 body {
-  width: 100%;
+  max-width: 440px;
   height: 100%;
   font-size: 10px;
-  background-color: #fff;
+  margin: 0 auto;
 }
 
 .login-wrap {

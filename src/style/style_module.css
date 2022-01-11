@@ -280,7 +280,7 @@ body {
 
 /* post-modal */
 .post-modal {
-  width: 252px;
+  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   box-sizing: border-box;
@@ -289,6 +289,8 @@ body {
 .post-modal__wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
 }
 

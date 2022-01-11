@@ -33,7 +33,7 @@ function search() {
 const findUserInput = document.querySelector('input.nav-top__inp-sch');
 const resultUser = document.querySelector('div.cont-user-search');
 
-// 3. search에 엔터 또는 키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
+// 3. search에  키업 확인을 눌렀을때 , 작성한 검색 값을 통해 유저 조회하는 함수
 async function findUser() {
   console.log('aaa');
   console.log(findUserInput.value);
@@ -49,25 +49,36 @@ async function findUser() {
   );
   const searchData = await res.json();
   console.log(searchData);
-  searchData.forEach((searchData) => {
-    const search_username = searchData.username;
-    const search_accountname = searchData.accountname;
-    const search_image = searchData.image;
-    console.log(search_accountname);
-    document.querySelector('.item-user-search__list').innerHTML += `
-      <li class="item-user-search">
-        <a href="#" class="item-user-search__wrapper">
-        <img
-          src="${search_image}"
-          onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지"
-          class="item-user-search__img-user"/>
-      <span class="item-user-search-box">
-      <span class="item-user-search__username">${search_username}</span>
-      <span class="item-user-search__userid">${search_accountname}</span>
-      </span>
-    </a>
-  </li>`;
+  const DData = searchData.filter((word) => {
+    return word.username.includes(`${findUserInput.value}`)
+      ? true
+      : word.accountname.includes(`${findUserInput.value}`)
+      ? true
+      : false;
   });
+  console.log('------');
+  console.log(DData);
+
+  document.querySelector('.item-user-search__list').innerHTML = DData.map(
+    (data) => {
+      const search_username = data.username;
+      const search_accountname = data.accountname;
+      const search_image = data.image;
+      return `
+          <li class="item-user-search">
+          <a href="#" class="item-user-search__wrapper">
+          <img
+            src="${search_image}"
+            onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지"
+            class="item-user-search__img-user"/>
+        <span class="item-user-search-box">
+        <span class="item-user-search__username">${search_username}</span>
+        <span class="item-user-search__userid">${search_accountname}</span>
+        </span>
+      </a>
+    </li>`;
+    },
+  ).join('');
 }
 
 //  1.  해당함수 변수 선언

@@ -61,12 +61,14 @@ async function findUser() {
 
   document.querySelector('.item-user-search__list').innerHTML = DData.map(
     (data) => {
+      const search_id = data._id;
       const search_username = data.username;
       const search_accountname = data.accountname;
       const search_image = data.image;
+      
       return `
           <li class="item-user-search">
-          <a href="#" class="item-user-search__wrapper">
+          <a href="../../profile.html" class="item-user-search__wrapper" data-id="${search_id}" data-useraccount="${search_accountname}">
           <img
             src="${search_image}"
             onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지"
@@ -80,7 +82,12 @@ async function findUser() {
     },
   ).join('');
 }
-
+//../../profile.html
+const selectUser = document.querySelector('.item-user-search__list');
+selectUser.addEventListener('click', (e) => {
+  console.log(e.target.dataset.useraccount);
+  localStorage.setItem('YourProfile_accountname', e.target.dataset.useraccount);
+});
 //  1.  해당함수 변수 선언
 console.log('home.js입장');
 let search_btn = document.querySelector('button.m-btn');

@@ -13,7 +13,7 @@
 
   <body>
     <div class="nav-top">
-      <a href="#" class="nav-top__btn--goback">
+      <a href="#" onClick="history.back()" class="nav-top__btn--goback">
         <img
           src="src/images/icon/icon-arrow-left.png"
           alt="뒤로 가기"
@@ -65,7 +65,10 @@
             class="contact-icon"
         /></a>
 
-        <button type="button" class="m-btn">팔로우</button>
+        <button type="button" onClick="follow_btn()" class="m-btn">
+          팔로우
+        </button>
+        <button type="button" class="unfollow-btn hide-text">언팔로우</button>
 
         <a href="#">
           <img

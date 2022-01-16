@@ -1,6 +1,8 @@
 /* 사이즈 */
+html,
 body {
   max-width: 440px;
+  margin: 0 auto;
 }
 .chat-list-wrap {
   position: relative;
@@ -8,9 +10,10 @@ body {
   height: 100vh;
 }
 .nav-tab-menu {
-  position: absolute;
+  position: absolue;
   width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: #fff;
 }

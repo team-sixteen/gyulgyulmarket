@@ -111,6 +111,7 @@ async function init() {
   }
 }
 init();
+// 팔로우 버튼구현
 const toggleFollow = document.querySelector('.m-btn');
 console.log(toggleFollow);
 toggleFollow.addEventListener('click', function () {
@@ -121,3 +122,16 @@ toggleFollow.addEventListener('click', function () {
     toggleFollow.innerText = '팔로우';
   }
 });
+// followers 리스트 이동
+const followersBtn = document.querySelector('.followers-wrap');
+followersBtn.addEventListener('click', function () {
+  location.href = '../followers.html';
+});
+// followings 리스트 이동
+const followingsBtn = document.querySelector('.followings-wrap');
+followingsBtn.addEventListener('click', function () {
+  location.href = '../followings.html';
+});
+
+// 
+const 

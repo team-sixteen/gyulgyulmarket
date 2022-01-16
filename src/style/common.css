@@ -1,9 +1,3 @@
-/* 사이즈 */
-html,
-body {
-  max-width: 440px;
-  margin: 0 auto;
-}
 .chat-list-wrap {
   position: relative;
   width: 100%;
@@ -16,4 +10,8 @@ body {
   left: 0;
   right: 0;
   background-color: #fff;
+}
+
+.hide {
+  display: none;
 }

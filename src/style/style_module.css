@@ -285,6 +285,42 @@ body {
   color: #f26e22;
 }
 
+/* post-modal */
+.post-modal {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.post-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.post-modal .post-modal__choice {
+  height: 46px;
+  width: 100%;
+}
+
+.post-modal .post-modal__btn-delete,
+.post-modal .post-modal__btn-fix {
+  display: block;
+  height: inherit;
+  background-color: #fff;
+  margin-left: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+.post-modal .post-modal__btn-delete:hover,
+.post-modal .post-modal__btn-fix:hover {
+  cursor: pointer;
+}
+
 /* 버튼 모듈*/
 .l-btn,
 .m-btn,

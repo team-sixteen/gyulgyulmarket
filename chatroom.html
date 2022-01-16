@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatRoom</title>
+    <link rel="stylesheet" href="../src/style/reset.css" />
+    <link rel="stylesheet" href="../style/chatRoom.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+  </head>
+  <body>
+    <h1 class="sr-only">채팅방 화면</h1>
+
+    <header>
+      <div class="status-bar">
+        <time class="text-current-time"></time>
+        <ul class="status-menu">
+          <li class="mobile-signal"></li>
+          <li class="wifi"></li>
+          <li class="battery"></li>
+        </ul>
+      </div>
+      <div class="top-nav">
+        <div class="wrap-cont">
+          <button type="button" class="btn-back-key">뒤로가기</button>
+          <p class="text-chat-opponent">애월읍 위니브 감귤농장</p>
+        </div>
+        <button type="button" class="btn-menu">메뉴</button>
+      </div>
+    </header>
+    <main>
+      <div class="wrap-chat-space">
+        <div class="wrap-opponent-chat">
+          <img
+            src="../images/default-profile-img.png"
+            alt="상대방 프로필"
+            class="img-oppo-profile"
+          />
+          <p class="text-opponent-chat-content">
+            옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
+            이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
+            풍부하게 뛰노는 인생의 힘있다.
+          </p>
+          <small class="text-input-opponent-time">12:39</small>
+        </div>
+        <div class="wrap-opponent-chat">
+          <img
+            src="../images/default-profile-img.png"
+            alt="상대방 프로필"
+            class="img-oppo-profile"
+          />
+          <p class="text-opponent-chat-content">
+            안녕하세요. 감귤 사고싶어요요요요요
+          </p>
+          <small class="text-input-opponent-time">12:41</small>
+        </div>
+
+        <div class="wrap-self-chat">
+          <p class="text-self-chat-content">네 말씀하세요.</p>
+          <small class="text-input-time">12:50</small>
+        </div>
+        <div class="wrap-self-chat">
+          <img
+            src="../images/dummyPics/chat-img.png"
+            alt="채팅 전송이미지"
+            class="img-chat-self"
+          />
+          <small class="text-input-time">12:51</small>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap-input-chat">
+        <div class="wrap-input-zone">
+          <button type="button" class="btn-img-attach"></button>
+          <input
+            type="text"
+            placeholder="댓글 입력하기..."
+            id="inp-chat"
+            class="inp-chat"
+          />
+        </div>
+        <button type="button" class="btn-message-send">전송</button>
+      </div>
+      <!-- 모달창 -->
+      <div class="modal">
+        <div class="modal-bar"></div>
+        <ul class="list-modal-container"></ul>
+      </div>
+      <div class="dimd"></div>
+      <!-- 모달창 끝 -->
+    </footer>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/chatRoom.js"></script>
+  </body>
+</html>

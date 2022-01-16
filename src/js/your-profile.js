@@ -24,9 +24,6 @@ async function init() {
     window.location.href = './login.html';
   }
   console.log('로그인은 성공');
-  // 이제부터는 로그인 상태겠죠?
-  // myprofile .
-  //
   let localStorage_yourProfile = localStorage.getItem('yourProfile');
 
   // fetch(
@@ -44,9 +41,8 @@ async function init() {
   //       console.error(error);
   //     }),
   // );
-
-  // 정민님 코드
-  async function profile() {
+  // 프로필 설정
+  (async function profile() {
     const res = await fetch(`${BASE_URL}/profile/${localStorage_yourProfile}`, {
       method: 'get',
       headers: {
@@ -57,46 +53,66 @@ async function init() {
 
     const json = await res.json();
     console.log(json);
+    document.querySelector('.user-profile-id').innerText =
+      '@' + json.profile.accountname;
     document.querySelector('.user-profile-name').innerText =
-      json.profile.accountname;
+      json.profile.username;
     document.querySelector('.followers-num').innerText =
       json.profile.followerCount;
     document.querySelector('.followings-num').innerText =
       json.profile.followingCount;
+    document.querySelector('.user-profile-info').innerText = json.profile.intro;
     document.querySelector('.profile-img').src = json.profile.image;
+    //에러 시 추가로 어떻게 할지 정하기 .
+    // document.querySelector('.profile-img').innerHTML = (
+    //   <img
+    //     src="${json.profile.image}"
+    //     onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
+    //     alt="프로필이미지"
+    //     class="item-user-search__img-user"
+    //   />
+    // );
+  })();
+
+  // 판매 중인 상품 출력
+  const productList = document.querySelector('.product-item');
+  const productLimit = 5;
+  let productSkip = 0;
+  async function getProductData(){
+    const data = await fetch(
+      `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
+      {
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${Auth.getToken()}`,
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+    const productData = await data.json();
+    const productData = productData.product;
+    productSkip += productLimit;
+    return productData;
+  };
+  function makeProductItem(product){
+    const { id, itemImage, itemName, link, price} = product;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const img = document.createElement('img');
+    const p = document.createElement('p');
+    const span = document.createElement('span');
+    return li;
   }
-  profile();
+  function printProductList(productData) {
+    for (const product of productData) {
+      const productItem = makeProductItem(product);
+      product.appendChild(productItem);
+    }
+  }
 }
 
 init();
-//   const userData = {
-//        "profile": {
-//         "_id": String,
-//         "username": String,
-//         "accountname": String,
-//         "intro": String,
-//         "image": String,
-//         "following": [],
-//         "follower": [],
-//         "followerCount": Number,
-//         "followingCount": Number
-//     }
-//   }
-//   render(user.profile)
 
-// fetch('https://jsonplaceholder.typicode.com/todos/1')
-//   .then(res => {
-//     // response 처리
-//     console.log(res);
-//     // 응답을 JSON 형태로 파싱
-//     return res.json();
-//   })
-//   .then(data => {
-//     // json 출력
-//     console.log(data)
-//   })
-//   .catch(err => {
-//     // error 처리
-//     console.log('Fetch Error', err);
-//   });
-// }
+follow_btn(){
+  
+}

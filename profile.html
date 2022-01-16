@@ -13,7 +13,7 @@
 
   <body>
     <div class="nav-top">
-      <a href="#" class="nav-top__btn--goback">
+      <a href="#" onClick="history.back()" class="nav-top__btn--goback">
         <img
           src="src/images/icon/icon-arrow-left.png"
           alt="뒤로 가기"
@@ -48,20 +48,6 @@
           <dd clsss="followings-txt">followings</dd>
         </dl>
       </div>
-
-      <!-- 계정검색 -->
-      <form class="nav-top search-nav hide">
-        <a href="#" class="nav-top__btn--goback"
-          ><img src="src/images/icon/icon-arrow-left.png" alt="검색 취소"
-        /></a>
-        <input
-          maxlength="10"
-          type="text"
-          class="nav-top__inp-sch"
-          id="inpSch"
-          placeholder="계정 검색"
-        />
-      </form>
 
       <div class="user-profile">
         <h1 class="user-profile-name">애월읍 위니브 감귤농장</h1>
@@ -244,8 +230,44 @@
           </li>
         </ul>
       </div>
+      <!-- tab-menu -->
+      <nav class="nav-tab-menu">
+        <ul class="nav-tab-menu__list">
+          <li class="nav-tab-menu__item">
+            <a
+              href="#"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="chatroom.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__chat"
+            >
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="upload.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__post"
+            >
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="profile.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__profile"
+            >
+              <p class="nav-tab-menu__txt">프로필</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </section>
     <script src="src/js/your-profile.js" type="module"></script>
-    <script src="src/js/home.js"></script>
   </body>
 </html>

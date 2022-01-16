@@ -78,7 +78,7 @@ async function init() {
   const productList = document.querySelector('.product-item');
   const productLimit = 5;
   let productSkip = 0;
-  async function getProductData(){
+  async function getProductData() {
     const data = await fetch(
       `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
       {
@@ -89,13 +89,13 @@ async function init() {
         },
       },
     );
-    const productData = await data.json();
-    const productData = productData.product;
+    let product = await data.json();
+    let productData = product.product;
     productSkip += productLimit;
     return productData;
-  };
-  function makeProductItem(product){
-    const { id, itemImage, itemName, link, price} = product;
+  }
+  function makeProductItem(product) {
+    const { id, itemImage, itemName, link, price } = product;
     const li = document.createElement('li');
     const a = document.createElement('a');
     const img = document.createElement('img');
@@ -110,9 +110,14 @@ async function init() {
     }
   }
 }
-
 init();
-
-follow_btn(){
-  
-}
+const toggleFollow = document.querySelector('.m-btn');
+console.log(toggleFollow);
+toggleFollow.addEventListener('click', function () {
+  toggleFollow.classList.toggle('unfollow-btn');
+  if (toggleFollow.classList.contains('unfollow-btn')) {
+    toggleFollow.innerText = '언팔로우';
+  } else {
+    toggleFollow.innerText = '팔로우';
+  }
+});

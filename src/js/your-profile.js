@@ -133,5 +133,11 @@ followingsBtn.addEventListener('click', function () {
   location.href = '../followings.html';
 });
 
-// 
-const 
+// 앨범무늬 
+const albumBtn = document.querySelector('.product-album');
+const album = document.querySelector('.album-wrap');
+const post = document.querySelector('.post-list');
+albumBtn.addEventListener('click', function() {
+  album.classList.add('');
+  post.classList.remove('');
+}

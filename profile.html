@@ -49,20 +49,6 @@
         </dl>
       </div>
 
-      <!-- 계정검색 -->
-      <form class="nav-top search-nav hide">
-        <a href="#" class="nav-top__btn--goback"
-          ><img src="src/images/icon/icon-arrow-left.png" alt="검색 취소"
-        /></a>
-        <input
-          maxlength="10"
-          type="text"
-          class="nav-top__inp-sch"
-          id="inpSch"
-          placeholder="계정 검색"
-        />
-      </form>
-
       <div class="user-profile">
         <h1 class="user-profile-name">애월읍 위니브 감귤농장</h1>
         <p class="user-profile-id">@weniv_Mandarin</p>
@@ -132,17 +118,19 @@
 
     <section class="container-feed">
       <div class="product-menu">
-        <a href="#" class="product-view"
-          ><img
+        <button class="product-view">
+          <img
             src="src/images/icon/icon-post-list-on.png"
             alt="글 리스트 형식으로 보기"
-        /></a>
+          />
+        </button>
 
-        <a href="#" class="product-album"
-          ><img
+        <button class="product-album">
+          <img
             src="src/images/icon/icon-post-album-off.png"
             alt="글 앨범 형식으로 보기"
-        /></a>
+          />
+        </button>
       </div>
 
       <ul class="post-list">
@@ -186,7 +174,7 @@
         </li>
       </ul>
 
-      <div class="album-wrap">
+      <div class="album-wrap hide">
         <ul class="post-album">
           <li class="post-album-item">
             <img

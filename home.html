@@ -1,84 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>귤귤마켓</title>
-    <link rel="stylesheet" href="src/style/reset.css">
-    <link rel="stylesheet" href="src/style/style_module.css">
-    <link rel="stylesheet" href="src/style/home.css">
-</head>
+    <link rel="stylesheet" href="src/style/reset.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
+    <link rel="stylesheet" href="src/style/home.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="nav-top main-nav">
-            <h1 class="nav-top__txt-home-feed">귤귤마켓 피드</h1>
-            <a href="#" class="nav-top__btn--search"><img src="src/images/icon/icon-search.png" alt="계정 검색하기"></a>
+      <button class="nav-top main-nav search">
+        <h1 class="nav-top__txt-home-feed">귤귤마켓 피드</h1>
+        <a href="#" class="nav-top__btn--search"
+          ><img src="src/images/icon/icon-search.png" alt="계정 검색하기"
+        /></a>
+      </button>
+      <!-- 계정검색 -->
+      <form class="nav-top search-nav hide">
+        <a href="#" onClick="location.reload()" class="nav-top__btn--goback"
+          ><img src="src/images/icon/icon-arrow-left.png" alt="검색 취소"
+        /></a>
+        <input
+          type="text"
+          maxlength="10"
+          class="nav-top__inp-sch"
+          id="inpSch"
+          placeholder="계정 검색"
+        />
+      </form>
+
+      <div class="cont-user-search">
+        <ul class="item-user-search__list">
+          <!-- <li class="item-user-search">
+            <a href="#" class="item-user-search__wrapper">
+              <img
+                src="src/images/basic-profile-img.png"
+                alt="프로필이미지"
+                class="item-user-search__img-user"
+              />
+              <p class="item-user-search__username">애월읍 위니브 감귤농장</p>
+              <p class="item-user-search__userid">@weniv_mandarin</p>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+
+      <section class="cont-user-follow">
+        <div class="cont-user-follow__wrapper">
+          <img src="src/images/symbol-logo-gray.png" alt="" />
+          <h2 class="cont-user-follow__txt">유저를 검색해 팔로우 해보세요!</h2>
+          <button type="button" class="m-btn search">검색하기</button>
         </div>
-        <div class="nav-top search-nav hide">
-            <a href="#" class="nav-top__btn--goback"><img src="src/images/icon/icon-arrow-left.png" alt="검색 취소"></a>
-            <input type="text" class="nav-top__inp-sch" id="inpSch" placeholder="계정 검색">
-        </div>
+      </section>
 
-        <div class="cont-user-search">
-            <li class="item-user-search">
-                <a href="#" class="item-user-search__wrapper">
-                    <img src="src/images/basic-profile-img.png" alt="프로필이미지" class="item-user-search__img-user">
-                    <ul class="item-user-search__list">
-                        <li class="item-user-search__username">애월읍 위니브 감귤농장</li>
-                        <li class="item-user-search__userid">@weniv_mandarin</li>
-                    </ul>
-                </a>
-            </li>
-            <li class="item-user-search">
-                <a href="#" class="item-user-search__wrapper">
-                    <img src="src/images/basic-profile-img.png" alt="프로필이미지" class="item-user-search__img-user">
-                    <ul class="item-user-search__list">
-                        <li class="item-user-search__username">애월읍 위니브 감귤농장</li>
-                        <li class="item-user-search__userid">@weniv_mandarin</li>
-                    </ul>
-                </a>
-            </li>
-        </div>
+      <section class="cont-home-feed"></section>
 
-        <section class="cont-user-follow">
-            <div class="cont-user-follow__wrapper">
-                <img src="src/images/symbol-logo-gray.png" alt="">
-                <h2 class="cont-user-follow__txt">유저를 검색해 팔로우 해보세요!</h2>
-                <button type="button" class="m-btn">검색하기</button>
-            </div>
-        </section>
-
-        <section class="cont-home-feed"> 
-
-        </section> 
-
-        <nav class="nav-tab-menu">
-            <ul class="nav-tab-menu__list">
-                <li class="nav-tab-menu__item">
-                    <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active">
-                        <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
-                    </a>
-                </li>
-                <li class="nav-tab-menu__item">
-                    <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__chat">
-                        <p class="nav-tab-menu__txt">채팅</p>
-                    </a>
-                </li>
-                <li class="nav-tab-menu__item">
-                    <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__post">
-                        <p class="nav-tab-menu__txt">게시물 작성</p>
-                    </a>
-                </li> 
-                <li class="nav-tab-menu__item">       
-                    <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__profile">
-                        <p class="nav-tab-menu__txt">프로필</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+      <nav class="nav-tab-menu">
+        <ul class="nav-tab-menu__list">
+          <!-- <li class="nav-tab-menu__item">
+            <a
+              href="#"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__chat">
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__post">
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__profile">
+              <p class="nav-tab-menu__txt">프로필</p>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
     </div>
-    <script src="src/js/home.js"></script>
-</body>
+    <script src="src/js/home.js" type="module"></script>
+    <!-- <script src="src/js/tabMenu.js"></script> -->
+  </body>
 </html>

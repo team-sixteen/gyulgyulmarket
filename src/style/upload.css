@@ -12,6 +12,10 @@ html, body {
   max-width: 440px;
 }
 
+.nav-top__btn--goback {
+  cursor: pointer;
+}
+
 .nav-top .ms-btn--disabled {
   opacity: 1;
   cursor: pointer;
@@ -62,7 +66,7 @@ html, body {
 
 .upload-slide-item > img {
   width: 100%;
-  object-fit: none;
+  object-fit: scale-down;
 }
 
 .upload-slide-img-delete {

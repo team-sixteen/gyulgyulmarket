@@ -107,8 +107,9 @@ async function init() {
             <img
               src='${item.itemImage}'
               alt="상품: 감귤 파치"
+              
             />
-            <p class="product-txt">${item.itemName}</p>
+            <p class="product-txt sl-elipsis">${item.itemName}</p>
             <p class="product-price">${item.price}</p>
           </a>
         </li>
@@ -219,6 +220,23 @@ async function init() {
       document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
         new Slider(feed, imgs[idx]);
       })
+
+
+      albumchild.innerHTML = feedjson.post.map((item)=> {
+        const imgparse = item.image.split(',')
+        if(!!item.image) {
+          return`
+            <li class="post-album-item more-photos">
+              <img
+                src="${imgparse[0]}"
+                class="post-album-img"
+                onerror="this.style.display='none';"
+              />
+              ${imgparse.length>1 ? `<div class="post-album-item more-photos addPhotos"></div>`:``}
+            </li>
+          `
+        }
+      }).join('')
 
         
     // if(!!item.image){

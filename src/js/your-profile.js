@@ -144,7 +144,8 @@ async function init() {
     console.log(feedjson.post);
     console.log('0000');
     const feedchild = document.querySelector('.post-list');
-    const albumchild = document.querySelector('.post-album')
+    const albumchild = document.querySelector('.post-album');
+    //append방법도 있다..
     feedchild.innerHTML = feedjson.post.map((item) => {
       let date = item.createdAt.split('-');
       let d_year = date[0];
@@ -169,17 +170,7 @@ async function init() {
             <!-- <img src="${imgparse[0]}" onerror="this.style.visibility='hidden';" class="post-img" />-->
             <div class="upload-slide-wrap">
               <ul class="upload-slide">
-                ${imgparse.map((i, idx) => {
-                  return `
-                    <li class="upload-slide-item">
-                      <img
-                        src=${i}
-                        alt=""
-                        class="upload-slide-img">
-                      <button id=${idx} class="upload-slide-img-delete">X</button>
-                    </li>
-                  `;
-                }).join('')}
+        
               </ul>
               <div class="slide-arrow-left">
                 <i class="fas fa-chevron-left"></i>
@@ -218,6 +209,15 @@ async function init() {
 
       document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
         new Slider(feed, imgs[idx]);
+      })
+
+
+      albumchild.innerHTML = feedjson.post.map((item)=> {
+        if(!!item.image) {
+          return`
+
+          `
+        }
       })
 
         

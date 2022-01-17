@@ -47,6 +47,9 @@
             border-radius: 10px;
             margin-bottom: 30px;
             position: relative;
+            background-size: contain;
+            background-repeat: no-repeat;
+            
         }
         .img-lable::after {
             content: '';
@@ -78,7 +81,7 @@
     <main>
         <p>이미지 등록</p>
         <label for="product-img" class="img-lable"></label>
-        <input type="file" accept="image/*;capture=camera" id="product-img" class="img-hide">
+        <input type="file" accept="image/*;capture=camera" id="product-img" class="img-hide upload-img">
         <!-- 포커스를 고려해서 수정해라,,tab키를 고려하는 것  -->
         <label for="product-img2" class="img-lable2"></label>
         <input type="file" accept="image/*;capture=camera" id="product-img2" class="img-hide">
@@ -100,16 +103,70 @@
         const title = document.querySelector('.product-name')
         const price = document.querySelector('.product-pri')
         const content = document.querySelector('.product-link')
+        const img = document.querySelector('.img-lable')
+        const uploadImg = document.querySelector('.upload-img')   
 
         console.log(document.cookie)
         let JWT_TOKEN =document.cookie.split(" ").filter((key)=> {
             if(key.match('gyulgyul-token') !==null) return key
         }).join('').replace('gyulgyul-token=','');
 
-        
-
         console.log(JWT_TOKEN)
-        async function profile() {
+
+        async function initProduct() {
+            const res = await fetch("http://146.56.183.55:5050/product/detail/61e53c1a848431e191bf0992",{
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization" : `Bearer ${JWT_TOKEN}`
+                },
+            });   
+            const json = await res.json()
+            const productData = json.product
+            console.log(productData)
+
+            title.value = productData.itemName;
+            price.value = productData.price;
+            content.value = productData.link
+            if(!!productData.itemImage){
+                img.style.backgroundImage = `url(${productData.itemImage})`
+            }
+            
+        }
+
+        initProduct()
+
+
+
+        let formData;
+        uploadImg.addEventListener('change', (e) => {
+            console.log(e)
+            console.log(e.target.files)
+            console.log(e.target.files[0].name)
+            formData = new FormData();
+            formData.append("image",e.target.files[0])
+            console.log(formData)
+            const image = e.target.files[0];
+            const imageURL = window.URL.createObjectURL(image);
+            img.style.backgroundImage = `url(${imageURL})`
+        })
+
+        async function modProduct() {
+            //이미지 등록 API
+            const file = await fetch("http://146.56.183.55:5050/image/uploadfile",{
+                method: "POST",
+                // headers: {
+                //     "Content-Type": "multipart/form-data"
+                // },
+                body: formData
+  
+            })
+            const data = await file.json()
+            console.log(file)
+            console.log(data.filename)
+            const imgLink = data.filename
+
+            //상품 수정 API
             const res = await fetch("http://146.56.183.55:5050/product/61dd50f23fe886cd13382f12",{
                 method: "put",
                 headers: {
@@ -128,23 +185,26 @@
 
             const json = await res.json();
             console.log(json);
+          
         }
 
-        title.addEventListener('input',(e)=>
+
+        title.addEventListener('input',(e)=>{
             title.value = e.target.value
-        );
+            console.log(title.value)
+        });
         price.addEventListener('input',(e)=>
             price.value = e.target.value
         );
         content.addEventListener('input',(e)=>
             content.value = e.target.value
-        );
+        );    
 
-        window.addEventListener('keydown',(e) =>{
-            if(e.key==="Enter"){
-                profile()
-            }
-        })
+        // window.addEventListener('keydown',(e) =>{
+        //     if(e.key==="Enter"){
+        //         modProduct()
+        //     }
+        // })
         // 기본으로 담겨져있는 텍스트들 출력
     
     </script>

@@ -253,6 +253,7 @@ body {
 }
 .module-alert .module-alert__wrapper {
   display: flex;
+  position: relative;
 }
 .module-alert .module-alert__wrapper-txt {
   height: 64px;
@@ -262,6 +263,15 @@ body {
   font-size: 16px;
   font-weight: 500;
   border-bottom: solid 1px #dbdbdb;
+}
+.module-alert__wrapper-txt::before {
+  content: '';
+  position: absolute;
+  bottom: 405px;
+  width: 50px;
+  height: 4px;
+  background: #dbdbdb;
+  border-radius: 5px;
 }
 .module-alert .module-alert__choice {
   height: 46px;

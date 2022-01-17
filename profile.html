@@ -139,6 +139,21 @@
             src="src/images/s-basic-profile-img.png"
             class="post-profile-img"
           />
+
+          <!-- post-modal -->
+          <div class="post-modal-hidden">
+            <div class="post-modal">
+              <ul class="post-modal__wrapper">
+                  <li class="post-modal__choice">
+                      <button type="button" class="post-modal__btn-delete">삭제</button>
+                  </li>
+                  <li class="post-modal__choice">
+                      <button type="button" class="post-modal__btn-fix">수정</button>
+                  </li>
+              </ul>
+            </div>
+          </div>
+
           <div>
             <div class="post-profile-text">
               <strong class="post-writer">애월읍 위니브 감귤농장</strong>
@@ -165,7 +180,7 @@
             </div>
             <span class="post-date">2020년 10월 21일</span>
           </div>
-          <button class="btn-post-menu">
+          <button type='button' class="btn-post-menu">
             <img
               src="src/images/icon/s-icon-more-vertical.png"
               alt="게시글 메뉴 열기"

@@ -72,18 +72,49 @@ async function init() {
     //     class="item-user-search__img-user"
     //   />
     // );
-    await getProductData()
-    
-
+    await getProductData();
   })();
 
-  // 판매 중인 상품 출력
-  const productList = document.querySelector('.product-item');
-  const productLimit = 5;
-  let productSkip = 0;
-  async function getProductData() {
-    const data = await fetch(
-      `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
+  // // 판매 중인 상품 출력
+  // const productList = document.querySelector('.product-item');
+  // const productLimit = 5;
+  // let productSkip = 0;
+  // async function getProductData() {
+  //   const data = await fetch(
+  //     `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
+  //     {
+  //       method: 'get',
+  //       headers: {
+  //         Authorization: `Bearer ${Auth.getToken()}`,
+  //         'Content-Type': 'application/json',
+  //       },
+  //     },
+  //   );
+  //   const data = await data.json();
+  //   const productData = product.product;
+  //   const productData = data.product;
+  //   productSkip += productLimit;
+  //   return productData;
+  // }
+  // function makeProductItem(product) {
+  //   const { id, itemImage, itemName, link, price } = product;
+  //   const li = document.createElement('li');
+  //   const a = document.createElement('a');
+  //   const img = document.createElement('img');
+  //   const p = document.createElement('p');
+  //   const span = document.createElement('span');
+  //   return li;
+  // }
+  // function printProductList(productData) {
+  //   for (const product of productData) {
+  //     const productItem = makeProductItem(product);
+  //     product.appendChild(productItem);
+  //   }
+  // }
+
+  async function feed() {
+    const res = await fetch(
+      `${BASE_URL}/post/${localStorage_yourProfile}/userpost?limit=6&skip=3`,
       {
         method: 'get',
         headers: {
@@ -92,16 +123,71 @@ async function init() {
         },
       },
     );
-    let product = await data.json();
-    let productData = product.product;
-    console.log(productData)
-    productSkip += productLimit;
-
-    const productchild = document.querySelector('.product-list')
-    productchild.innerHTML = productData.map((item)=>{
-      
-      console.log(item)
+    const feedjson = await res.json();
+    console.log(feedjson);
+    console.log(feedjson.post);
+    console.log('0000');
+    const feedchild = document.querySelector('.post-list');
+    feedchild.innerHTML = feedjson.post.map((item) => {
+      let date = item.createdAt.split('-');
+      let d_year = date[0];
+      let d_month = date[1];
+      let d_day = date[2].slice(0, 2);
       return `
+      <li class="post-list-item">
+          <img
+            src="${item.author.image}"
+            class="post-profile-img"
+          />
+          <div>
+            <div class="post-profile-text">
+              <strong class="post-writer">${item.author.username}</strong>
+              <span class="post-writer-id">@ ${item.author.accountname}</span>
+            </div>
+            <p class="post-text">
+            ${item.author.intro}
+            </p>
+            <img src="${item.image}" onerror="this.style.visibility='hidden';" class="post-img" />
+            <div class="post-utils">
+              <button class="btn-like">
+                <img src="src/images/icon/icon-heart.png" alt="좋아요 수" />
+              </button>
+              <span class="count-like">${item.heartCount}</span>
+              <button class="btn-comment">
+                <img
+                  src="src/images/icon/icon-message-circle.png"
+                  alt="댓글 수"
+                />
+              </button>
+              <span class="count-comment">${item.comments.length}</span>
+            </div>
+            <span class="post-date">${d_year}년 ${d_month}월 ${d_day}일</span>
+          </div>
+          <button class="btn-post-menu">
+            <img
+              src="src/images/icon/s-icon-more-vertical.png"
+              alt="게시글 메뉴 열기"
+            />
+          </button></li>
+          <li class="post-album-item">
+          <img
+            src="${item.image}" onerror="this.style.visibility='hidden';"
+            class="post-album-img"
+          />
+        </li>
+          `;
+    });
+  }
+  feed();
+  let product = await data.json();
+  let productData = product.product;
+  console.log(productData);
+  productSkip += productLimit;
+
+  const productchild = document.querySelector('.product-list');
+  productchild.innerHTML = productData.map((item) => {
+    console.log(item);
+    return `
       <li class="product-item" data-id="${item.id}">
         <a href="#" >
           <img
@@ -112,17 +198,14 @@ async function init() {
           <p class="product-price">${item.price}</p>
         </a>
       </li>
-      `
-    });
+      `;
+  });
 
-    [...productchild.children].forEach((child) => {
-      
-      child.addEventListener('click', ({currentTarget}) => {
-        console.log(currentTarget.dataset)
-      });
+  [...productchild.children].forEach((child) => {
+    child.addEventListener('click', ({ currentTarget }) => {
+      console.log(currentTarget.dataset);
     });
-  }
-
+  });
 }
 
 init();
@@ -141,12 +224,16 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followers.html?${localStorage.getItem('yourProfile')}`;
+  location.href = `http://127.0.0.1:5500/followers.html?${localStorage.getItem(
+    'yourProfile',
+  )}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followings.html?${localStorage.getItem('yourProfile')}`;
+  location.href = `http://127.0.0.1:5500/followings.html?${localStorage.getItem(
+    'yourProfile',
+  )}`;
 });
 
 // 앨범무늬

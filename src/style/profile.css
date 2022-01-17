@@ -157,10 +157,12 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 48px;
+  border-top: solid 1px #dbdbdb;
   border-bottom: solid 1px #dbdbdb;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 6px;
   padding: 0 12px 0 16px;
 }
 
@@ -237,6 +239,8 @@ body {
 }
 
 .post-utils {
+  display: flex;
+  align-items: center;
   margin-bottom: 16px;
 }
 
@@ -269,7 +273,9 @@ body {
   height: 18px;
 }
 .album-wrap {
+  margin: 16px 0;
   padding: 0 30px;
+  box-sizing: border-box;
 }
 .post-album {
   display: grid;

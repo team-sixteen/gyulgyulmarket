@@ -15,7 +15,18 @@ body {
   justify-content: space-between;
   padding: 0 12px 0 16px;
 }
-
+.nav-top.search-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: #fff;
+  border-top: solid 1px #dbdbdb;
+}
+.item-user-search__list {
+  margin-top: 40px;
+}
 .nav-top .nav-top__btn--goback {
   width: 22px;
   height: 22px;
@@ -211,7 +222,7 @@ body {
 }
 .item-user-search .item-user-search__list,
 .item-user-follow .item-user-follow__list {
-  margin: 5px 0 6px 12px;
+  margin: 50px 0 6px 12px;
 }
 .item-user-search .item-user-search__username,
 .item-user-follow .item-user-follow__username {

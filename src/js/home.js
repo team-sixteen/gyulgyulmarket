@@ -85,8 +85,8 @@ async function findUser() {
     child.children[0].addEventListener('click', ({ currentTarget }) => {
       console.log(currentTarget)
       const { useraccount } = currentTarget.dataset;
-      localStorage.setItem('yourProfile', useraccount);
-      location.href = '../../profile.html';
+      
+      location.href = `http://127.0.0.1:5500/profile.html?${useraccount}`;
     });
   });
 }

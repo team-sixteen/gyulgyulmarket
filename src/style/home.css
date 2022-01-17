@@ -33,6 +33,12 @@
   padding-top: 16px;
 }
 .nav-top__btn--search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 48px;
+}
+.nav-top__btn--search img {
+  display: block;
 }

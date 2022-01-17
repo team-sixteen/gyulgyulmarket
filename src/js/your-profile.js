@@ -141,12 +141,12 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = '../followers.html';
+  location.href = `http://127.0.0.1:5500/followers.html?${localStorage.getItem('yourProfile')}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = '../followings.html';
+  location.href = `http://127.0.0.1:5500/followings.html?${localStorage.getItem('yourProfile')}`;
 });
 
 // 앨범무늬

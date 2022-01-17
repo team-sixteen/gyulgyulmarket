@@ -6,8 +6,9 @@ import Slider from './utils/slide.js'
  * 공통적으로 사용해야 하는것
  * AUth 클래스
  */
+ const urlQuery = window.location.search.split('?')[1];
 
-
+ console.log(urlQuery)
 console.log('나와');
 
 async function init() {
@@ -46,7 +47,7 @@ async function init() {
   // );
   // 프로필 설정
   (async function profile() {
-    const res = await fetch(`${BASE_URL}/profile/${localStorage_yourProfile}`, {
+    const res = await fetch(`${BASE_URL}/profile/${urlQuery}`, {
       method: 'get',
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`,
@@ -79,45 +80,57 @@ async function init() {
   })();
 
   // // 판매 중인 상품 출력
-  // const productList = document.querySelector('.product-item');
-  // const productLimit = 5;
-  // let productSkip = 0;
-  // async function getProductData() {
-  //   const data = await fetch(
-  //     `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
-  //     {
-  //       method: 'get',
-  //       headers: {
-  //         Authorization: `Bearer ${Auth.getToken()}`,
-  //         'Content-Type': 'application/json',
-  //       },
-  //     },
-  //   );
-  //   const data = await data.json();
-  //   const productData = product.product;
-  //   const productData = data.product;
-  //   productSkip += productLimit;
-  //   return productData;
-  // }
-  // function makeProductItem(product) {
-  //   const { id, itemImage, itemName, link, price } = product;
-  //   const li = document.createElement('li');
-  //   const a = document.createElement('a');
-  //   const img = document.createElement('img');
-  //   const p = document.createElement('p');
-  //   const span = document.createElement('span');
-  //   return li;
-  // }
-  // function printProductList(productData) {
-  //   for (const product of productData) {
-  //     const productItem = makeProductItem(product);
-  //     product.appendChild(productItem);
-  //   }
-  // }
+  const productLimit = 5;
+  let productSkip = 0;
+  async function getProductData() {
+    const data = await fetch(
+      `${BASE_URL}/product/${urlQuery}/?limit=${productLimit}&skip=${productSkip}`,
+      {
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${Auth.getToken()}`,
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+    let product = await data.json();
+    let productData = product.product;
+    console.log(productData);
+    productSkip += productLimit;
+  
+    const productchild = document.querySelector('.product-list');
+    productchild.innerHTML = productData.map((item) => {
+      console.log(item);
+      return `
+        <li class="product-item" data-id="${item.id}">
+          <a href="#" >
+            <img
+              src='${item.itemImage}'
+              alt="상품: 감귤 파치"
+            />
+            <p class="product-txt">${item.itemName}</p>
+            <p class="product-price">${item.price}</p>
+          </a>
+        </li>
+        `;
+    });
+  
+    [...productchild.children].forEach((child) => {
+      child.addEventListener('click', ({ currentTarget }) => {
+        console.log(currentTarget.dataset);
+      });
+    });
+  }
+
+
+
+
+
+  //게시글
 
   async function feed() {
     const res = await fetch(
-      `${BASE_URL}/post/${localStorage_yourProfile}/userpost`,
+      `${BASE_URL}/post/${urlQuery}/userpost`,
       {
         method: 'get',
         headers: {
@@ -221,33 +234,7 @@ async function init() {
 
   }
   feed();
-  let product = await data.json();
-  let productData = product.product;
-  console.log(productData);
-  productSkip += productLimit;
-
-  const productchild = document.querySelector('.product-list');
-  productchild.innerHTML = productData.map((item) => {
-    console.log(item);
-    return `
-      <li class="product-item" data-id="${item.id}">
-        <a href="#" >
-          <img
-            src='${item.itemImage}'
-            alt="상품: 감귤 파치"
-          />
-          <p class="product-txt">${item.itemName}</p>
-          <p class="product-price">${item.price}</p>
-        </a>
-      </li>
-      `;
-  });
-
-  [...productchild.children].forEach((child) => {
-    child.addEventListener('click', ({ currentTarget }) => {
-      console.log(currentTarget.dataset);
-    });
-  });
+  // getProductData();
 }
 
 init();
@@ -266,16 +253,12 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followers.html?${localStorage.getItem(
-    'yourProfile',
-  )}`;
+  location.href = `http://127.0.0.1:5500/followers.html?${urlQuery}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followings.html?${localStorage.getItem(
-    'yourProfile',
-  )}`;
+  location.href = `http://127.0.0.1:5500/followings.html?${urlQuery}`;
 });
 
 // 앨범무늬

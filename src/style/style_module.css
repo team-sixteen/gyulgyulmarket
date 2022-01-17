@@ -146,12 +146,18 @@ body {
 
 /* 댓글 입력창(comment) */
 .module-inp-cmmt {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border: solid 1px #dbdbdb;
   padding: 0 20px 0 16px;
   height: 61px;
   color: #c4c4c4;
-  display: flex;
-  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
 }
 
 .module-inp-cmmt__form {

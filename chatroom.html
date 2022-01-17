@@ -6,90 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>chatRoom</title>
     <link rel="stylesheet" href="../src/style/reset.css" />
-    <link rel="stylesheet" href="../style/chatRoom.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="src/style/chatRoom.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
   </head>
   <body>
-    <h1 class="sr-only">채팅방 화면</h1>
+    <h1 class="hide-text">채팅방 화면</h1>
 
     <header>
-      <div class="status-bar">
-        <time class="text-current-time"></time>
-        <ul class="status-menu">
-          <li class="mobile-signal"></li>
-          <li class="wifi"></li>
-          <li class="battery"></li>
-        </ul>
-      </div>
-      <div class="top-nav">
-        <div class="wrap-cont">
-          <button type="button" class="btn-back-key">뒤로가기</button>
-          <p class="text-chat-opponent">애월읍 위니브 감귤농장</p>
-        </div>
-        <button type="button" class="btn-menu">메뉴</button>
+      <!-- top-basic-nav -->
+      <div class="nav-top">
+        <a href="#" class="nav-top__btn--goback"
+          ><img
+            src="./src/images/icon/icon-arrow-left.png"
+            alt="뒤로 가기"
+            class="nav-top__img-icon-arrow-left"
+        /></a>
+        <a href="#" class="nav-top__btn--more"
+          ><img
+            src="./src/images/icon/icon-more-vertical.png"
+            alt="메뉴 더보기"
+            class="nav-top__img-icon-more"
+        /></a>
       </div>
     </header>
     <main>
-      <div class="wrap-chat-space">
-        <div class="wrap-opponent-chat">
-          <img
-            src="../images/default-profile-img.png"
-            alt="상대방 프로필"
-            class="img-oppo-profile"
-          />
-          <p class="text-opponent-chat-content">
+      <div class="otherSend-wrap">
+        <img
+          src="src/images/s-basic-profile-img.png"
+          alt="상대방 프로필"
+          class="other-img"
+        />
+        <div class="other-text-wrap">
+          <p class="other-chat-text">
             옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
             이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
             풍부하게 뛰노는 인생의 힘있다.
           </p>
-          <small class="text-input-opponent-time">12:39</small>
+          <small class="other-text-time">12:39</small>
         </div>
-        <div class="wrap-opponent-chat">
-          <img
-            src="../images/default-profile-img.png"
-            alt="상대방 프로필"
-            class="img-oppo-profile"
-          />
-          <p class="text-opponent-chat-content">
-            안녕하세요. 감귤 사고싶어요요요요요
-          </p>
-          <small class="text-input-opponent-time">12:41</small>
-        </div>
+      </div>
 
-        <div class="wrap-self-chat">
-          <p class="text-self-chat-content">네 말씀하세요.</p>
-          <small class="text-input-time">12:50</small>
-        </div>
-        <div class="wrap-self-chat">
-          <img
-            src="../images/dummyPics/chat-img.png"
-            alt="채팅 전송이미지"
-            class="img-chat-self"
-          />
-          <small class="text-input-time">12:51</small>
-        </div>
+      <div class="selfSend-wrap">
+        <p class="self-chat-text">네 말씀하세요.</p>
+        <small class="self-text-time">12:50</small>
       </div>
     </main>
     <footer>
-      <div class="wrap-input-chat">
-        <div class="wrap-input-zone">
-          <button type="button" class="btn-img-attach"></button>
+      <!-- comment -->
+      <div class="module-inp-cmmt">
+        <img src="src/images/s-basic-profile-img.png" alt="내 프로필 이미지" />
+        <fieldset class="module-inp-cmmt__form">
+          <label for="inpCmmt"></label>
           <input
             type="text"
+            id="inpCmmt"
             placeholder="댓글 입력하기..."
-            id="inp-chat"
-            class="inp-chat"
+            class="module-inp-cmmt__inp"
           />
-        </div>
-        <button type="button" class="btn-message-send">전송</button>
+          <button type="submit" class="module-inp-cmmt__btn-upload">
+            게시
+          </button>
+        </fieldset>
       </div>
-      <!-- 모달창 -->
-      <div class="modal">
-        <div class="modal-bar"></div>
-        <ul class="list-modal-container"></ul>
-      </div>
-      <div class="dimd"></div>
-      <!-- 모달창 끝 -->
     </footer>
 
     <script src="../js/modal.js"></script>

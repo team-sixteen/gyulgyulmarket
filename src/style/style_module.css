@@ -118,10 +118,12 @@ body {
 
 .nav-tab-menu__wrapper.nav-tab-menu__home:before {
   background-image: url('../images/icon/icon-home.png');
+  background-size: 100%;
 }
-.nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
+/* 주황색 홈 이미지 */
+/* .nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
   background-image: url('../images/icon/icon-home-fill.png');
-}
+} */
 
 .nav-tab-menu__wrapper.nav-tab-menu__chat:before {
   background-image: url('../images/icon/icon-message-circle.png');
@@ -139,11 +141,11 @@ body {
   background-size: contain;
   background-image: url('../images/icon/icon-user.png');
 }
-.nav-tab-menu__wrapper.nav-tab-menu__profile.nav-tab-menu__profile--active:before {
-  background-image: url('../images/icon/icon-user-fill.png');
+.nav-tab-menu__wrapper.nav-tab-menu__profile.nav-tab-menu__profile.active::before {
+  background: url('../images/icon/icon-user-fill.png') no-repeat;
 }
-
-.nav-tab-menu__txt.nav-tab-menu__txt--active {
+/*  주황색 칼라 추가 */
+.active {
   color: #f26e22;
 }
 

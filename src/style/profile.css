@@ -269,7 +269,9 @@ body {
   height: 18px;
 }
 .album-wrap {
+  margin: 16px 0;
   padding: 0 30px;
+  box-sizing: border-box;
 }
 .post-album {
   display: grid;

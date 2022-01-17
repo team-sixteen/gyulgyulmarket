@@ -2,6 +2,7 @@ import Auth from './modules/Auth.js';
 // fetch();
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
 
+
 // 0. 로그인 유지 확인 함수 + 데이터 불러오는 함수
 async function init() {
   // getProfile 의 기능
@@ -86,7 +87,7 @@ async function findUser() {
       console.log(currentTarget)
       const { useraccount } = currentTarget.dataset;
       
-      location.href = `http://127.0.0.1:5500/profile.html?${useraccount}`;
+      location.href = `${window.location.origin}/profile.html?${useraccount}`;
     });
   });
 }

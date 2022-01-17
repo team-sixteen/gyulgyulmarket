@@ -66,7 +66,9 @@ html, body {
 
 .upload-slide-item > img {
   width: 100%;
-  object-fit: scale-down;
+  height: 100%;
+  /* object-fit: scale-down; */
+  object-fit: cover;
 }
 
 .upload-slide-img-delete {

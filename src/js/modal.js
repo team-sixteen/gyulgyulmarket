@@ -1,13 +1,14 @@
-const open = document.getElementById(".btn-post-menu")
+const open = document.querySelector(".btn-post-menu")
 const modal = document.querySelector(".post-modal-hidden")
+const close = document.querySelector(".post-modal-close")
 
 open.onclick = () => {
     modal.style.display = "flex";
 };
 
-
-
-
+close.onclick = () => {
+    modal.style.display = "none";
+};
 
 // // 특정 버튼 누르면 모달창 켜기
 // const modal = document.getElementById(".post-modal__wrapper")

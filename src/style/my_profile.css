@@ -1,0 +1,167 @@
+:root {
+    --tangerine: #f26e22;
+}
+
+.main-profile {
+    text-align: center;
+}
+.profile-conf {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 0px 16px  ;
+}
+.profile-conf p {
+    font-weight: bold;
+    font-size: 18px;
+}
+.profile-conf small {
+    font-size: 10px;
+    color: #767676;
+    padding-top: 6px;
+}
+.profile-conf img {
+    width: 110px;
+    height: 110px;
+}
+.main-profile>h2 {
+    font-weight: bold;
+    font-size: 16px;
+}
+.main-profile>small {
+    padding:6px 0px 16px;
+    display: block;
+    font-size: 12px;
+    color: #767676;
+}
+.main-profile>p {
+    font-size: 14px;
+    color: #767676;
+}
+.profile-btns {
+    padding: 24px 0 26px;
+}
+.profile-follow {
+    border: none;
+    padding: 8px 40px;
+    border-radius: 30px;
+    background: var(--tangerine);
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+}
+.profile-btns img {
+    width: 13px;
+    height: 13px;
+    padding: 10px;
+    border: 1px solid #DBDBDB;
+    border-radius: 100%;
+}
+
+.sect-sell {
+    padding:20px 21px;
+}
+.sect-sell h3 {
+    font-weight: bold;
+    font-size: 16px;
+}
+.sell-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    padding-top: 16px;
+}
+.sell-list img {
+    width: 140px;
+    height: 90px;
+}
+.sell-list p {
+    padding:6px 0px 4px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.sell-list em {
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--tangerine);
+}
+
+.sect-post {
+    border-top: 6px solid #DBDBDB;
+}
+.sect-post>button {
+    float: right;
+    margin: 9px 20px 9px auto;
+    border: none;
+    background-color: white;
+}
+.sect-post .post-form-list { 
+}
+.sect-post .post-form-album{
+}
+.post-box-list {
+    clear: both;
+    display: flex;
+    border-top: 0.5px solid #c4c4c4;
+    padding: 16px;
+}
+.post-box-list>img{
+    width: 42px;
+    height: 42px;
+}
+.post-box-list .post-content {
+    margin-left: 12px;
+}
+.post-box-list .post-content h4 {
+    font-weight: bold;
+    font-size: 14px;    
+}
+.post-box-list .post-content small {
+    font-size: 12px;
+    color: #767676;
+    padding: 2px 0px 16px;
+    display: block;
+}
+.post-box-list .post-content p {
+    font-size: 14px;
+}
+/* .post-box-list div {
+    max-height : 250px
+} */
+.post-box-list .post-img {
+    display: block;
+    margin: 16px 0px 15px;
+
+    /* height: 100%; */
+    /* 여기 이미지가 높이가 달라요 이거 어떻게 해결해야할까요?? */
+}
+.post-box-list button {
+    background-color: white;
+    font-size: 15px;  
+    /* 여기 btn 픽셀이 애매하다 */
+    color: #767676;
+    margin-right: 18.5px;
+}
+.post-box-list button img {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+.post-box-list .post-date {
+    padding-top: 18.5px;
+    font-size: 10px;
+    color: #767676;
+}
+
+.post-box-album {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    padding: 16px 16px 30px ;
+}
+
+
+img {
+    width: 100%;
+    vertical-align: top;
+  }

@@ -1,10 +1,14 @@
 import Auth from './modules/Auth.js';
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
+import Slider from './utils/slide.js'
+
 /**
  * 공통적으로 사용해야 하는것
  * AUth 클래스
  */
+ const urlQuery = window.location.search.split('?')[1];
 
+ console.log(urlQuery)
 console.log('나와');
 
 async function init() {
@@ -43,7 +47,7 @@ async function init() {
   // );
   // 프로필 설정
   (async function profile() {
-    const res = await fetch(`${BASE_URL}/profile/${localStorage_yourProfile}`, {
+    const res = await fetch(`${BASE_URL}/profile/${urlQuery}`, {
       method: 'get',
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`,
@@ -72,15 +76,15 @@ async function init() {
     //     class="item-user-search__img-user"
     //   />
     // );
+    await getProductData();
   })();
 
-  // 판매 중인 상품 출력
-  const productList = document.querySelector('.product-item');
+  // // 판매 중인 상품 출력
   const productLimit = 5;
   let productSkip = 0;
   async function getProductData() {
     const data = await fetch(
-      `${BASE_URL}/product/${localStorage_yourProfile}/?limit=${productLimit}&skip=${productSkip}`,
+      `${BASE_URL}/product/${urlQuery}/?limit=${productLimit}&skip=${productSkip}`,
       {
         method: 'get',
         headers: {
@@ -91,26 +95,150 @@ async function init() {
     );
     let product = await data.json();
     let productData = product.product;
+    console.log(productData);
     productSkip += productLimit;
-    return productData;
+  
+    const productchild = document.querySelector('.product-list');
+    productchild.innerHTML = productData.map((item) => {
+      console.log(item);
+      return `
+        <li class="product-item" data-id="${item.id}">
+          <a href="#" >
+            <img
+              src='${item.itemImage}'
+              alt="상품: 감귤 파치"
+            />
+            <p class="product-txt">${item.itemName}</p>
+            <p class="product-price">${item.price}</p>
+          </a>
+        </li>
+        `;
+    });
+  
+    [...productchild.children].forEach((child) => {
+      child.addEventListener('click', ({ currentTarget }) => {
+        console.log(currentTarget.dataset);
+      });
+    });
   }
-  function makeProductItem(product) {
-    const { id, itemImage, itemName, link, price } = product;
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const img = document.createElement('img');
-    const p = document.createElement('p');
-    const span = document.createElement('span');
-    return li;
+
+
+
+
+
+  //게시글
+
+  async function feed() {
+    const res = await fetch(
+      `${BASE_URL}/post/${urlQuery}/userpost`,
+      {
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${Auth.getToken()}`,
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+    const feedjson = await res.json();
+    console.log(feedjson);
+    console.log(feedjson.post);
+    console.log('0000');
+    const feedchild = document.querySelector('.post-list');
+    const albumchild = document.querySelector('.post-album')
+    feedchild.innerHTML = feedjson.post.map((item) => {
+      let date = item.createdAt.split('-');
+      let d_year = date[0];
+      let d_month = date[1];
+      let d_day = date[2].slice(0, 2);
+      const imgparse = item.image.split(',')
+      
+      return `
+        <li class="post-list-item">
+          <img
+            src="${item.author.image}"
+            class="post-profile-img"
+          />
+          <div>
+            <div class="post-profile-text">
+              <strong class="post-writer">${item.author.username}</strong>
+              <span class="post-writer-id">@ ${item.author.accountname}</span>
+            </div>
+            <p class="post-text">
+            ${item.author.intro}
+            </p>
+            <!-- <img src="${imgparse[0]}" onerror="this.style.visibility='hidden';" class="post-img" />-->
+            <div class="upload-slide-wrap">
+              <ul class="upload-slide">
+                ${imgparse.map((i, idx) => {
+                  return `
+                    <li class="upload-slide-item">
+                      <img
+                        src=${i}
+                        alt=""
+                        class="upload-slide-img">
+                      <button id=${idx} class="upload-slide-img-delete">X</button>
+                    </li>
+                  `;
+                }).join('')}
+              </ul>
+              <div class="slide-arrow-left">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="slide-arrow-right">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <ul class="slide-points"></ul>
+            </div>
+            <div class="post-utils">
+              <button class="btn-like">
+                <img src="src/images/icon/icon-heart.png" alt="좋아요 수" />
+              </button>
+              <span class="count-like">${item.heartCount}</span>
+              <button class="btn-comment">
+                <img
+                  src="src/images/icon/icon-message-circle.png"
+                  alt="댓글 수"
+                />
+              </button>
+              <span class="count-comment">${item.comments.length}</span>
+            </div>
+            <span class="post-date">${d_year}년 ${d_month}월 ${d_day}일</span>
+          </div>
+          <button class="btn-post-menu">
+            <img
+              src="src/images/icon/s-icon-more-vertical.png"
+              alt="게시글 메뉴 열기"
+            />
+          </button>
+        </li>
+        `
+      }).join('');
+      
+      const imgs = feedjson.post.map(feed => feed.image.split(','));
+
+      document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
+        new Slider(feed, imgs[idx]);
+      })
+
+        
+    // if(!!item.image){
+    //   albumchild.innerHTML += `
+    //     <li class="post-album-item">
+    //       <img
+    //         src="http://146.56.183.55:5050/${item.image}"
+    //         class=""
+    //       />
+    //     </li>
+    //   `
+    // }
+
   }
-  function printProductList(productData) {
-    for (const product of productData) {
-      const productItem = makeProductItem(product);
-      product.appendChild(productItem);
-    }
-  }
+  feed();
+  // getProductData();
 }
+
 init();
+
 // 팔로우 버튼구현
 const toggleFollow = document.querySelector('.m-btn');
 console.log(toggleFollow);
@@ -125,12 +253,12 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = '../followers.html';
+  location.href = `${window.location.origin}/followers.html?${urlQuery}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = '../followings.html';
+  location.href = `${window.location.origin}/followings.html?${urlQuery}`;
 });
 
 // 앨범무늬

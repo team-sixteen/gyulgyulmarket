@@ -15,8 +15,23 @@ body {
   justify-content: space-between;
   padding: 0 12px 0 16px;
 }
-
+.nav-top.search-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: #fff;
+  border-top: solid 1px #dbdbdb;
+}
+.item-user-search__list {
+  margin-top: 40px;
+}
 .nav-top .nav-top__btn--goback {
+  width: 200px;
+  height: 22px;
+}
+.nav-top__btn--goback > img {
   width: 22px;
   height: 22px;
 }
@@ -26,7 +41,6 @@ body {
   height: 24px;
 }
 
-.nav-top .nav-top__img-icon-arrow-left,
 .nav-top__img-icon-more {
   width: 100%;
   height: 100%;
@@ -36,6 +50,7 @@ body {
   width: 100%;
   font-size: 18px;
   font-weight: 500;
+  line-height: 48px;
 }
 
 .nav-top .nav-top__inp-sch {
@@ -57,14 +72,19 @@ body {
 
 /* 하단 tab-menu */
 .nav-tab-menu {
-  border-top: solid 1px #dbdbdb;
   height: 60px;
   width: 100%;
 }
 .nav-tab-menu .nav-tab-menu__list {
   display: flex;
   justify-content: space-around;
-  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background-color: #fff;
+  border-top: solid 1px #dbdbdb;
 }
 .nav-tab-menu .nav-tab-menu__item {
   display: flex;
@@ -98,10 +118,12 @@ body {
 
 .nav-tab-menu__wrapper.nav-tab-menu__home:before {
   background-image: url('../images/icon/icon-home.png');
+  background-size: 100%;
 }
-.nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
+/* 주황색 홈 이미지 */
+/* .nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
   background-image: url('../images/icon/icon-home-fill.png');
-}
+} */
 
 .nav-tab-menu__wrapper.nav-tab-menu__chat:before {
   background-image: url('../images/icon/icon-message-circle.png');
@@ -119,22 +141,28 @@ body {
   background-size: contain;
   background-image: url('../images/icon/icon-user.png');
 }
-.nav-tab-menu__wrapper.nav-tab-menu__profile.nav-tab-menu__profile--active:before {
-  background-image: url('../images/icon/icon-user-fill.png');
+.nav-tab-menu__wrapper.nav-tab-menu__profile.nav-tab-menu__profile.active::before {
+  background: url('../images/icon/icon-user-fill.png') no-repeat;
 }
-
-.nav-tab-menu__txt.nav-tab-menu__txt--active {
+/*  주황색 칼라 추가 */
+.active {
   color: #f26e22;
 }
 
 /* 댓글 입력창(comment) */
 .module-inp-cmmt {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border: solid 1px #dbdbdb;
   padding: 0 20px 0 16px;
   height: 61px;
   color: #c4c4c4;
-  display: flex;
-  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
 }
 
 .module-inp-cmmt__form {
@@ -195,13 +223,17 @@ body {
 .item-user-search .item-user-search__img-user,
 .item-user-follow .item-user-follow__img-user {
   height: inherit;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
+
 .item-user-search .item-user-search__wrapper:hover {
   text-decoration: underline;
 }
 .item-user-search .item-user-search__list,
 .item-user-follow .item-user-follow__list {
-  margin: 5px 0 6px 12px;
+  margin: 50px 0 6px 12px;
 }
 .item-user-search .item-user-search__username,
 .item-user-follow .item-user-follow__username {

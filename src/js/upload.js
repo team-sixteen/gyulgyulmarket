@@ -52,7 +52,7 @@ class Upload {
         body: JSON.stringify({
           post: {
             content: content.value,
-            image: this.imgs.join(',')
+            image: this.imgs.map((img) => BASE_URL + '/' + img).join(','),
           },
         }),
       });

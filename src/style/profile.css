@@ -180,7 +180,7 @@ body {
 
 .product-list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-left: 20px;
 }
@@ -204,6 +204,10 @@ body {
 .product-item {
   margin: 5px;
 }
+.product-item img {
+  width: 140px;
+  height: 90px;
+}
 
 .container-feed {
   display: flex;
@@ -216,10 +220,12 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 48px;
+  border-top: solid 1px #dbdbdb;
   border-bottom: solid 1px #dbdbdb;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 6px;
   padding: 0 12px 0 16px;
 }
 
@@ -296,6 +302,8 @@ body {
 }
 
 .post-utils {
+  display: flex;
+  align-items: center;
   margin-bottom: 16px;
 }
 
@@ -328,7 +336,9 @@ body {
   height: 18px;
 }
 .album-wrap {
+  margin: 16px 0;
   padding: 0 30px;
+  box-sizing: border-box;
 }
 .post-album {
   display: grid;
@@ -352,4 +362,102 @@ body {
   height: 22px;
   background: url('../images/img-button.png');
   background-size: 100%;
+}
+
+
+
+
+/* 스타일 슬라이트 */
+
+.upload-slide-wrap {
+  position: relative;
+  /* width: 100%; */
+  width: 304px;
+  /* height: 356px; */
+  height: 228px;
+  overflow: hidden;
+}
+
+.upload-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.upload-slide-item {
+  width: 100%;
+  position: relative;
+}
+
+.upload-slide-item > img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: scale-down; */
+  object-fit: cover;
+}
+
+.upload-slide-img-delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: none;
+}
+
+.slide-arrow-left, .slide-arrow-right {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  cursor: pointer;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.slide-arrow-left > *, .slide-arrow-right > * {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: grey;
+}
+
+.slide-arrow-left {
+  left: 20px;
+}
+
+.slide-arrow-right {
+  right: 20px;
+}
+
+.slide-points {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  
+}
+
+.slide-points li {
+  width: 8px;
+  height: 8px;
+  border: 1px solid orange;
+  border-radius: 50%;
+  background: white;
+  margin-right: 5px;
 }

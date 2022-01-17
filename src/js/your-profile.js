@@ -1,9 +1,11 @@
 import Auth from './modules/Auth.js';
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
+import Slider from './utils/slide.js'
 /**
  * 공통적으로 사용해야 하는것
  * AUth 클래스
  */
+
 
 console.log('나와');
 
@@ -114,7 +116,7 @@ async function init() {
 
   async function feed() {
     const res = await fetch(
-      `${BASE_URL}/post/${localStorage_yourProfile}/userpost?limit=6&skip=3`,
+      `${BASE_URL}/post/${localStorage_yourProfile}/userpost`,
       {
         method: 'get',
         headers: {
@@ -128,55 +130,72 @@ async function init() {
     console.log(feedjson.post);
     console.log('0000');
     const feedchild = document.querySelector('.post-list');
-    feedchild.innerHTML = feedjson.post.map((item) => {
+    const albumchild = document.querySelector('.post-album')
+    await feedjson.post.map((item) => {
       let date = item.createdAt.split('-');
       let d_year = date[0];
       let d_month = date[1];
       let d_day = date[2].slice(0, 2);
-      return `
-      <li class="post-list-item">
-          <img
-            src="${item.author.image}"
-            class="post-profile-img"
-          />
-          <div>
-            <div class="post-profile-text">
-              <strong class="post-writer">${item.author.username}</strong>
-              <span class="post-writer-id">@ ${item.author.accountname}</span>
-            </div>
-            <p class="post-text">
-            ${item.author.intro}
-            </p>
-            <img src="${item.image}" onerror="this.style.visibility='hidden';" class="post-img" />
-            <div class="post-utils">
-              <button class="btn-like">
-                <img src="src/images/icon/icon-heart.png" alt="좋아요 수" />
-              </button>
-              <span class="count-like">${item.heartCount}</span>
-              <button class="btn-comment">
-                <img
-                  src="src/images/icon/icon-message-circle.png"
-                  alt="댓글 수"
-                />
-              </button>
-              <span class="count-comment">${item.comments.length}</span>
-            </div>
-            <span class="post-date">${d_year}년 ${d_month}월 ${d_day}일</span>
-          </div>
-          <button class="btn-post-menu">
+      console.log(item)
+      // console.log(item.image.length)
+      const imgparse = item.image.split(',')
+      console.log(imgparse)
+      
+      feedchild.innerHTML += `
+          <li class="post-list-item">
             <img
-              src="src/images/icon/s-icon-more-vertical.png"
-              alt="게시글 메뉴 열기"
+              src="${item.author.image}"
+              class="post-profile-img"
             />
-          </button></li>
-          <li class="post-album-item">
-          <img
-            src="${item.image}" onerror="this.style.visibility='hidden';"
-            class="post-album-img"
-          />
-        </li>
-          `;
+            <div>
+              <div class="post-profile-text">
+                <strong class="post-writer">${item.author.username}</strong>
+                <span class="post-writer-id">@ ${item.author.accountname}</span>
+              </div>
+              <p class="post-text">
+              ${item.author.intro}
+              </p>
+              <img src="${imgparse[0]}" onerror="this.style.visibility='hidden';" class="post-img" />
+              <div class="post-utils">
+                <button class="btn-like">
+                  <img src="src/images/icon/icon-heart.png" alt="좋아요 수" />
+                </button>
+                <span class="count-like">${item.heartCount}</span>
+                <button class="btn-comment">
+                  <img
+                    src="src/images/icon/icon-message-circle.png"
+                    alt="댓글 수"
+                  />
+                </button>
+                <span class="count-comment">${item.comments.length}</span>
+              </div>
+              <span class="post-date">${d_year}년 ${d_month}월 ${d_day}일</span>
+            </div>
+            <button class="btn-post-menu">
+              <img
+                src="src/images/icon/s-icon-more-vertical.png"
+                alt="게시글 메뉴 열기"
+              />
+            </button>
+          </li>
+          `
+        if(!!item.image){
+          albumchild.innerHTML += `
+            <li class="post-album-item">
+              <img
+                src="http://146.56.183.55:5050/${item.image}"
+                class=""
+              />
+            </li>
+          `
+        } 
+
+
     });
+    new Slider(
+      document.querySelector('.upload-slide-wrap')
+    )
+    
   }
   feed();
   let product = await data.json();

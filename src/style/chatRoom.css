@@ -1,7 +1,13 @@
 body {
   width: 100%;
 }
-main {
+.nav-top__btn--goback {
+  display: flex;
+}
+.other-name {
+  width: 160px;
+  margin-top: 5px;
+  margin-left: 14px;
 }
 .otherSend-wrap {
   display: flex;
@@ -44,9 +50,12 @@ main {
   right: 14px;
   max-width: 240px;
   margin-right: 14px;
+  margin-bottom: 8px;
   padding: 12px;
   border-radius: 10px 0 10px 10px;
   background-color: #f26e22;
+  font-size: 14px;
+  color: #fff;
 }
 .text-self-chat-content {
   position: absolute;
@@ -58,4 +67,10 @@ main {
   left: -30px;
   font-size: 12px;
   color: #767676;
+}
+.img-upload {
+  width: 36px;
+  height: 36px;
+  -webkit-filter: grayscale(100%);
+  opacity: 0.4;
 }

@@ -133,11 +133,22 @@ followingsBtn.addEventListener('click', function () {
   location.href = '../followings.html';
 });
 
-// 앨범무늬 
+// 앨범무늬
 const albumBtn = document.querySelector('.product-album');
+const postBtn = document.querySelector('.product-view');
+const postImg = postBtn.querySelector('img');
+const albumImg = albumBtn.querySelector('img');
 const album = document.querySelector('.album-wrap');
 const post = document.querySelector('.post-list');
-albumBtn.addEventListener('click', function() {
-  album.classList.add('');
-  post.classList.remove('');
-})
+albumBtn.addEventListener('click', function () {
+  post.classList.add('hide');
+  album.classList.remove('hide');
+  albumImg.setAttribute('src', 'src/images/icon/icon-post-album-on.png');
+  postImg.setAttribute('src', 'src/images/icon/icon-post-list-off.png');
+});
+postBtn.addEventListener('click', function () {
+  post.classList.remove('hide');
+  album.classList.add('hide');
+  albumImg.setAttribute('src', 'src/images/icon/icon-post-album-off.png');
+  postImg.setAttribute('src', 'src/images/icon/icon-post-list-on.png');
+});

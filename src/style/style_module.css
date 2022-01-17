@@ -57,14 +57,19 @@ body {
 
 /* 하단 tab-menu */
 .nav-tab-menu {
-  border-top: solid 1px #dbdbdb;
   height: 60px;
   width: 100%;
 }
 .nav-tab-menu .nav-tab-menu__list {
   display: flex;
   justify-content: space-around;
-  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background-color: #fff;
+  border-top: solid 1px #dbdbdb;
 }
 .nav-tab-menu .nav-tab-menu__item {
   display: flex;

@@ -89,7 +89,7 @@
         [...followerList.children].forEach((item)=>{
             item.addEventListener('click',({currentTarget}) => {
                 // console.log(currentTarget.dataset.accountname)
-                location.href = `http://127.0.0.1:5500/profile.html?${currentTarget.dataset.accountname}`;
+                location.href = `${window.location.origin}/profile.html?${currentTarget.dataset.accountname}`;
                 // location.href = `http://127.0.0.1:5500/followers.html?${currentTarget.dataset.accountname}`;
             })
         })

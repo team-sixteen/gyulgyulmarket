@@ -253,12 +253,12 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followers.html?${urlQuery}`;
+  location.href = `${window.location.origin}/followers.html?${urlQuery}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = `http://127.0.0.1:5500/followings.html?${urlQuery}`;
+  location.href = `${window.location.origin}/followings.html?${urlQuery}`;
 });
 
 // 앨범무늬

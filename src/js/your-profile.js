@@ -72,6 +72,9 @@ async function init() {
     //     class="item-user-search__img-user"
     //   />
     // );
+    await getProductData()
+    
+
   })();
 
   // 판매 중인 상품 출력
@@ -91,26 +94,39 @@ async function init() {
     );
     let product = await data.json();
     let productData = product.product;
+    console.log(productData)
     productSkip += productLimit;
-    return productData;
+
+    const productchild = document.querySelector('.product-list')
+    productchild.innerHTML = productData.map((item)=>{
+      
+      console.log(item)
+      return `
+      <li class="product-item" data-id="${item.id}">
+        <a href="#" >
+          <img
+            src='${item.itemImage}'
+            alt="상품: 감귤 파치"
+          />
+          <p class="product-txt">${item.itemName}</p>
+          <p class="product-price">${item.price}</p>
+        </a>
+      </li>
+      `
+    });
+
+    [...productchild.children].forEach((child) => {
+      
+      child.addEventListener('click', ({currentTarget}) => {
+        console.log(currentTarget.dataset)
+      });
+    });
   }
-  function makeProductItem(product) {
-    const { id, itemImage, itemName, link, price } = product;
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const img = document.createElement('img');
-    const p = document.createElement('p');
-    const span = document.createElement('span');
-    return li;
-  }
-  function printProductList(productData) {
-    for (const product of productData) {
-      const productItem = makeProductItem(product);
-      product.appendChild(productItem);
-    }
-  }
+
 }
+
 init();
+
 // 팔로우 버튼구현
 const toggleFollow = document.querySelector('.m-btn');
 console.log(toggleFollow);

@@ -72,6 +72,7 @@ async function init() {
     //     class="item-user-search__img-user"
     //   />
     // );
+    await getProductData();
   })();
 
   // // 판매 중인 상품 출력
@@ -178,8 +179,37 @@ async function init() {
     });
   }
   feed();
+  let product = await data.json();
+  let productData = product.product;
+  console.log(productData);
+  productSkip += productLimit;
+
+  const productchild = document.querySelector('.product-list');
+  productchild.innerHTML = productData.map((item) => {
+    console.log(item);
+    return `
+      <li class="product-item" data-id="${item.id}">
+        <a href="#" >
+          <img
+            src='${item.itemImage}'
+            alt="상품: 감귤 파치"
+          />
+          <p class="product-txt">${item.itemName}</p>
+          <p class="product-price">${item.price}</p>
+        </a>
+      </li>
+      `;
+  });
+
+  [...productchild.children].forEach((child) => {
+    child.addEventListener('click', ({ currentTarget }) => {
+      console.log(currentTarget.dataset);
+    });
+  });
 }
+
 init();
+
 // 팔로우 버튼구현
 const toggleFollow = document.querySelector('.m-btn');
 console.log(toggleFollow);
@@ -194,12 +224,16 @@ toggleFollow.addEventListener('click', function () {
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
-  location.href = '../followers.html';
+  location.href = `http://127.0.0.1:5500/followers.html?${localStorage.getItem(
+    'yourProfile',
+  )}`;
 });
 // followings 리스트 이동
 const followingsBtn = document.querySelector('.followings-wrap');
 followingsBtn.addEventListener('click', function () {
-  location.href = '../followings.html';
+  location.href = `http://127.0.0.1:5500/followings.html?${localStorage.getItem(
+    'yourProfile',
+  )}`;
 });
 
 // 앨범무늬

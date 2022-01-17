@@ -83,6 +83,7 @@ async function findUser() {
   list.innerHTML = DOMStrings;
   [...list.children].forEach((child) => {
     child.children[0].addEventListener('click', ({ currentTarget }) => {
+      console.log(currentTarget)
       const { useraccount } = currentTarget.dataset;
       localStorage.setItem('yourProfile', useraccount);
       location.href = '../../profile.html';

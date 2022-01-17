@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h2>상품 리스트</h2>
+
+    <script>
+        console.log(document.cookie)
+        let JWT_TOKEN =document.cookie.split(" ").filter((key)=> {
+            if(key.match('gyulgyul-token') !==null) return key
+        }).join('').replace('gyulgyul-token=','');
+
+        console.log(JWT_TOKEN)
+        async function profile() {
+            const res = await fetch("http://146.56.183.55:5050/product/",{
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization" : `Bearer ${JWT_TOKEN}`
+                },
+            });
+
+            const json = await res.json();
+            console.log(json);
+            console.log(json.product)
+            const data =json.product
+           
+        }
+        profile ()
+    </script>
+</body>
+</html>

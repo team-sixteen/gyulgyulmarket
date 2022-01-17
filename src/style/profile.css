@@ -27,6 +27,7 @@ body {
 
 .followers-num,
 .followings-num {
+  text-align: center;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;

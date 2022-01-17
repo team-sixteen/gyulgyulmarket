@@ -68,7 +68,6 @@ export default class Slider {
       this.$ul.style.width = `100%`;
     }
   }
-
   render() {
     this.$ul.innerHTML = this.imgs
       .map((img, idx) => {
@@ -83,7 +82,7 @@ export default class Slider {
       `;
       })
       .join('');
-
     this.initialize();
   }
 }
+

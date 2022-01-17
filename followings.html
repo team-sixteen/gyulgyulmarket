@@ -101,85 +101,40 @@
 
     <nav class="nav-tab-menu">
         <ul class="nav-tab-menu__list">
-            <li class="nav-tab-menu__item">
-                <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active">
-                    <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
-                </a>
-            </li>
-            <li class="nav-tab-menu__item">
-                <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__chat">
-                    <p class="nav-tab-menu__txt">채팅</p>
-                </a>
-            </li>
-            <li class="nav-tab-menu__item">
-                <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__post">
-                    <p class="nav-tab-menu__txt">게시물 작성</p>
-                </a>
-            </li>
-            <li class="nav-tab-menu__item">
-                <a href="#" class="nav-tab-menu__wrapper nav-tab-menu__profile">
-                    <p class="nav-tab-menu__txt">프로필</p>
-                </a>
-            </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="home.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="chatroom.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__chat"
+            >
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="upload.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__post"
+            >
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="profile.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__profile active"
+            >
+              <p class="nav-tab-menu__txt active">프로필</p>
+            </a>
+          </li>
         </ul>
-    </nav>
-    <script>
-        const urlQuery = window.location.search.split('?')[1];
-
-        console.log(urlQuery)
-
-        console.log(document.cookie)
-        let JWT_TOKEN = document.cookie.split(" ").filter((key) => {
-            if (key.match('gyulgyul-token') !== null) return key
-        }).join('').replace('gyulgyul-token=', '');
-
-        console.log(JWT_TOKEN)
-
-        async function followersData() {
-            const res = await fetch(`http://146.56.183.55:5050/profile/${urlQuery}/following`, {
-                method: "get",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${JWT_TOKEN}`
-                },
-            });
-            const json = await res.json()
-            console.log(json)
-
-            const followingList = document.querySelector('.profile-list-container')
-            followingList.innerHTML = json.map((item) => {
-                return `
-                <li class="item-user-follow" data-accountname="${item.accountname}">
-                    <div class="item-user-follow__wrapper">
-                        <img src="${item.image}" alt="프로필이미지" class="item-user-follow__img-user">
-                        <ul class="item-user-follow__list">
-                            <li class="item-user-follow__username">${item.accountname}</li>
-                            <li class="item-user-follow__userid">${item.intro}</li>
-                        </ul>
-                    </div>
-                    <button type="button" class="s-btn">팔로우</button>
-                </li>               
-            `
-            })
-            json.map((item)=> {
-                if(!!item.intro){
-                    
-                }
-            })
-
-            console.log(followingList.children);
-            [...followingList.children].forEach((item) => {
-                item.addEventListener('click', ({ currentTarget }) => {
-                    // console.log(currentTarget.dataset.accountname)
-                    location.href = `${window.location.origin}/profile.html?${currentTarget.dataset.accountname}`;
-                    // location.href = `http://127.0.0.1:5500/followers.html?${currentTarget.dataset.accountname}`;
-                })
-                //로컬스토리지에 스택을 쌓아야했어요
-                // 그ㅡ forEach마다 클릭이벤트 주신거 확인
-            })
-        }
-        followersData()
-    </script>
+      </nav>
+      <script src="src/js/followings.js" type="module"></script>
 </body>
-
 </html>

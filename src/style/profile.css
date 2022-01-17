@@ -112,26 +112,35 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-  margin-left: 30px;
+  margin-left: 5px;
 }
 
 .product-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  overflow-x: scroll;
+  max-width: 420px;
+  padding: 0 20px;
 }
-
+.product-item {
+  text-align: center;
+}
 .product-txt {
   display: flex;
   align-items: flex-end;
+  width: 70%;
   font-size: 14px;
   line-height: 18px;
+  margin: 0 auto;
 }
-
+.sl-elipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .product-price {
-  display: flex;
-  align-items: flex-end;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
@@ -139,11 +148,13 @@ body {
 }
 
 .product-item {
+  width: 140px;
   margin: 5px;
 }
 .product-item img {
   width: 140px;
   height: 90px;
+  object-fit: cover;
 }
 
 .container-feed {
@@ -290,19 +301,15 @@ body {
 .post-album-item.more-photos {
   position: relative;
 }
-.post-album-item.more-photos::after {
+.post-album-item.more-photos.addPhotos {
   position: absolute;
   top: 3px;
   right: 6px;
-  content: '';
   width: 22px;
   height: 22px;
   background: url('../images/img-button.png');
   background-size: 100%;
 }
-
-
-
 
 /* 스타일 슬라이트 */
 
@@ -352,7 +359,8 @@ body {
   display: none;
 }
 
-.slide-arrow-left, .slide-arrow-right {
+.slide-arrow-left,
+.slide-arrow-right {
   display: none;
   position: absolute;
   top: 50%;
@@ -365,7 +373,8 @@ body {
   border-radius: 50%;
 }
 
-.slide-arrow-left > *, .slide-arrow-right > * {
+.slide-arrow-left > *,
+.slide-arrow-right > * {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -387,7 +396,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
-  
 }
 
 .slide-points li {

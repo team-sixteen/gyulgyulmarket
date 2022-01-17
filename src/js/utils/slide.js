@@ -23,7 +23,7 @@ export default class Slider {
   }
 
   removeImg(id) {
-    this.imgs = this.imgs.filter((img, idx) => idx != id ? img : null);
+    this.imgs = this.imgs.filter((img, idx) => (idx != id ? img : null));
     this.render();
   }
 
@@ -54,7 +54,6 @@ export default class Slider {
         else p.style.backgroundColor = 'white';
       });
     });
-    
   }
 
   initialize() {
@@ -69,20 +68,21 @@ export default class Slider {
       this.$ul.style.width = `100%`;
     }
   }
-
   render() {
-    this.$ul.innerHTML = this.imgs.map((img, idx) => {
-      return `
+    this.$ul.innerHTML = this.imgs
+      .map((img, idx) => {
+        return `
         <li class="upload-slide-item">
           <img
             src=${img}
             alt=""
-            class="upload-slide-img">
+            class="upload-slide-img" onerror="this.parentNode.parentNode.parentNode.style.cssText='height:50px; visibility:hidden;'">
           <button id=${idx} class="upload-slide-img-delete">X</button>
         </li>
       `;
-    }).join('');
-
+      })
+      .join('');
     this.initialize();
   }
 }
+

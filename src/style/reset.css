@@ -4,7 +4,9 @@
 */
 
 html,
-body,
+body {
+  margin: 0 auto;
+}
 div,
 span,
 applet,
@@ -144,4 +146,10 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+.sl-elipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

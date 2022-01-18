@@ -7,15 +7,16 @@
     <title>귤귤마켓</title>
     <link rel="stylesheet" href="src/style/reset.css" />
     <link rel="stylesheet" href="src/style/style_module.css" />
+    <link rel="stylesheet" href="src/style/profile.css" />
     <link rel="stylesheet" href="src/style/home.css" />
   </head>
 
   <body>
-    <div class="container">
-      <button class="nav-top main-nav search">
-        <h1 class="nav-top__txt-home-feed">귤귤마켓 피드</h1>
+    <div class="home-container">
+      <header class="nav-top main-nav search">
+        <span class="nav-top__txt-home-feed">귤귤마켓 피드</span>
         <img src="src/images/icon/icon-search.png" alt="계정 검색하기" />
-      </button>
+      </header>
       <!-- 계정검색 -->
       <form class="nav-top search-nav hide">
         <a
@@ -32,7 +33,7 @@
           placeholder="계정 검색"
         />
       </form>
-
+      <div class="homefeed-list-wrap"><ul class="home-list"></ul></div>
       <div class="cont-user-search">
         <ul class="item-user-search__list">
           <!-- <li class="item-user-search">

@@ -1,14 +1,14 @@
 import Auth from './modules/Auth.js';
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
-import Slider from './utils/slide.js'
+import Slider from './utils/slide.js';
 
 /**
  * 공통적으로 사용해야 하는것
  * AUth 클래스
  */
- const urlQuery = window.location.search.split('?')[1];
+const urlQuery = window.location.search.split('?')[1];
 
- console.log(urlQuery)
+console.log(urlQuery);
 console.log('나와');
 
 async function init() {
@@ -97,11 +97,12 @@ async function init() {
     let productData = product.product;
     console.log(productData);
     productSkip += productLimit;
-  
+
     const productchild = document.querySelector('.product-list');
-    productchild.innerHTML = productData.map((item) => {
-      console.log(item);
-      return `
+    productchild.innerHTML = productData
+      .map((item) => {
+        console.log(item);
+        return `
         <li class="product-item" data-id="${item.id}">
           <a href="#" >
             <img
@@ -114,8 +115,9 @@ async function init() {
           </a>
         </li>
         `;
-    });
-  
+      })
+      .join('');
+
     [...productchild.children].forEach((child) => {
       child.addEventListener('click', ({ currentTarget }) => {
         console.log(currentTarget.dataset);
@@ -123,23 +125,16 @@ async function init() {
     });
   }
 
-
-
-
-
   //게시글
 
   async function feed() {
-    const res = await fetch(
-      `${BASE_URL}/post/${urlQuery}/userpost`,
-      {
-        method: 'get',
-        headers: {
-          Authorization: `Bearer ${Auth.getToken()}`,
-          'Content-Type': 'application/json',
-        },
+    const res = await fetch(`${BASE_URL}/post/${urlQuery}/userpost`, {
+      method: 'get',
+      headers: {
+        Authorization: `Bearer ${Auth.getToken()}`,
+        'Content-Type': 'application/json',
       },
-    );
+    });
     const feedjson = await res.json();
     console.log(feedjson);
     console.log(feedjson.post);
@@ -168,11 +163,14 @@ async function init() {
             <p class="post-text">
             ${item.author.intro}
             </p>
-            <!-- <img src="${imgparse[0]}" onerror="this.style.visibility='hidden';" class="post-img" />-->
+            <!-- <img src="${
+              imgparse[0]
+            }" onerror="this.style.visibility='hidden';" class="post-img" />-->
             <div class="upload-slide-wrap">
               <ul class="upload-slide">
-                ${imgparse.map((i, idx) => {
-                  return `
+                ${imgparse
+                  .map((i, idx) => {
+                    return `
                     <li class="upload-slide-item">
                       <img
                         src=${i}
@@ -181,7 +179,8 @@ async function init() {
                       <button id=${idx} class="upload-slide-img-delete">X</button>
                     </li>
                   `;
-                }).join('')}
+                  })
+                  .join('')}
               </ul>
               <div class="slide-arrow-left">
                 <i class="fas fa-chevron-left"></i>
@@ -213,32 +212,41 @@ async function init() {
             />
           </button>
         </li>
-        `
-      }).join('');
-      
-      const imgs = feedjson.post.map(feed => feed.image ? feed.image.split(',') : ['']);
-
-      document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
-        new Slider(feed, imgs[idx]);
+        `;
       })
+      .join('');
 
-      albumchild.innerHTML = feedjson.post.map((item)=> {
+
+    const imgs = feedjson.post.map((feed) =>
+      feed.image ? feed.image.split(',') : [''],
+    )
+
+    document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
+      new Slider(feed, imgs[idx]);
+    });
+
+    albumchild.innerHTML = feedjson.post
+      .map((item) => {
         const imgparse = item.image ? item.image.split(',') : [''];
-        if(!!item.image) {
-          return`
+        if (!!item.image) {
+          return `
             <li class="post-album-item more-photos">
               <img
                 src="${imgparse[0]}"
                 class="post-album-img"
                 onerror="this.style.display='none';"
               />
-              ${imgparse.length>1 ? `<div class="post-album-item more-photos addPhotos"></div>`:``}
+              ${
+                imgparse.length > 1
+                  ? `<div class="post-album-item more-photos addPhotos"></div>`
+                  : ``
+              }
             </li>
-          `
+          `;
         }
-      }).join('')
+      })
+      .join('');
 
-        
     // if(!!item.image){
     //   albumchild.innerHTML += `
     //     <li class="post-album-item">
@@ -249,7 +257,6 @@ async function init() {
     //     </li>
     //   `
     // }
-
   }
   feed();
   // getProductData();

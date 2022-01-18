@@ -15,6 +15,7 @@ body {
   justify-content: space-between;
   padding: 0 12px 0 16px;
 }
+/* search */
 .nav-top.search-nav {
   position: fixed;
   top: 0;

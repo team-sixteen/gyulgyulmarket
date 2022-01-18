@@ -1,180 +1,203 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/style_module.css" />
+    <link rel="stylesheet" href="./src/style/upload.css" />
     <title></title>
 
     <style>
-        main {
-            padding: 30px 34px 0px;
-        }
-        p {
-            color: #767676;
-        }
-        label, input {
-            display: block;
-        }
-        label {
-            font-size: 12px;
-            line-height: 15px;
-            color: #767676;
-        }
-        input {
-            border: none;
-            border-bottom: 1px solid #dbdbdb;
-            width: 100%;
-            padding: 10px 0px 8px;
-            margin-bottom: 16px;
-        }
-        input::placeholder {
-            color: #DBDBDB;
-        }
+      main {
+        padding: 30px 34px 0px;
+      }
+      p {
+        color: #767676;
+      }
+      label,
+      input {
+        display: block;
+      }
+      label {
+        font-size: 12px;
+        line-height: 15px;
+        color: #767676;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid #dbdbdb;
+        width: 100%;
+        padding: 10px 0px 8px;
+        margin-bottom: 16px;
+      }
+      input::placeholder {
+        color: #dbdbdb;
+      }
 
-        .img-lable {
-            display: inline-block;
-            width: 100%;
-            padding-top: calc(0.7 * 100%);
-            /* 가로의 너비의 퍼센트이다... */
-            color: #999;
-            font-size: inherit;
-            line-height: normal;
-            vertical-align: middle;
-            background: #F2F2F2;
-            cursor: pointer;
-            border: 1px solid #ebebeb;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            position: relative;
-            object-fit: contain;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
-        .img-lable::after {
-            content: '';
-            display: block;
-            background: url('src/images/img-button.png') no-repeat;
-            width: 36px;
-            height: 36px;
-            border-radius: 40px;
-            position: absolute;
-            right: 12px;
-            bottom: 12px;
-        }
-        .img-hide {
-            position: absolute;
-            clip: rect(0 0 0 0);
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-        }
+      .img-lable {
+        display: inline-block;
+        width: 100%;
+        padding-top: calc(0.7 * 100%);
+        /* 가로의 너비의 퍼센트이다... */
+        color: #999;
+        font-size: inherit;
+        line-height: normal;
+        vertical-align: middle;
+        background: #f2f2f2;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        position: relative;
+        background-size: 100% 100%;
+      }
+      .img-lable::after {
+        content: '';
+        display: block;
+        background: url('src/images/img-button.png') no-repeat;
+        width: 36px;
+        height: 36px;
+        border-radius: 40px;
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+      }
+      .img-hide {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
     </style>
-</head>
-<body>
-    <header>
-
-    </header>
+  </head>
+  <body>
+    <div class="nav-top">
+      <a class="nav-top__btn--goback" onClick="history.back()">
+        <img src="src/images/icon/icon-arrow-left.png" alt="업로드 취소" />
+      </a>
+      <button type="button" class="ms-btn ms-btn--disabled">업로드</button>
+    </div>
 
     <main>
-        <p>이미지 등록</p>
-        <!-- 온체인지했을 때 배열값을 쌓아놔서, -->
-        <label for="product-img" class="img-lable"></label>
-        <input type="file" accept="image/*;capture=camera" id="product-img" multiple class="img-hide upload-img" />
-        <!-- 포커스를 고려해서 수정해라,,tab키를 고려하는 것  -->
-        <!-- 인풋 미디어 -->
-        <label for="product-title">상품명</label>
-        <input type="text" name="" id="product-title" placeholder="2-15자 이내여야 합니다" class="product-name">
-        
-        <label for="product-price">가격</label>
-        <input type="number" name="" id="product-price" placeholder="숫자만 입력 가능합니다." class="product-pri">
+      <p>이미지 등록</p>
+      <!-- 온체인지했을 때 배열값을 쌓아놔서, -->
+      <label for="product-img" class="img-lable"></label>
+      <input
+        type="file"
+        accept="image/*;capture=camera"
+        id="product-img"
+        multiple
+        class="img-hide upload-img"
+      />
+      <!-- 포커스를 고려해서 수정해라,,tab키를 고려하는 것  -->
+      <!-- 인풋 미디어 -->
+      <label for="product-title">상품명</label>
+      <input
+        type="text"
+        name=""
+        id="product-title"
+        placeholder="2-15자 이내여야 합니다"
+        class="product-name"
+      />
 
-        <label for="product-content">판매 링크</label>
-        <input type="text" name="" id="product-content" placeholder="URL을 입력해 주세요" class="product-link">
+      <label for="product-price">가격</label>
+      <input
+        type="number"
+        name=""
+        id="product-price"
+        placeholder="숫자만 입력 가능합니다."
+        class="product-pri"
+      />
+
+      <label for="product-content">판매 링크</label>
+      <input
+        type="text"
+        name=""
+        id="product-content"
+        placeholder="URL을 입력해 주세요"
+        class="product-link"
+      />
     </main>
 
     <script>
-        const title = document.querySelector('.product-name')
-        const price = document.querySelector('.product-pri')
-        const content = document.querySelector('.product-link')
-        const img = document.querySelector('.img-lable')
-        const uploadImg = document.querySelector('.upload-img')
-        
-        let formData;
-        uploadImg.addEventListener('change',async (e) => {
-            console.log(e.target.files)
-            console.log(e.target.files[0].name)
-            formData = new FormData();
-            formData.append("image",e.target.files[0])
-            console.log(formData)
-            const image = e.target.files[0];
-            const imageURL = window.URL.createObjectURL(image);
-            img.style.backgroundImage = `url(${imageURL})`
+      const title = document.querySelector('.product-name');
+      const price = document.querySelector('.product-pri');
+      const content = document.querySelector('.product-link');
+      const img = document.querySelector('.img-lable');
+      const uploadImg = document.querySelector('.upload-img');
+
+      let formData;
+      uploadImg.addEventListener('change', async (e) => {
+        console.log(e.target.files);
+        console.log(e.target.files[0].name);
+        formData = new FormData();
+        formData.append('image', e.target.files[0]);
+        console.log(formData);
+        const image = e.target.files[0];
+        const imageURL = window.URL.createObjectURL(image);
+        img.style.backgroundImage = `url(${imageURL})`;
+      });
+
+      console.log(document.cookie);
+      let JWT_TOKEN = document.cookie
+        .split(' ')
+        .filter((key) => {
+          if (key.match('gyulgyul-token') !== null) return key;
         })
-        
+        .join('')
+        .replace('gyulgyul-token=', '');
 
-        console.log(document.cookie)
-        let JWT_TOKEN =document.cookie.split(" ").filter((key)=> {
-            if(key.match('gyulgyul-token') !==null) return key
-        }).join('').replace('gyulgyul-token=','');
+      console.log(JWT_TOKEN);
+      async function addProduct() {
+        // 이미지전송 API
+        const file = await fetch('http://146.56.183.55:5050/image/uploadfile', {
+          method: 'POST',
+          // headers: {
+          //     "Content-Type": "multipart/form-data"
+          // },
+          body: formData,
+        });
+        const data = await file.json();
+        console.log(file);
+        console.log(data.filename);
+        const imgLink = data.filename;
 
-        console.log(JWT_TOKEN)
-        async function addProduct() {
-            // 이미지전송 API
-            const file = await fetch("http://146.56.183.55:5050/image/uploadfile",{
-                method: "POST",
-                // headers: {
-                //     "Content-Type": "multipart/form-data"
-                // },
-                body: formData
-  
-            })
-            const data = await file.json()
-            console.log(file)
-            console.log(data.filename)
-            const imgLink = data.filename
+        // 상품등록 API
+        const res = await fetch('http://146.56.183.55:5050/product/', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${JWT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            product: {
+              itemName: title.value,
+              price: +price.value,
+              link: content.value,
+              itemImage: `http://146.56.183.55:5050/${imgLink}`,
+            },
+          }),
+        });
 
-            // 상품등록 API
-            const res = await fetch("http://146.56.183.55:5050/product/",{
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization" : `Bearer ${JWT_TOKEN}`
-                },
-                body:JSON.stringify({
-                    "product": {
-                        "itemName": title.value,
-                        "price": +price.value,
-                        "link": content.value,
-                        "itemImage": `http://146.56.183.55:5050/${imgLink}`,
-                    }
-                })
-            });
+        const json = await res.json();
+        console.log(json);
+        location.href = './my_profile.html';
+      }
 
-            const json = await res.json();
-            console.log(json);
-        }
-        
-        title.addEventListener('input',(e)=>
-            title.value = e.target.value
-        );
-        price.addEventListener('input',(e)=>
-            price.value = e.target.value
-        );
-        content.addEventListener('input',(e)=>
-            content.value = e.target.value
-        );
+      title.addEventListener('input', (e) => (title.value = e.target.value));
+      price.addEventListener('input', (e) => (price.value = e.target.value));
+      content.addEventListener(
+        'input',
+        (e) => (content.value = e.target.value),
+      );
 
-        window.addEventListener('keydown',(e) =>{
-            if(e.key==="Enter"){
-                addProduct()
-            }
-        })
-
-        
-
+      const uploadBtn = document.querySelector('.ms-btn');
+      uploadBtn.addEventListener('click', (e) => {
+        addProduct();
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -19,6 +19,8 @@ body {
   top: 35%;
   width: 100%;
   margin: 0 auto;
+  animation: fadeout 2s;
+  animation-fill-mode: forwards;
 }
 
 .wrap-login-link {
@@ -35,6 +37,7 @@ body {
   text-align: center;
   width: 100%;
   height: 100%;
+  animation: fadein 2s;
 }
 
 .img-wrap {
@@ -146,4 +149,22 @@ img {
   height: 1.5rem;
   margin: 0px 6px;
   line-height: 15px;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

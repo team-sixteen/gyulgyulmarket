@@ -140,16 +140,16 @@ async function init() {
     console.log(feedjson.post);
     console.log('0000');
     const feedchild = document.querySelector('.post-list');
-    const albumchild = document.querySelector('.post-album');
-    feedchild.innerHTML = feedjson.post
-      .map((item) => {
-        let date = item.createdAt.split('-');
-        let d_year = date[0];
-        let d_month = date[1];
-        let d_day = date[2].slice(0, 2);
-        const imgparse = item.image ? item.image.split(',') : [''];
-
-        return `
+    const albumchild = document.querySelector('.post-album')
+    feedchild.innerHTML = feedjson.post.map((item) => {
+      console.log(item)
+      let date = item.createdAt.split('-');
+      let d_year = date[0];
+      let d_month = date[1];
+      let d_day = date[2].slice(0, 2);
+      const imgparse = item.image ? item.image.split(',') : [''];
+      
+      return `
         <li class="post-list-item">
           <img
             src="${item.author.image}"
@@ -216,9 +216,10 @@ async function init() {
       })
       .join('');
 
+
     const imgs = feedjson.post.map((feed) =>
       feed.image ? feed.image.split(',') : [''],
-    );
+    )
 
     document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
       new Slider(feed, imgs[idx]);

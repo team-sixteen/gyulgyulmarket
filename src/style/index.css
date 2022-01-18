@@ -1,27 +1,26 @@
 /* 사이즈 */
 html,
 body {
+  position: relative;
   width: 100%;
   height: 100%;
-  max-width: 440px;
   margin: 0 auto;
   font-size: 10px;
   background-color: #ffffff;
 }
 
 .wrap-splash {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
   width: 100%;
-  height: 100%;
   margin: 0 auto;
+  animation: fadeout 2s;
+  animation-fill-mode: forwards;
 }
 
 .wrap-login-link {
@@ -38,10 +37,13 @@ body {
   text-align: center;
   width: 100%;
   height: 100%;
+  animation: fadein 2s;
 }
 
 .img-wrap {
-  position: fixed;
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 25%;
   width: 100%;
   height: 70%;
@@ -58,17 +60,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: flex-end;
-  position: fixed;
-  bottom: -5px;
+  position: absolute;
+
+  bottom: -20px;
   width: 100%;
   min-height: 250px;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   background-color: #69d282;
 }
 
@@ -150,4 +149,22 @@ img {
   height: 1.5rem;
   margin: 0px 6px;
   line-height: 15px;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

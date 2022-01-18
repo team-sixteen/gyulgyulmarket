@@ -99,6 +99,35 @@ async function init() {
     productSkip += productLimit;
 
     const productchild = document.querySelector('.product-list');
+    console.log('0000');
+    console.log(!productData.length === 0);
+    if (!(productData.length == 0)) {
+      productchild.classList.add('add');
+      // productchild.innerHTML = productData
+      //   .map((item) => {
+      //     console.log(item);
+      //     return `
+      //   <li class="product-item" data-id="${item.id}">
+      //     <a href="#" >
+      //       <img
+      //         src='${item.itemImage}'
+      //         alt="상품: 감귤 파치"
+      //       />
+      //       <p class="product-txt sl-elipsis">${item.itemName}</p>
+      //       <p class="product-price">${item.price}</p>
+      //     </a>
+      //   </li>
+      //   `;
+      //   })
+      //   .join('');
+
+      // [...productchild.children].forEach((child) => {
+      //   child.addEventListener('click', ({ currentTarget }) => {
+      //     console.log(currentTarget.dataset);
+      //   });
+      // });
+    } else {
+    }
     productchild.innerHTML = productData
       .map((item) => {
         console.log(item);
@@ -108,7 +137,6 @@ async function init() {
             <img
               src='${item.itemImage}'
               alt="상품: 감귤 파치"
-              
             />
             <p class="product-txt sl-elipsis">${item.itemName}</p>
             <p class="product-price">${item.price}</p>
@@ -234,7 +262,7 @@ async function init() {
               <img
                 src="${imgparse[0]}"
                 class="post-album-img"
-                onerror="this.style.display='none';"
+                onerror="this.src='src/images/error.png';"
               />
               ${
                 imgparse.length > 1

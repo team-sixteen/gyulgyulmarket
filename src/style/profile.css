@@ -178,7 +178,7 @@ body {
   margin-left: 5px;
 }
 
-.product-list {
+.product-list.add {
   display: flex;
   justify-content: center;
   align-items: center;

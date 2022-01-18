@@ -56,7 +56,7 @@ async function followersData() {
       return `
                 <li class="item-user-follow" data-accountname="${item.accountname}">
                     <div class="item-user-follow__wrapper">
-                        <img src="${item.image}" alt="프로필이미지" class="item-user-follow__img-user">
+                        <img src="${item.image}" onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지" class="item-user-follow__img-user">
                         <ul class="item-user-follow__list">
                             <li class="item-user-follow__username">${item.accountname}</li>
                             <li class="item-user-follow__userid">${item.intro}</li>

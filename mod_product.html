@@ -112,8 +112,6 @@
             if(key.match('gyulgyul-token') !==null) return key
         }).join('').replace('gyulgyul-token=','');
 
-        
-
         console.log(JWT_TOKEN)
         async function initProduct() {
             const res = await fetch("http://146.56.183.55:5050/product/detail/61e53c1a848431e191bf0992",{

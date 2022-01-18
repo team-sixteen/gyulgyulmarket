@@ -167,3 +167,10 @@ html, body {
   display: block;
   clear: both;
 } */
+
+.post-userid {
+  font-size: 12px;
+  line-height: 14px;
+  padding-bottom: 14px;
+  color: #767676;
+}

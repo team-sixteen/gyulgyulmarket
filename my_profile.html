@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./src/style/my_profile.css">
     <link rel="stylesheet" href="./src//style/style_module.css">
     <!-- <link rel="stylesheet" href="./src/style/profile.css"> -->
+    <link rel="stylesheet" href="./src/style/modal.css">
 
     
     <link
@@ -20,7 +21,52 @@
    
 </head>
 <body>
+    <article class="modal-logout">
+        <section class="logout-box">
+          <div class="bar"></div>
+          <ul>
+            <li>설정 및 개인정보</li>
+            <li class="logout-btn">로그아웃</li>
+          </ul>
+          <section class="logout-check">
+            <p>로그아웃하시겠어요?</p>
+            <button class="btn1">취소</button>
+            <button class="real-logout">로그아웃</button>
+          </section>
+        </section>
+      </article>
+      <div class="nav-top">
+        <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+          <img
+            src="src/images/icon/icon-arrow-left.png"
+            alt="뒤로 가기"
+            class="nav-top__img-icon-arrow-left"
+          />
+        </a>
+  
+        <a href="#" class="nav-top__btn--more">
+          <img
+            src="src/images/icon/icon-more-vertical.png"
+            alt="메뉴 더보기"
+            class="nav-top__img-icon-more"
+          />
+        </a>
+      </div>
     <main>
+        <article class="modal-del">
+            <section class="del-box">
+              <div class="bar"></div>
+              <ul>
+                <li>수정</li>
+                <li class="del-btn">삭제</li>
+              </ul>
+              <section class="del-check">
+                <p>게시글을 삭제할까요?</p>
+                <button class="btn1">취소</button>
+                <button class="real-del">삭제</button>
+              </section>
+            </section>
+        </article>
         <section class="main-profile">
             <div class="profile-conf">
                 <div class="followers">
@@ -58,8 +104,9 @@
             <button class="post-form-list"><img src="src/images/icon/icon-post-list-on.png" alt=""></button>
             <ul class="post-box-ul">
                 <li class="post-box-list">
-                    <img src="" alt="">
+                    <img src="./src/images/icon/icon-more-vertical.png" alt="" class="moreBtn">
                     <section class="post-content">
+                        <img src="" alt="">
                         <h4>애월읍 위니브 감귤농장</h4>
                         <small>@ weniv_Mandarin</small>
                         <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>

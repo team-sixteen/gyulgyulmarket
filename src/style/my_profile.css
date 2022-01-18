@@ -206,6 +206,11 @@ img {
     width: 100%;
     vertical-align: top;
   }
+.moreBtn {
+    float: right;
+    width: 18px;
+    height: 18px;
+}
 
 
   /* 스타일 슬라이드 */

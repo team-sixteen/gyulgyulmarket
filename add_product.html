@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style_module.css">
+    <link rel="stylesheet" href="./src/style/upload.css">
     <title></title>
 
     <style>
@@ -71,9 +73,12 @@
     </style>
 </head>
 <body>
-    <header>
-
-    </header>
+    <div class="nav-top">
+        <a class="nav-top__btn--goback">
+          <img src="src/images/icon/icon-arrow-left.png" alt="업로드 취소">
+        </a>
+        <button type="button" class="ms-btn ms-btn--disabled">업로드</button>
+      </div>
 
     <main>
         <p>이미지 등록</p>
@@ -152,6 +157,7 @@
 
             const json = await res.json();
             console.log(json);
+            location.href ='./my_profile.html'
         }
         
         title.addEventListener('input',(e)=>
@@ -164,10 +170,11 @@
             content.value = e.target.value
         );
 
-        window.addEventListener('keydown',(e) =>{
-            if(e.key==="Enter"){
-                addProduct()
-            }
+        const uploadBtn = document.querySelector('.ms-btn')
+        uploadBtn.addEventListener('click',(e) =>{
+            
+            addProduct()
+            
         })
 
         

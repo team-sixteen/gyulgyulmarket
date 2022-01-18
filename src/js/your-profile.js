@@ -151,7 +151,7 @@ async function init() {
       let d_year = date[0];
       let d_month = date[1];
       let d_day = date[2].slice(0, 2);
-      const imgparse = item.image.split(',')
+      const imgparse = item.image ? item.image.split(',') : [''];
       
       return `
         <li class="post-list-item">
@@ -215,7 +215,7 @@ async function init() {
         `
       }).join('');
       
-      const imgs = feedjson.post.map(feed => feed.image.split(','));
+      const imgs = feedjson.post.map(feed => feed.image ? feed.image.split(',') : ['']);
 
       document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
         new Slider(feed, imgs[idx]);
@@ -223,7 +223,7 @@ async function init() {
 
 
       albumchild.innerHTML = feedjson.post.map((item)=> {
-        const imgparse = item.image.split(',')
+        const imgparse = item.image ? item.image.split(',') : [''];
         if(!!item.image) {
           return`
             <li class="post-album-item more-photos">

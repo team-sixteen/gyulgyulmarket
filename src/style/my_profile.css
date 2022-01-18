@@ -1,167 +1,306 @@
 :root {
-    --tangerine: #f26e22;
+  --tangerine: #f26e22;
 }
 
 .main-profile {
-    text-align: center;
+  text-align: center;
 }
 .profile-conf {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 30px 0px 16px  ;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0px 16px;
 }
 .profile-conf p {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .profile-conf small {
-    font-size: 10px;
-    color: #767676;
-    padding-top: 6px;
+  font-size: 10px;
+  color: #767676;
+  padding-top: 6px;
 }
 .profile-conf img {
-    width: 110px;
-    height: 110px;
+  width: 110px;
+  height: 110px;
 }
-.main-profile>h2 {
-    font-weight: bold;
-    font-size: 16px;
+.main-profile > h2 {
+  font-weight: bold;
+  font-size: 16px;
 }
-.main-profile>small {
-    padding:6px 0px 16px;
-    display: block;
-    font-size: 12px;
-    color: #767676;
+.main-profile > small {
+  padding: 6px 0px 16px;
+  display: block;
+  font-size: 12px;
+  color: #767676;
 }
-.main-profile>p {
-    font-size: 14px;
-    color: #767676;
+.main-profile > p {
+  font-size: 14px;
+  color: #767676;
 }
 .profile-btns {
-    padding: 24px 0 26px;
+  padding: 24px 0 26px;
 }
 .profile-follow {
-    border: none;
-    padding: 8px 40px;
-    border-radius: 30px;
-    background: var(--tangerine);
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 30px;
+  background: var(--tangerine);
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
 }
 .profile-btns img {
-    width: 13px;
-    height: 13px;
-    padding: 10px;
-    border: 1px solid #DBDBDB;
-    border-radius: 100%;
+  width: 13px;
+  height: 13px;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 100%;
+}
+.profile-btns a {
+  color: #767676;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 26px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  margin-right: 12px;
 }
 
 .sect-sell {
-    padding:20px 21px;
+  padding: 20px 21px;
 }
 .sect-sell h3 {
-    font-weight: bold;
-    font-size: 16px;
+  font-weight: bold;
+  font-size: 16px;
 }
 .sell-list {
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
-    padding-top: 16px;
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  padding-top: 16px;
+  text-align: center;
 }
 .sell-list img {
-    width: 140px;
-    height: 90px;
+  width: 140px;
+  height: 90px;
 }
 .sell-list p {
-    padding:6px 0px 4px;
-    font-size: 14px;
-    font-weight: normal;
+  padding: 6px 0px 4px;
+  font-size: 14px;
+  font-weight: normal;
 }
 .sell-list em {
-    font-weight: bold;
-    font-size: 12px;
-    color: var(--tangerine);
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--tangerine);
 }
 
 .sect-post {
-    border-top: 6px solid #DBDBDB;
+  border-top: 6px solid #dbdbdb;
 }
-.sect-post>button {
-    float: right;
-    margin: 9px 20px 9px auto;
-    border: none;
-    background-color: white;
+.sect-post > button {
+  float: right;
+  margin: 9px 20px 9px auto;
+  border: none;
+  background-color: white;
 }
-.sect-post .post-form-list { 
+.sect-post .post-form-list {
 }
-.sect-post .post-form-album{
+.sect-post .post-form-album {
 }
+
+.post-box-ul.hide {
+  display: none;
+}
+.post-box-album.hide {
+  display: none;
+}
+
 .post-box-list {
-    clear: both;
-    display: flex;
-    border-top: 0.5px solid #c4c4c4;
-    padding: 16px;
+  clear: both;
+  display: flex;
+  border-top: 0.5px solid #c4c4c4;
+  padding: 16px;
 }
-.post-box-list>img{
-    width: 42px;
-    height: 42px;
+.post-box-list > img {
+  width: 42px;
+  height: 42px;
 }
 .post-box-list .post-content {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 .post-box-list .post-content h4 {
-    font-weight: bold;
-    font-size: 14px;    
+  font-weight: bold;
+  font-size: 14px;
 }
 .post-box-list .post-content small {
-    font-size: 12px;
-    color: #767676;
-    padding: 2px 0px 16px;
-    display: block;
+  font-size: 12px;
+  color: #767676;
+  padding: 2px 0px 16px;
+  display: block;
 }
 .post-box-list .post-content p {
-    font-size: 14px;
+  font-size: 14px;
 }
 /* .post-box-list div {
     max-height : 250px
 } */
 .post-box-list .post-img {
-    display: block;
-    margin: 16px 0px 15px;
+  display: block;
+  margin: 16px 0px 15px;
 
-    /* height: 100%; */
-    /* 여기 이미지가 높이가 달라요 이거 어떻게 해결해야할까요?? */
+  /* height: 100%; */
+  /* 여기 이미지가 높이가 달라요 이거 어떻게 해결해야할까요?? */
 }
 .post-box-list button {
-    background-color: white;
-    font-size: 15px;  
-    /* 여기 btn 픽셀이 애매하다 */
-    color: #767676;
-    margin-right: 18.5px;
+  background-color: white;
+  font-size: 15px;
+  /* 여기 btn 픽셀이 애매하다 */
+  color: #767676;
+  margin-right: 18.5px;
 }
 .post-box-list button img {
-    width: 15px;
-    height: 15px;
-    margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
 }
 .post-box-list .post-date {
-    padding-top: 18.5px;
-    font-size: 10px;
-    color: #767676;
+  padding-top: 18.5px;
+  font-size: 10px;
+  color: #767676;
 }
 
 .post-box-album {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 8px;
-    padding: 16px 16px 30px ;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 16px 16px 30px;
+}
+.post-box-album li {
+  position: relative;
+}
+.post-album-item.more-photos.addPhotos {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  background: url('../images/post-img/iccon-img-layers.png');
+  background-size: 100%;
 }
 
+.post-box-album {
+  clear: both;
+  border-top: 0.5px solid #c4c4c4;
+}
+.post-box-album img {
+  min-height: 114px;
+  max-height: 114px;
+}
 
 img {
-    width: 100%;
-    vertical-align: top;
-  }
+  width: 100%;
+  vertical-align: top;
+}
+.moreBtn {
+  float: right;
+  width: 18px;
+  height: 18px;
+}
+
+/* 스타일 슬라이드 */
+
+.upload-slide-wrap {
+  position: relative;
+  /* width: 100%; */
+  width: 304px;
+  /* height: 356px; */
+  height: 228px;
+  overflow: hidden;
+}
+
+.upload-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.upload-slide-item {
+  width: 100%;
+  position: relative;
+}
+
+.upload-slide-item > img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: scale-down; */
+  object-fit: cover;
+}
+
+.upload-slide-img-delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: none;
+}
+
+.slide-arrow-left,
+.slide-arrow-right {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  cursor: pointer;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.slide-arrow-left > *,
+.slide-arrow-right > * {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: grey;
+}
+
+.slide-arrow-left {
+  left: 20px;
+}
+
+.slide-arrow-right {
+  right: 20px;
+}
+
+.slide-points {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
+
+.slide-points li {
+  width: 8px;
+  height: 8px;
+  border: 1px solid orange;
+  border-radius: 50%;
+  background: white;
+  margin-right: 5px;
+}

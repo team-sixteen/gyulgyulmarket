@@ -15,16 +15,7 @@ body {
   justify-content: space-between;
   padding: 0 12px 0 16px;
 }
-/* search */
-.nav-top.search-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background-color: #fff;
-  border-top: solid 1px #dbdbdb;
-}
+
 .item-user-search__list {
   margin-top: 40px;
 }

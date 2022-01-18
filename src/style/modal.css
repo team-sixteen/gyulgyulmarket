@@ -1,167 +1,164 @@
 .modal-logout {
-    display: none;
-    height: 100%;
-    width: 100%;
+  display: none;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-logout.on {
-    display: block;
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    left: 0;
-    /* background: black;
+  display: block;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  /* background: black;
     opacity: .7; */
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10;
 }
 .modal-logout .logout-box {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 160px;
-    background: white;
-    color: black;
-    z-index: 20;
-    border: 1px solid #c4c4c4;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: white;
+  color: black;
+  z-index: 20;
+  border: 1px solid #c4c4c4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .logout-box .bar {
-    width: 50px;
-    height: 4px;
-    margin: 16px auto;
-    background: #DBDBDB;
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background: #dbdbdb;
 }
 .logout-box ul {
-    font-size: 20px;
+  font-size: 20px;
 }
-.logout-box ul li{
-    padding: 14px 0px;
-    padding-left: 26px;
+.logout-box ul li {
+  padding: 14px 0px;
+  padding-left: 26px;
 }
-
 
 .modal-logout .logout-check {
-    display: none;
-    width: 270px;
-    height: 110px;
+  display: none;
+  width: 270px;
+  height: 110px;
 }
 .modal-logout .logout-check.on {
-    display: block;
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    transform: translate(-50%,-50%);
-    background: white;
-    z-index: 20;
+  display: block;
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 20;
 }
 .modal-logout .logout-check p {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    border-bottom: 0.5px solid #DBDBDB;
-    padding: 22px 55px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 0.5px solid #dbdbdb;
+  padding: 22px 55px;
 }
 .modal-logout .logout-check button {
-    padding: 12px 37px;
-    color: orange;
+  padding: 12px 37px;
+  color: orange;
 }
 .modal-logout .logout-check .btn1 {
-    padding: 12px 50px;
-    font-size: 14px;
-    line-height: 18px;
-    color: black;
-    border-right: 0.5px solid #DBDBDB;
+  padding: 12px 50px;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  border-right: 0.5px solid #dbdbdb;
 }
-
 
 /* 상품딜리트 */
 .modal-del {
-    display: none;
-    height: 100%;
-    width: 100%;
+  display: none;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-del.on {
-    display: block;
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    left: 0;
-    /* background: black;
+  display: block;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  /* background: black;
     opacity: .7; */
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10;
 }
 .modal-del .del-box {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 160px;
-    background: white;
-    color: black;
-    z-index: 20;
-    border: 1px solid #c4c4c4;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: white;
+  color: black;
+  z-index: 20;
+  border: 1px solid #c4c4c4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .del-box .bar {
-    width: 50px;
-    height: 4px;
-    margin: 16px auto;
-    background: #DBDBDB;
+  width: 50px;
+  height: 4px;
+  margin: 16px auto;
+  background: #dbdbdb;
 }
 .del-box ul {
-    font-size: 20px;
+  font-size: 20px;
 }
-.del-box ul li{
-    padding: 14px 0px;
-    padding-left: 26px;
+.del-box ul li {
+  padding: 14px 0px;
+  padding-left: 26px;
 }
-
 
 .modal-del .del-check {
-    display: none;
-    width: 270px;
-    height: 110px;
+  display: none;
+  width: 270px;
+  height: 110px;
 }
 .modal-del .del-check.on {
-    display: block;
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    transform: translate(-50%,-50%);
-    background: white;
-    z-index: 20;
+  display: block;
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 100;
 }
 .modal-del .del-check p {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    border-bottom: 0.5px solid #DBDBDB;
-    padding: 22px 55px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 0.5px solid #dbdbdb;
+  padding: 22px 55px;
 }
 .modal-del .del-check button {
-    padding: 12px 37px;
-    color: orange;
+  padding: 12px 37px;
+  color: orange;
 }
 .modal-del .del-check .btn1 {
-    padding: 12px 50px;
-    font-size: 14px;
-    line-height: 18px;
-    color: black;
-    border-right: 0.5px solid #DBDBDB;
+  padding: 12px 50px;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  border-right: 0.5px solid #dbdbdb;
 }

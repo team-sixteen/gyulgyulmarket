@@ -21,7 +21,7 @@ async function init() {
   console.log('로그인은 성공');
 }
 (async function init_homefeed() {
-  const homefeed_res = await fetch(`${BASE_URL}/post/feed/?limit=6&skip=3`, {
+  const homefeed_res = await fetch(`${BASE_URL}/post/feed/`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${Auth.getToken()}`,
@@ -59,12 +59,9 @@ async function init() {
               <strong class="post-writer">${item.author.username}</strong>
               <span class="post-writer-id">@ ${item.author.accountname}</span>
             </div>
-            <p class="post-text">
+          <p class="post-text">
             ${item.author.intro}
-            </p>
-            <!-- <img src="${
-              imgparse[0]
-            }" onerror="this.style.visibility='hidden';" class="post-img" />-->
+          </p>
             <div class="upload-slide-wrap">
               <ul class="upload-slide">
                 ${imgparse
@@ -75,7 +72,7 @@ async function init() {
                         src=${i}
                         alt=""
                         class="upload-slide-img">
-                      <button id=${idx} class="upload-slide-img-delete">X</button>
+                        <button id=${idx} class="upload-slide-img-delete">X</button>
                     </li>
                   `;
                   })
@@ -123,6 +120,7 @@ async function init() {
       new Slider(feed, imgs[idx]);
     });
   } else {
+    // noFeed.style.display = 'block';
     console.log('존재 x');
   }
 })();
@@ -132,6 +130,7 @@ function search() {
   nav_new_top.classList.remove('hide');
   home_zero_wrap.classList.add('hide');
   homefeed_wrap.style.display = 'none';
+  // noFeed.style.display = 'none';
   findUserInput.focus();
   findUser();
 }

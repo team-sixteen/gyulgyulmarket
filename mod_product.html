@@ -47,10 +47,7 @@
             border-radius: 10px;
             margin-bottom: 30px;
             position: relative;
-            object-fit: contain;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
+            background-size: 100% 100%;
         }
         .img-lable::after {
             content: '';
@@ -111,8 +108,6 @@
         let JWT_TOKEN =document.cookie.split(" ").filter((key)=> {
             if(key.match('gyulgyul-token') !==null) return key
         }).join('').replace('gyulgyul-token=','');
-
-        
 
         console.log(JWT_TOKEN)
         async function initProduct() {

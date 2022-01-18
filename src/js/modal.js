@@ -4,7 +4,7 @@ const close = document.querySelector(".post-modal-close")
 
 open.onclick = () => {
     modal.style.display = "flex";
-    document.body.style.backgroundColor = "black";
+    // document.body.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
 };
 
 close.onclick = () => {

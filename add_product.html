@@ -47,6 +47,7 @@
             border-radius: 10px;
             margin-bottom: 30px;
             position: relative;
+            background-size: 100% 100%;
         }
         .img-lable::after {
             content: '';
@@ -95,6 +96,7 @@
         const title = document.querySelector('.product-name')
         const price = document.querySelector('.product-pri')
         const content = document.querySelector('.product-link')
+        const img = document.querySelector('.img-lable')
         const uploadImg = document.querySelector('.upload-img')
         
         let formData;
@@ -104,6 +106,9 @@
             formData = new FormData();
             formData.append("image",e.target.files[0])
             console.log(formData)
+            const image = e.target.files[0];
+            const imageURL = window.URL.createObjectURL(image);
+            img.style.backgroundImage = `url(${imageURL})`
         })
         
 
@@ -113,7 +118,7 @@
         }).join('').replace('gyulgyul-token=','');
 
         console.log(JWT_TOKEN)
-        async function profile() {
+        async function addProduct() {
             // 이미지전송 API
             const file = await fetch("http://146.56.183.55:5050/image/uploadfile",{
                 method: "POST",
@@ -161,7 +166,7 @@
 
         window.addEventListener('keydown',(e) =>{
             if(e.key==="Enter"){
-                profile()
+                addProduct()
             }
         })
 

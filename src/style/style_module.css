@@ -121,9 +121,9 @@ body {
   background-size: 100%;
 }
 /* 주황색 홈 이미지 */
-/* .nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home--active:before {
+.nav-tab-menu__wrapper.nav-tab-menu__home.nav-tab-menu__home.active:before {
   background-image: url('../images/icon/icon-home-fill.png');
-} */
+}
 
 .nav-tab-menu__wrapper.nav-tab-menu__chat:before {
   background-image: url('../images/icon/icon-message-circle.png');

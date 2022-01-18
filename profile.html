@@ -9,13 +9,6 @@
     <link rel="stylesheet" href="src/style/profile.css" />
     <link rel="stylesheet" href="src/style/style_module.css" />
     <link rel="stylesheet" href="src/style/common.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
   </head>
 
   <body>
@@ -86,7 +79,40 @@
     <div class="container">
       <section class="product">
         <h2 class="product-sale">판매 중인 상품</h2>
-        <ul class="product-list"></ul>
+        <ul class="product-list">
+          <li class="product-item">
+            <a href="#">
+              <img
+                src="src/images/product-img-example.png"
+                alt="상품: 애월읍 노지 감귤"
+              />
+              <p class="product-txt">애월읍 노지 감귤</p>
+              <p class="product-price">35,000원</p>
+            </a>
+          </li>
+
+          <li class="product-item">
+            <a href="#">
+              <img
+                src="src/images/product-img-example.png"
+                alt="상품: 애월읍 한라봉 10kg"
+              />
+              <p class="product-txt">애월읍 노지 감귤</p>
+              <p class="product-price">35,000원</p>
+            </a>
+          </li>
+
+          <li class="product-item">
+            <a href="#">
+              <img
+                src="src/images/product-img-example.png"
+                alt="상품: 감귤 파치"
+              />
+              <p class="product-txt">감귤 파치</p>
+              <p class="product-price">25,000원</p>
+            </a>
+          </li>
+        </ul>
       </section>
     </div>
 
@@ -108,11 +134,29 @@
       </div>
 
       <ul class="post-list">
-        <!-- <li class="post-list-item">
+        <li class="post-list-item">
           <img
             src="src/images/s-basic-profile-img.png"
             class="post-profile-img"
           />
+
+          <!-- post-modal -->
+          <div class="post-modal-hidden">
+            <div class="modal__background">
+              <div class="post-modal">
+                <ul class="post-modal__wrapper">
+                    <li class="post-modal-close">X</li>
+                    <li class="post-modal__choice">
+                        <button type="button" class="post-modal__btn-delete">삭제</button>
+                    </li>
+                    <li class="post-modal__choice">
+                        <button type="button" class="post-modal__btn-fix">수정</button>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div>
             <div class="post-profile-text">
               <strong class="post-writer">애월읍 위니브 감귤농장</strong>
@@ -139,13 +183,13 @@
             </div>
             <span class="post-date">2020년 10월 21일</span>
           </div>
-          <button class="btn-post-menu">
+          <button type='button' class="btn-post-menu">
             <img
               src="src/images/icon/s-icon-more-vertical.png"
               alt="게시글 메뉴 열기"
             />
           </button>
-        </li> -->
+        </li>
       </ul>
 
       <div class="album-wrap hide">
@@ -211,10 +255,10 @@
         <ul class="nav-tab-menu__list">
           <li class="nav-tab-menu__item">
             <a
-              href="home.html"
+              href="#"
               class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
             >
-              <p class="nav-tab-menu__txt nav-tab-menu__txt">홈</p>
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
             </a>
           </li>
           <li class="nav-tab-menu__item">
@@ -238,13 +282,13 @@
               href="my_profile.html"
               class="nav-tab-menu__wrapper nav-tab-menu__profile active"
             >
-              <p class="nav-tab-menu__txt active">프로필</p>
+              <p class="nav-tab-menu__txt">프로필</p>
             </a>
           </li>
         </ul>
       </nav>
     </section>
     <script src="src/js/your-profile.js" type="module"></script>
-    <script src="src/js/home.js"></script>
+    <script src="src/js/modal.js"></script>
   </body>
 </html>

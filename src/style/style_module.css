@@ -363,6 +363,13 @@ body {
   cursor: pointer;
 }
 
+.modal__background {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 /* 버튼 모듈*/
 .l-btn,
 .m-btn,

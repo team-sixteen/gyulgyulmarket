@@ -9,10 +9,34 @@
     <link rel="stylesheet" href="src/style/profile.css" />
     <link rel="stylesheet" href="src/style/style_module.css" />
     <link rel="stylesheet" href="src/style/common.css" />
+
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style/modal.css">
   </head>
 
   <body>
     <header class="nav-top">
+    <article class="modal-logout">
+      <section class="logout-box">
+        <div class="bar"></div>
+        <ul>
+          <li>설정 및 개인정보</li>
+          <li class="logout-btn">로그아웃</li>
+        </ul>
+        <section class="logout-check">
+          <p>로그아웃하시겠어요?</p>
+          <button class="btn1">취소</button>
+          <button class="real-logout">로그아웃</button>
+        </section>
+      </section>
+    </article>
+    <div class="nav-top">
       <a href="#" onClick="history.back()" class="nav-top__btn--goback">
         <img
           src="src/images/icon/icon-arrow-left.png"
@@ -75,7 +99,6 @@
         /></a>
       </div>
     </section>
-
     <div class="container">
       <section class="product">
         <h2 class="product-sale">판매 중인 상품</h2>
@@ -250,6 +273,8 @@
           </li>
         </ul>
       </div>
+              
+
       <!-- tab-menu -->
       <nav class="nav-tab-menu">
         <ul class="nav-tab-menu__list">
@@ -288,6 +313,10 @@
         </ul>
       </nav>
     </section>
+
+
+
+
     <script src="src/js/your-profile.js" type="module"></script>
     <script src="src/js/modal.js"></script>
   </body>

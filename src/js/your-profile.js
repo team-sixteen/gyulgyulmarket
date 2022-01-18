@@ -178,18 +178,19 @@ async function init() {
       const imgparse = item.image ? item.image.split(',') : [''];
       
       return `
-        <li class="post-list-item">
+        <li class="post-list-item" data-id="${item.id}">
           <img
             src="${item.author.image}"
-            class="post-profile-img"
+            class="post-profile-img user-page"
+            data-name="${item.author.accountname}"
           />
           <div>
             <div class="post-profile-text">
-              <strong class="post-writer">${item.author.username}</strong>
-              <span class="post-writer-id">@ ${item.author.accountname}</span>
+              <strong class="post-writer user-page" data-name="${item.author.accountname}">${item.author.username}</strong>
+              <span class="post-writer-id user-page" data-name="${item.author.accountname}">@ ${item.author.accountname}</span>
             </div>
             <p class="post-text">
-            ${item.author.intro}
+            ${item.content}
             </p>
             <!-- <img src="${
               imgparse[0]
@@ -220,7 +221,7 @@ async function init() {
             </div>
             <div class="post-utils">
               <button class="btn-like">
-                <img src="src/images/icon/icon-heart.png" alt="좋아요 수" />
+                <img src="src/images/icon/icon-heart.png" alt="좋아요 수" class="likelike" />
               </button>
               <span class="count-like">${item.heartCount}</span>
               <button class="btn-comment">
@@ -243,6 +244,7 @@ async function init() {
         `;
       })
       .join('');
+      // create li를 해서 innerHTML 을 한다음에 그 li태그에서 query로 button 
 
 
     const imgs = feedjson.post.map((feed) =>
@@ -274,6 +276,27 @@ async function init() {
         }
       })
       .join('');
+
+
+    feedchild.addEventListener('click',(e)=>{
+      // console.log(e.target.parentNode)
+      let parent = e.target.parentNode;
+      if(e.target.classList.contains('user-page')){
+        console.log(e.target.dataset.name)
+        location.href=`./profile.html?${e.target.dataset.name}`
+      } else if (e.target.classList.contains('likelike')){
+        // location.href='좋아요'
+        console.log('좋아요')
+      } else {
+        while(!parent.classList.contains('post-list-item')) {
+          parent = parent.parentNode
+          const data = parent.dataset
+          location.href=`./post.html?${data.id}`
+        }
+
+      }
+    })
+
 
     // if(!!item.image){
     //   albumchild.innerHTML += `
@@ -333,3 +356,34 @@ postBtn.addEventListener('click', function () {
   albumImg.setAttribute('src', 'src/images/icon/icon-post-album-off.png');
   postImg.setAttribute('src', 'src/images/icon/icon-post-list-on.png');
 });
+
+//모달js
+
+const modalLogout = document.querySelector('.modal-logout')
+const logoutCheck = document.querySelector('.logout-check')
+const logoutBtn = document.querySelector('.logout-btn')
+const moreBtn = document.querySelector('.nav-top__btn--more')
+const realLogout = document.querySelector('.real-logout')
+modalLogout.addEventListener('click',(e) => {
+  if(e.target==e.currentTarget){
+    logoutCheck.classList.remove('on')
+    modalLogout.classList.remove('on')
+  }
+})
+moreBtn.addEventListener('click', ()=>{
+  modalLogout.classList.add('on')
+})
+
+logoutBtn.addEventListener('click', () => {
+  logoutCheck.classList.add('on')
+})
+
+realLogout.addEventListener('click',()=>{
+  document.cookie = 'gyulgyul-token'+ '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;'
+  console.log("gggg")
+  location.href='./'
+})
+
+
+
+

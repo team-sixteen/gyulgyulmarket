@@ -29,7 +29,7 @@ class Profile {
         const username = this.$username.value;
         const accountname = this.$accountname.value;
         const intro = this.$target.querySelector('.text-field.intro').value;
-        const image = this.profileImg;
+        const image = BASE_URL + '/' + this.profileImg;
 
         const user = { username, accountname, intro, image };
         const validate = this.validateSubmit(username, accountname);

@@ -67,6 +67,7 @@ async function init() {
       json.profile.followingCount;
     document.querySelector('.user-profile-info').innerText = json.profile.intro;
     document.querySelector('.profile-img').src = json.profile.image;
+   
     //에러 시 추가로 어떻게 할지 정하기 .
     // document.querySelector('.profile-img').innerHTML = (
     //   <img

@@ -60,17 +60,18 @@
 - 게시글 관리 기능(목록, 등록, 삭제, 상세, 신고)
 - 상품 관리 기능(목록, 등록, 삭제, 상세, 수정)
 - 좋아요 및 댓글, 채팅 등 실시간 양방향 소통이 가능한 플랫폼
-- 로그인 url을 요청하여 미가입 혹은 허가되지 않은 사용자 접근 차단
+- 로그인 URL을 요청하여 미가입 혹은 허가되지 않은 사용자 접근 차단
 
 <br>
 
 ## 2. 개발 환경 및 배포 URL
 ### 2.1 개발 환경
 - Web Framework
-  - HTML5
-  - CSS3
-  - JavaScript
-  - Figma
+  - HTML(언어)
+  - CSS3(언어)
+  - JavaScript(언어)
+  - Figma(디자인 툴)
+  - Asana(프로젝트 관리)
 
 - 서비스 배포 환경
   - Github Page
@@ -93,25 +94,27 @@
 ...중략...
 ```
 ### 3.1 개발 일정(WBS)
-* 일정표는 [habitmaker.co.kr](https://habitmaker.co.kr) 에서 작성되었습니다.
-* 관련된 스택 표시는 [dev.habitmaker.co.kr](https://dev.habitmaker.co.kr) 에서 작성되었습니다.
-<img src="habit.jpg" width="30%">
-<img src="blob.png" width="30%">
+* 일정표는 https://app.asana.com/ 에서 작성되었습니다.
+
+<img width="1104" alt="개발일정 보드" src="https://user-images.githubusercontent.com/79084294/150372116-f31479e7-710c-4ad0-b1f2-69261bb7375c.png">
 
 <br>
 
 ## 4. 역할 분담
-- 김다님 : Css 모듈화
+- 김다님 : CSS 모듈화
 - 김정민 : 프로필, 상품 등록, 게시글, 팔로우
 - 김준호 : 프로필, 로그인, 회원가입, 게시글
-- 허대훈 : 프로필, 모달, 스플래쉬
+- 허대훈 : 프로필, 모달, 모듈 리팩토링
 - 황나희 : 프로필, 홈, 검색, 팔로우, 채팅
 
 <br>
 
 ## 5. UI / BM
 - 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
-<img src="ui.png" width="40%">
+
+[index.html]
+
+<img width="483" alt="스크린샷 2022-01-21 오전 12 53 48" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png">
 
 <br>
 
@@ -120,10 +123,6 @@
 
 <br>
 
-## 7. 추가 기능
+## 7. 개발하며 느낀점
 -
 
-<br>
-
-## 8. 개발하며 느낀점
--

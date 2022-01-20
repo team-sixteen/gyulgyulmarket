@@ -51,7 +51,7 @@ async function getProductData() {
     productchild.innerHTML = productData.map((item) => {
     return `
         <li data-id="${item.id}">
-            <img src="${item.itemImage}" alt="" onerror="this.src='src/images/productNone.png';">
+            <img src="${item.itemImage}" alt="" onerror="this.src='src/images/productNone.png';" />
             <p>${item.itemName}</p>
             <em>${item.price}</em>
         </li>

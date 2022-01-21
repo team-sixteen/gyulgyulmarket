@@ -289,8 +289,6 @@ async function init() {
         return;
       }
       let parent = e.target.parentNode;
-      console.log('피드 클리이익');
-      console.log(feedchild);
       if (e.target.classList.contains('user-page')) {
         console.log(e.target.dataset.name);
         location.href = `./profile.html?${e.target.dataset.name}`;

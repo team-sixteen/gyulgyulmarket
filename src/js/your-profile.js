@@ -289,11 +289,15 @@ async function init() {
         // location.href='좋아요'
         console.log('좋아요')
       } else {
-        while(!parent.classList.contains('post-list-item')) {
-          parent = parent.parentNode
-          const data = parent.dataset
-          location.href=`./post.html?${data.id}`
-        }
+        // while(!parent.classList.contains('post-list-item')) {
+        //   parent = parent.parentNode
+        //   const data = parent.dataset
+        //   location.href=`./post.html?${data.id}`
+        // }
+
+        e.target.closest('.post-list-item').dataset
+        location.href=`./post.html?${e.target.closest('.post-list-item').dataset.id}`
+
 
       }
     })

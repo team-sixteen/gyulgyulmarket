@@ -48,6 +48,10 @@ async function getProductData() {
     console.log(productData);
 
     const productchild = document.querySelector('.sell-list');
+    if(!productData.length==0){
+        productchild.classList.add('add')
+    }
+
     productchild.innerHTML = productData.map((item) => {
     return `
         <li data-id="${item.id}">
@@ -261,3 +265,4 @@ realLogout.addEventListener('click',()=>{
   console.log("gggg")
   location.href='./'
 })
+

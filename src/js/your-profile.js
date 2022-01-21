@@ -2,6 +2,7 @@ import Auth from './modules/Auth.js';
 import { BASE_URL, MAX_AGE, TOKEN_KEY, ACCOUNT_NAME } from '../js/constant.js';
 import Slider from './utils/slide.js';
 
+const feedchild = document.querySelector('.post-list');
 /**
  * 공통적으로 사용해야 하는것
  * AUth 클래스
@@ -168,7 +169,7 @@ async function init() {
     console.log(feedjson);
     console.log(feedjson.post);
     console.log('0000');
-    const feedchild = document.querySelector('.post-list');
+    
     const albumchild = document.querySelector('.post-album')
     feedchild.innerHTML = feedjson.post.map((item) => {
       console.log(item)
@@ -279,24 +280,7 @@ async function init() {
       .join('');
 
 
-    feedchild.addEventListener('click',(e)=>{
-      // console.log(e.target.parentNode)
-      let parent = e.target.parentNode;
-      if(e.target.classList.contains('user-page')){
-        console.log(e.target.dataset.name)
-        location.href=`./profile.html?${e.target.dataset.name}`
-      } else if (e.target.classList.contains('likelike')){
-        // location.href='좋아요'
-        console.log('좋아요')
-      } else {
-        while(!parent.classList.contains('post-list-item')) {
-          parent = parent.parentNode
-          const data = parent.dataset
-          location.href=`./post.html?${data.id}`
-        }
 
-      }
-    })
 
 
     // if(!!item.image){
@@ -315,6 +299,24 @@ async function init() {
 }
 
 init();
+feedchild.addEventListener('click',(e)=>{
+  // console.log(e.target.parentNode)
+  let parent = e.target.parentNode;
+  if(e.target.classList.contains('user-page')){
+    console.log(e.target.dataset.name)
+    location.href=`./profile.html?${e.target.dataset.name}`
+  } else if (e.target.classList.contains('likelike')){
+    // location.href='좋아요'
+    console.log('좋아요')
+  } else {
+    while(!parent.classList.contains('post-list-item')) {
+      parent = parent.parentNode
+      const data = parent.dataset
+      location.href=`./post.html?${data.id}`
+    }
+    
+  }
+})
 
 // 팔로우 버튼구현
 const toggleFollow = document.querySelector('.m-btn');

@@ -75,7 +75,7 @@ export default class Slider {
           <img
             src=${img}
             alt=""
-            class="upload-slide-img" onerror="this.parentNode.parentNode.parentNode.style.cssText='height:50px; visibility:hidden;'">
+            class="upload-slide-img" onerror="this.closest('.upload-slide-wrap').style.cssText='height:50px; visibility:hidden;'">
           <button id=${idx} class="upload-slide-img-delete">X</button>
         </li>
       `;
@@ -84,4 +84,3 @@ export default class Slider {
     this.initialize();
   }
 }
-

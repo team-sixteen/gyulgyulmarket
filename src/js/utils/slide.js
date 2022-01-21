@@ -1,7 +1,6 @@
 export default class Slider {
   imgs;
   constructor(container, initImg = []) {
-    console.log(container);
     this.$container = container;
     this.$ul = container.children[0];
     this.imgs = initImg;

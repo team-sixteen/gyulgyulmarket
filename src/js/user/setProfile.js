@@ -10,6 +10,14 @@ class Profile {
 
     this.initEvent();
     this.validateInput();
+    this.setUserProfile(user);
+  }
+
+  setUserProfile(user) {
+    const img = new URL(user.profile.image).pathname.split('/');
+    if(img[1] !== 'null') {
+      document.querySelector('.profile-img').src = user.profile.image;
+    }
   }
 
   initEvent() {

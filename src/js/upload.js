@@ -4,13 +4,18 @@ import Slider from './utils/slide.js';
 
 class Upload {
   imgs = [];
-  constructor($target) {
+  constructor($target, user) {
     this.$target = $target;
     this.$sliderContainer = new Slider(
       $target.querySelector('.upload-slide-wrap'),
     );
     this.close = document.querySelector('.upload-slide');
+    this.setUserProfile(user);
     this.initEvent();
+  }
+
+  setUserProfile(user) {
+    document.querySelector('.upload-userimg').src = user.profile.image;
   }
 
   initEvent() {
@@ -89,6 +94,6 @@ class Upload {
   if (!user.isLogin) {
     window.location.href = './login.html';
   }
-
-  new Upload(document.querySelector('.upload-container'))
+  
+  new Upload(document.querySelector('.upload-container'), user);
 })();

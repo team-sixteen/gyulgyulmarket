@@ -83,15 +83,38 @@
 
 ## 3. 프로젝트 구조와 개발 일정
 ### 3.1 프로젝트 구조
+
 ```bash
-  └─ aaa
-      │  bbb
-      │  bbb
-      │  
-      ├─bbb
-      │  │  bbb.py
-      │  │  bbb.py
-...중략...
+
+gyulgyulmarket
+    ├─ modules
+    ├─ chatroom
+    ├─ chatlist
+    ├─ 404
+    │  
+    ├─ login
+    │       index
+    │       login
+    │       signup
+    │       
+    ├─ profile
+    │       my_profile
+    │       setting_profile
+    │       modification_profile
+    │                            
+    ├─ follow      
+    │       home
+    │       followers
+    │       followings   
+    │                 
+    ├─ post       
+    │       post
+    │       upload
+    │            
+    ├─ product  
+    │       add_product
+    │       mod_product
+    └─      list_product                                                                      
 ```
 
 ### 3.1 개발 일정(WBS)

@@ -133,34 +133,34 @@
 <table>
     <tr height="160px">
         <td align="center" width="160px">
-            <a href="https://github.com/dahhnym"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150641525-e57ed10a-5aeb-4870-a1f5-6a60f9b85d5f.png"/>
+            <br />
+            <strong>홈</strong> <br />
+        </td>
+        <td align="center" width="160px">
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150641581-d685f285-f78e-4066-b93f-989345a51471.png"/>
             <br />
             <strong>회원가입</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/skgml0"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150641600-1666f4ca-05d5-44b3-ac68-77ac416dbaa7.png"/>
             <br />
             <strong>로그인</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/junho0956"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150641607-c2aae996-bfcb-4b92-8286-31dcd3382083.png"/>
             <br />
             <strong>프로필 수정</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/BigHuni"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651331-4927586c-0764-499c-aaf0-ac936ef984e4.png"/>
             <br />
             <strong>개인 프로필 정보</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/skgml0"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651345-cd5d93f1-48ce-4331-91a0-c6ab7ecd96e6.png"/>
             <br />
             <strong>유저 검색</strong> <br />
-        </td>
-        <td align="center" width="160px">
-            <a href="https://github.com/skgml0"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
-            <br />
-            <strong>계정 게시글 목록</strong> <br />
         </td>
     </tr>
 </table>
@@ -168,27 +168,32 @@
 <table>
     <tr height="160px">
         <td align="center" width="160px">
-            <a href="https://github.com/dahhnym"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651354-4f035bad-2e05-440a-aaa3-5813378e879a.png"/>
+            <br />
+            <strong>계정 게시글 목록</strong> <br />
+        </td>
+        <td align="center" width="160px">
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651362-998b0c95-b553-4f1d-a686-e466a6c56efb.png"/>
             <br />
             <strong>게시물 작성</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/skgml0"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651374-6361b37a-6836-4496-b53b-86dfbf4ba233.png"/>
             <br />
             <strong>게시글 상세 정보</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/junho0956"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651381-c02c3751-3d3c-44f5-bbfa-1315077f4601.png"/>
             <br />
             <strong>댓글 작성</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/BigHuni"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651397-d572c1af-267c-461c-bae0-65b1d8dd7aa7.png"/>
             <br />
             <strong>상품 정보</strong> <br />
         </td>
         <td align="center" width="160px">
-            <a href="https://github.com/skgml0"><img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150374094-c0b2917e-82fb-4c19-8007-cc2a54db2ab3.png"/></a>
+            <img height="160px" width="130px" src="https://user-images.githubusercontent.com/79084294/150651406-fdde633f-de38-4752-b7d5-58aa2f03ca6b.png"/>
             <br />
             <strong>상품 리스트</strong> <br />
         </td>
@@ -208,7 +213,7 @@
 |프로필 수정|PUT|`/user`|200|
 |개인 프로필 정보|GET|`/profile/:accountname`|200|
 |유저 검색|GET|`/user/searchuser/?keyword=keyword`|200|
-|계정 게시글 목록|GET|`/post/:accountname/userpost`|200|
+|계정 목록|GET|`/post/:accountname/userpost`|200|
 |게시물 작성|POST|`/post`|201|
 |게시글 상세 정보|GET|`/post/:post_id`|200|
 |댓글 작성|POST|`/post/:post_id/comments`|201|

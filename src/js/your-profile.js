@@ -138,6 +138,7 @@ async function init() {
             <img
               src='${item.itemImage}'
               alt="상품: 감귤 파치"
+              onerror="this.src='src/images/productNone.png';"
             />
             <p class="product-txt sl-elipsis">${item.itemName}</p>
             <p class="product-price">${item.price}</p>

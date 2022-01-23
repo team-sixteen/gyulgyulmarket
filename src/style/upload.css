@@ -1,8 +1,7 @@
 html,
 body {
-  width: 100%;
+  max-width: 440px;
   margin: 0 auto;
-  /* height: 100%; */
 }
 
 .nav-top {
@@ -10,7 +9,7 @@ body {
   top: 0;
   background-color: white;
   z-index: 10;
-  max-width: 100%;
+  max-width: 440px;
 }
 
 .nav-top__btn--goback {
@@ -37,6 +36,7 @@ body {
   position: absolute;
   width: 42px;
   height: 42px;
+  border-radius: 50%;
 }
 
 .upload-contents {

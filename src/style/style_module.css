@@ -79,6 +79,7 @@ body {
   height: 60px;
   background-color: #fff;
   border-top: solid 1px #dbdbdb;
+  z-index: 100;
 }
 .nav-tab-menu .nav-tab-menu__item {
   display: flex;

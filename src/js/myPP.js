@@ -11,7 +11,7 @@ const urlQuery = window.location.search.split('?')[1];
 console.log(urlQuery);
 console.log('나와');
 
-const myAccountName = localStorage.getItem('accountname')
+const myAccountName = localStorage.getItem('accountname');
 
 async function init() {
   // getProfile 의 기능
@@ -69,7 +69,7 @@ async function init() {
       json.profile.followingCount;
     document.querySelector('.user-profile-info').innerText = json.profile.intro;
     document.querySelector('.profile-img').src = json.profile.image;
-   
+
     //에러 시 추가로 어떻게 할지 정하기 .
     // document.querySelector('.profile-img').innerHTML = (
     //   <img
@@ -139,6 +139,7 @@ async function init() {
           <a href="#" >
             <img
               src='${item.itemImage}'
+              onerror="this.src='src/images/productNone.png';"
               alt="상품: 감귤 파치"
             />
             <p class="product-txt sl-elipsis">${item.itemName}</p>
@@ -171,16 +172,17 @@ async function init() {
     console.log(feedjson.post);
     console.log('0000');
     const feedchild = document.querySelector('.post-list');
-    const albumchild = document.querySelector('.post-album')
-    feedchild.innerHTML = feedjson.post.map((item) => {
-      console.log(item)
-      let date = item.createdAt.split('-');
-      let d_year = date[0];
-      let d_month = date[1];
-      let d_day = date[2].slice(0, 2);
-      const imgparse = item.image ? item.image.split(',') : [''];
-      
-      return `
+    const albumchild = document.querySelector('.post-album');
+    feedchild.innerHTML = feedjson.post
+      .map((item) => {
+        console.log(item);
+        let date = item.createdAt.split('-');
+        let d_year = date[0];
+        let d_month = date[1];
+        let d_day = date[2].slice(0, 2);
+        const imgparse = item.image ? item.image.split(',') : [''];
+
+        return `
         <li class="post-list-item" data-id="${item.id}">
           <img
             src="${item.author.image}"
@@ -189,8 +191,12 @@ async function init() {
           />
           <div>
             <div class="post-profile-text">
-              <strong class="post-writer user-page" data-name="${item.author.accountname}">${item.author.username}</strong>
-              <span class="post-writer-id user-page" data-name="${item.author.accountname}">@ ${item.author.accountname}</span>
+              <strong class="post-writer user-page" data-name="${
+                item.author.accountname
+              }">${item.author.username}</strong>
+              <span class="post-writer-id user-page" data-name="${
+                item.author.accountname
+              }">@ ${item.author.accountname}</span>
             </div>
             <p class="post-text">
             ${item.content}
@@ -249,12 +255,11 @@ async function init() {
         `;
       })
       .join('');
-      // create li를 해서 innerHTML 을 한다음에 그 li태그에서 query로 button 
-
+    // create li를 해서 innerHTML 을 한다음에 그 li태그에서 query로 button
 
     const imgs = feedjson.post.map((feed) =>
       feed.image ? feed.image.split(',') : [''],
-    )
+    );
 
     document.querySelectorAll('.upload-slide-wrap').forEach((feed, idx) => {
       new Slider(feed, imgs[idx]);
@@ -282,54 +287,49 @@ async function init() {
       })
       .join('');
 
-
-    feedchild.addEventListener('click',(e)=>{
+    feedchild.addEventListener('click', (e) => {
       // console.log(e.target.parentNode)
       let parent = e.target.parentNode;
-      if(e.target.classList.contains('user-page')){
-        console.log(e.target.dataset.name)
-        location.href=`./profile.html?${e.target.dataset.name}`
-      } else if (e.target.classList.contains('likelike')){
+      if (e.target.classList.contains('user-page')) {
+        console.log(e.target.dataset.name);
+        location.href = `./profile.html?${e.target.dataset.name}`;
+      } else if (e.target.classList.contains('likelike')) {
         // location.href='좋아요'
-        console.log('좋아요')
+        console.log('좋아요');
       } else if (e.target.classList.contains('btn-post-menu')) {
-        const data = e.target.dataset.id
-        modalDel.classList.add('on')       
-        realDel.addEventListener('click',()=>{
-            async function postDelete() {
-                const res = await fetch(`http://146.56.183.55:5050/post/${data}`,{
-                    method:'delete',
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${Auth.getToken()}`,
-                    }
-                })
-                const json = await res.json()
-                console.log(json)
-                
-                // initProfile()
-                feed()    
-            }
-            postDelete()
+        const data = e.target.dataset.id;
+        modalDel.classList.add('on');
+        realDel.addEventListener('click', () => {
+          async function postDelete() {
+            const res = await fetch(`http://146.56.183.55:5050/post/${data}`, {
+              method: 'delete',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${Auth.getToken()}`,
+              },
+            });
+            const json = await res.json();
+            console.log(json);
 
-            delCheck.classList.remove('on')
-            modalDel.classList.remove('on')
-        
-        })
+            // initProfile()
+            feed();
+          }
+          postDelete();
+
+          delCheck.classList.remove('on');
+          modalDel.classList.remove('on');
+        });
       } else {
         // while(!parent.classList.contains('post-list-item')) {
         //   parent = parent.parentNode
         //   const data = parent.dataset
         //   location.href=`./post.html?${data.id}`
         // }
-        
-        e.target.closest('.post-list-item').dataset
+
+        e.target.closest('.post-list-item').dataset;
         // location.href=`./post.html?${e.target.closest('.post-list-item').dataset.id}`
-
-
       }
-    })
-
+    });
 
     // if(!!item.image){
     //   albumchild.innerHTML += `
@@ -347,8 +347,6 @@ async function init() {
 }
 
 init();
-
-
 
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
@@ -382,55 +380,45 @@ postBtn.addEventListener('click', function () {
 });
 
 //모달js
-const modalDel = document.querySelector('.modal-del')
-const delCheck = document.querySelector('.del-check')
-const delBtn = document.querySelector('.del-btn')
-const realDel = document.querySelector('.real-del')
-modalDel.addEventListener('click',(e) => {
-  if(e.target==e.currentTarget){
-    delCheck.classList.remove('on')
-    modalDel.classList.remove('on')
+const modalDel = document.querySelector('.modal-del');
+const delCheck = document.querySelector('.del-check');
+const delBtn = document.querySelector('.del-btn');
+const realDel = document.querySelector('.real-del');
+modalDel.addEventListener('click', (e) => {
+  if (e.target == e.currentTarget) {
+    delCheck.classList.remove('on');
+    modalDel.classList.remove('on');
   }
-})
-
+});
 
 delBtn.addEventListener('click', () => {
-  delCheck.classList.add('on')
-})
-
-
-
-
-
-
+  delCheck.classList.add('on');
+});
 
 //로그아웃
-const modalLogout = document.querySelector('.modal-logout')
-const logoutCheck = document.querySelector('.logout-check')
-const logoutBtn = document.querySelector('.logout-btn')
-const moreBtn = document.querySelector('.nav-top__btn--more')
-const realLogout = document.querySelector('.real-logout')
-modalLogout.addEventListener('click',(e) => {
-  if(e.target==e.currentTarget){
-    logoutCheck.classList.remove('on')
-    modalLogout.classList.remove('on')
+const modalLogout = document.querySelector('.modal-logout');
+const logoutCheck = document.querySelector('.logout-check');
+const logoutBtn = document.querySelector('.logout-btn');
+const moreBtn = document.querySelector('.nav-top__btn--more');
+const realLogout = document.querySelector('.real-logout');
+modalLogout.addEventListener('click', (e) => {
+  if (e.target == e.currentTarget) {
+    logoutCheck.classList.remove('on');
+    modalLogout.classList.remove('on');
   }
-})
-moreBtn.addEventListener('click', ()=>{
-    console.log("asdasdsadsadsa")
-  modalLogout.classList.add('on')
-})
+});
+moreBtn.addEventListener('click', () => {
+  console.log('asdasdsadsadsa');
+  modalLogout.classList.add('on');
+});
 
 logoutBtn.addEventListener('click', () => {
-  logoutCheck.classList.add('on')
-})
+  logoutCheck.classList.add('on');
+});
 
-realLogout.addEventListener('click',()=>{
-  document.cookie = 'gyulgyul-token'+ '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;'
-  console.log("gggg")
-  location.href='./'
-})
-
-
-
-
+realLogout.addEventListener('click', () => {
+  document.cookie =
+    'gyulgyul-token' + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';
+  console.log('gggg');
+  location.href = './';
+});

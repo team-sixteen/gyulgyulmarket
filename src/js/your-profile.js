@@ -282,9 +282,13 @@ async function init() {
         }
       })
       .join('');
-
+    console.log(feedchild);
+    const feed_img = document.querySelectorAll('.upload-slide-wrap');
+    console.log(feed_img);
     feedchild.addEventListener('click', (e) => {
-      // console.log(e.target.parentNode)
+      if (e.target.closest('.upload-slide-wrap')) {
+        return;
+      }
       let parent = e.target.parentNode;
       if (e.target.classList.contains('user-page')) {
         console.log(e.target.dataset.name);
@@ -293,16 +297,11 @@ async function init() {
         // location.href='좋아요'
         console.log('좋아요');
       } else {
-        // while(!parent.classList.contains('post-list-item')) {
-        //   parent = parent.parentNode
-        //   const data = parent.dataset
-        //   location.href=`./post.html?${data.id}`
-        // }
-
-        e.target.closest('.post-list-item').dataset;
-        location.href = `./post.html?${
-          e.target.closest('.post-list-item').dataset.id
-        }`;
+        while (!parent.classList.contains('post-list-item')) {
+          parent = parent.parentNode;
+          const data = parent.dataset;
+          location.href = `./post.html?${data.id}`;
+        }
       }
     });
 

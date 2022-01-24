@@ -475,3 +475,14 @@ body {
   background: white;
   margin-right: 5px;
 }
+
+/* 마이프로필 */
+.user-contact a {
+  color: #767676;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 26px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  margin-right: 12px;
+}

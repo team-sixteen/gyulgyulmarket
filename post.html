@@ -7,8 +7,10 @@
     <title>게시글</title>
     <link rel="stylesheet" href="src/style/reset.css" />
     <!-- <link rel="stylesheet" href="src/style/style_module.css"> -->
-    <link rel="stylesheet" href="src/style/post.css" />
     <link rel="stylesheet" href="src/style/style_module.css">
+    <link rel="stylesheet" href="src/style/post.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
   <body>
     <div class="nav-top">
@@ -61,20 +63,28 @@
             이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
             풍부하게 뛰노는 인생의 힘있다.
           </section>
-          <!-- TODO: slide -->
-          <section class="post-img-slide">
+          <!-- <section class="post-img-slide">
             <ul class="post-imgs">
               <li class="post-img">
                 <img src="src/images/chat-exapmle.png" alt="" />
               </li>
             </ul>
-            <!-- TODO: slide points -->
             <ul class="post-img-slide-pointer">
               <li>.</li>
               <li>.</li>
               <li>.</li>
             </ul>
-          </section>
+          </section> -->
+          <div class="upload-slide-wrap">
+            <ul class="upload-slide"></ul>
+            <div class="slide-arrow-left">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slide-arrow-right">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+            <ul class="slide-points"></ul>
+          </div>
           <section class="post-active">
             <div class="post-active-like">
               <!-- TODO: active 시 heart-fill로 변경 -->
@@ -132,7 +142,7 @@
     </main>
 
     <div class="module-inp-cmmt">
-      <img src="src/images/profile-img/Ellipse 6.png" alt="내 프로필 이미지" />
+      <img src="src/images/s-basic-profile-img.png" alt="내 프로필 이미지" />
 
       <input
         type="text"

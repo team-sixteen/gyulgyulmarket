@@ -20,7 +20,22 @@
     <link rel="stylesheet" href="src/style/modal.css">
   </head>
 
+
   <body>
+    <article class="modal-del">
+      <section class="del-box">
+        <div class="bar"></div>
+        <ul>
+          <li>수정</li>
+          <li class="del-btn">삭제</li>
+        </ul>
+        <section class="del-check">
+          <p>게시글을 삭제할까요?</p>
+          <button class="btn1">취소</button>
+          <button class="real-del">삭제</button>
+        </section>
+      </section>
+  </article>
     <header class="nav-top">
     <article class="modal-logout">
       <section class="logout-box">
@@ -83,21 +98,13 @@
       </div>
 
       <div class="user-contact">
-        <a href="chatroom.html">
-          <img
-            src="src/images/icon/icon-message-circle.png"
-            alt="현재 프로필 사용자에게 메시지 전송하기"
-            class="contact-icon"
-        /></a>
 
-        <button type="button" class="m-btn">팔로우</button>
 
-        <a href="#">
-          <img
-            src="src/images/icon/icon-share.png"
-            alt="현재 프로필을 SNS에 공유하기"
-            class="contact-icon"
-        /></a>
+
+        <a href="./profile_modification.html">프로필 수정</a>
+
+        <a href="./add_product.html">상품 등록</a>
+  
       </div>
     </section>
     <div class="container">
@@ -318,7 +325,7 @@
 
 
 
-    <script src="src/js/your-profile.js" type="module"></script>
+    <script src="src/js/myPP.js" type="module"></script>
     <script src="src/js/modal.js"></script>
   </body>
 </html>

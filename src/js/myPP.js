@@ -11,6 +11,8 @@ const urlQuery = window.location.search.split('?')[1];
 console.log(urlQuery);
 console.log('나와');
 
+const myAccountName = localStorage.getItem('accountname')
+
 async function init() {
   // getProfile 의 기능
   // 토큰과 accountname을 파악해서
@@ -47,7 +49,7 @@ async function init() {
   // );
   // 프로필 설정
   (async function profile() {
-    const res = await fetch(`${BASE_URL}/profile/${urlQuery}`, {
+    const res = await fetch(`${BASE_URL}/profile/${myAccountName}`, {
       method: 'get',
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`,
@@ -85,7 +87,7 @@ async function init() {
   let productSkip = 0;
   async function getProductData() {
     const data = await fetch(
-      `${BASE_URL}/product/${urlQuery}/?limit=${productLimit}&skip=${productSkip}`,
+      `${BASE_URL}/product/${myAccountName}/?limit=${productLimit}&skip=${productSkip}`,
       {
         method: 'get',
         headers: {
@@ -157,7 +159,7 @@ async function init() {
   //게시글
 
   async function feed() {
-    const res = await fetch(`${BASE_URL}/post/${urlQuery}/userpost`, {
+    const res = await fetch(`${BASE_URL}/post/${myAccountName}/userpost`, {
       method: 'get',
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`,
@@ -235,10 +237,12 @@ async function init() {
             </div>
             <span class="post-date">${d_year}년 ${d_month}월 ${d_day}일</span>
           </div>
-          <button class="btn-post-menu">
+          <button class="btn-post-menu" data-id="${item.id}">
             <img
               src="src/images/icon/s-icon-more-vertical.png"
               alt="게시글 메뉴 열기"
+              class="btn-post-menu"
+              data-id="${item.id}"
             />
           </button>
         </li>
@@ -288,15 +292,39 @@ async function init() {
       } else if (e.target.classList.contains('likelike')){
         // location.href='좋아요'
         console.log('좋아요')
+      } else if (e.target.classList.contains('btn-post-menu')) {
+        const data = e.target.dataset.id
+        modalDel.classList.add('on')       
+        realDel.addEventListener('click',()=>{
+            async function postDelete() {
+                const res = await fetch(`http://146.56.183.55:5050/post/${data}`,{
+                    method:'delete',
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${Auth.getToken()}`,
+                    }
+                })
+                const json = await res.json()
+                console.log(json)
+                
+                // initProfile()
+                feed()    
+            }
+            postDelete()
+
+            delCheck.classList.remove('on')
+            modalDel.classList.remove('on')
+        
+        })
       } else {
         // while(!parent.classList.contains('post-list-item')) {
         //   parent = parent.parentNode
         //   const data = parent.dataset
         //   location.href=`./post.html?${data.id}`
         // }
-
+        
         e.target.closest('.post-list-item').dataset
-        location.href=`./post.html?${e.target.closest('.post-list-item').dataset.id}`
+        // location.href=`./post.html?${e.target.closest('.post-list-item').dataset.id}`
 
 
       }
@@ -320,17 +348,8 @@ async function init() {
 
 init();
 
-// 팔로우 버튼구현
-const toggleFollow = document.querySelector('.m-btn');
-console.log(toggleFollow);
-toggleFollow.addEventListener('click', function () {
-  toggleFollow.classList.toggle('unfollow-btn');
-  if (toggleFollow.classList.contains('unfollow-btn')) {
-    toggleFollow.innerText = '언팔로우';
-  } else {
-    toggleFollow.innerText = '팔로우';
-  }
-});
+
+
 // followers 리스트 이동
 const followersBtn = document.querySelector('.followers-wrap');
 followersBtn.addEventListener('click', function () {
@@ -363,7 +382,29 @@ postBtn.addEventListener('click', function () {
 });
 
 //모달js
+const modalDel = document.querySelector('.modal-del')
+const delCheck = document.querySelector('.del-check')
+const delBtn = document.querySelector('.del-btn')
+const realDel = document.querySelector('.real-del')
+modalDel.addEventListener('click',(e) => {
+  if(e.target==e.currentTarget){
+    delCheck.classList.remove('on')
+    modalDel.classList.remove('on')
+  }
+})
 
+
+delBtn.addEventListener('click', () => {
+  delCheck.classList.add('on')
+})
+
+
+
+
+
+
+
+//로그아웃
 const modalLogout = document.querySelector('.modal-logout')
 const logoutCheck = document.querySelector('.logout-check')
 const logoutBtn = document.querySelector('.logout-btn')
@@ -376,6 +417,7 @@ modalLogout.addEventListener('click',(e) => {
   }
 })
 moreBtn.addEventListener('click', ()=>{
+    console.log("asdasdsadsadsa")
   modalLogout.classList.add('on')
 })
 

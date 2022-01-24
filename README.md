@@ -6,7 +6,10 @@
 상품등록 뿐만이 아닌 글과 사진과 함께 게시물을 작성하여 자신의 일상을 공유할 수도 있습니다.<br>
 다른 귤귤마켓 유저들을 팔로우하고 소식을 홈피드에서 확인해보세요. 다른 사용자와 메시지를 주고 받을 수 있습니다.<br>
 피드를 구경하다가 마음에 드는 게시물을 발견했다면 좋아요를 누를 수 있고 댓글을 남기거나 공유를 할 수도 있습니다.
-#### 프로젝트 기간 : 2022-01-03 ~ 2022-01-19
+
+#### 
+- 프로젝트 기간 : 2022.01.03 ~ 2022.01.19
+
 ### 🔸 팀원 
 <table>
     <tr height="160px">
@@ -14,31 +17,31 @@
             <a href="https://github.com/dahhnym"><img height="130px" width="130px" src="https://github.com/dahhnym.png"/></a>
             <br />
             <strong>김다님</strong> <br />
-            <strong>2022-01-03 ~ 07</strong>
+            <strong>2022.01.03 ~ 07</strong>
         </td>
         <td align="center" width="160px">
             <a href="https://github.com/skgml0"><img height="130px" width="130px" src="https://github.com/jma1020.png"/></a>
             <br />
             <strong>김정민</strong> <br />
-            <strong>2022-01-09 ~ 19</strong>
+            <strong>2022.01.09 ~ 19</strong>
         </td>
         <td align="center" width="160px">
             <a href="https://github.com/junho0956"><img height="130px" width="130px" src="https://github.com/junho0956.png"/></a>
             <br />
             <strong>김준호</strong> <br />
-            <strong>2022-01-03 ~ 19</strong>
+            <strong>2022.01.03 ~ 19</strong>
         </td>
         <td align="center" width="160px">
             <a href="https://github.com/BigHuni"><img height="130px" width="130px" src="https://github.com/BigHuni.png"/></a>
             <br />
             <strong>허대훈</strong> <br />
-            <strong>2022-01-03 ~ 19</strong>
+            <strong>2022.01.03 ~ 19</strong>
         </td>
         <td align="center" width="160px">
             <a href="https://github.com/skgml0"><img height="130px" width="130px" src="https://github.com/skgml0.png"/></a>
             <br />
             <strong>황나희</strong> <br />
-            <strong>2022-01-03 ~ 19</strong>
+            <strong>2022.01.03 ~ 19</strong>
         </td>
     </tr>
 </table>
@@ -51,7 +54,7 @@
 - 상품을 등록하여 홍보 및 공유할 수 있는 전자상거래 서비스 플랫폼
 - 판매 목적의 본 취지를 달성할 뿐만 아니라 웹상에서 인적 네트워크를 형성할 수 있는 SNS 플랫폼
 - 판매자와 거래자 간의 지속적인 거래 및 소통으로 신뢰도를 쌓아 믿고 거래할 수 있는 플랫폼 
-- 기존 타사 중고거래 플랫폼과 역할이 겹치지 않는 차별성을 둘 수 있는 상호 보완적인 플랫폼
+- 독창적인 UI, 디자인 요소를 넣어 역동적인 분위기를 고취시키고, 광고 배너 등의 활용을 통해 비즈니스 모델 형성이 가능한 플랫폼
 
 ### 1.2 기능
 - 판매 관리가 가능한 플랫폼(귤귤마켓 API 활용)
@@ -118,26 +121,20 @@ gyulgyulmarket
 ```
 
 ### 3.1 개발 일정(WBS)
+### 🔸 일정표
+
 * 일정표는 https://app.asana.com/ 에서 작성되었습니다.
 
 <img width="1104" alt="개발일정 보드" src="https://user-images.githubusercontent.com/79084294/150372116-f31479e7-710c-4ad0-b1f2-69261bb7375c.png">
 
-- 컴포넌트 단위로 스타일링 관리에 용이하기 때문에 초기 CSS 모듈화 작업부터 실시
+### 🔸 체크리스트
 
-- 작업 동시 진행(초기)
-    - 홈 - 검색
-    - 로그인 - 회원가입
-    - 프로필
-
-- 작업 동시 진행(중기 ~ 종결)
-    - 게시글 - 상품등록
-    - 채팅
-    - 스플래시
-
-- 리팩토링
-    - 불필요한 코드 삭제 & 수정
-    - 적절한 메서드 사용
-    - 모듈 및 클래스
+|  <center> Term </center> | <center> 수행 여부 </center> | 수행 내용 |
+| :------------: | :-------------: | ------------------ |
+| 01.03 ~ 07 | ✅  | CSS 모듈화 작업 및 로그인 & 회원가입 |
+| 01.08 ~ 10 | ✅  | 홈, 검색, 프로필, 채팅, 스플래시 |
+| 01.11 ~ 14 | ✅  | 불필요한 코드 수정 및 적절한 메서드 사용 |
+| 01.15 ~ 19 | ✅  | 모듈 및 클래스 등의 리팩토링 마무리 |
 
 <br>
 
@@ -151,7 +148,7 @@ gyulgyulmarket
 <br>
 
 ## 5. UI
-- 기능단위별 웹 페이지 UI
+- 기능 단위별 웹 페이지 UI
 
 <table>
     <tr height="160px">
@@ -247,4 +244,3 @@ gyulgyulmarket
 
 ## 7. 개발하며 느낀점
 - 
-

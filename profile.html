@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>your profile</title>
+    <link rel="stylesheet" href="src/style/reset.css" />
+    <link rel="stylesheet" href="src/style/profile.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
+    <link rel="stylesheet" href="src/style/common.css" />
+
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style/modal.css">
+  </head>
+
+  <body>
+    <header class="nav-top">
+    <article class="modal-logout">
+      <section class="logout-box">
+        <div class="bar"></div>
+        <ul>
+          <li>설정 및 개인정보</li>
+          <li class="logout-btn">로그아웃</li>
+        </ul>
+        <section class="logout-check">
+          <p>로그아웃하시겠어요?</p>
+          <button class="btn1">취소</button>
+          <button class="real-logout">로그아웃</button>
+        </section>
+      </section>
+    </article>
+    <div class="nav-top">
+      <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+        <img
+          src="src/images/icon/icon-arrow-left.png"
+          alt="뒤로 가기"
+          class="nav-top__img-icon-arrow-left"
+        />
+      </a>
+
+      <a href="#" class="nav-top__btn--more">
+        <img
+          src="src/images/icon/icon-more-vertical.png"
+          alt="메뉴 더보기"
+          class="nav-top__img-icon-more"
+        />
+      </a>
+    </header>
+
+    <section class="user-info">
+      <div class="user-follow-number">
+        <dl class="followers-wrap">
+          <dt class="followers-num"></dt>
+          <dd clsss="followers-txt">followers</dd>
+        </dl>
+
+        <img
+          alt="사용자 프로필 이미지"
+          class="profile-img" 
+          onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
+        />
+
+        <dl class="followings-wrap">
+          <dt class="followings-num"></dt>
+          <dd clsss="followings-txt">followings</dd>
+        </dl>
+      </div>
+
+      <div class="user-profile">
+        <h1 class="user-profile-name"></h1>
+        <p class="user-profile-id"></p>
+        <p class="user-profile-info">
+        
+        </p>
+      </div>
+
+      <div class="user-contact">
+        <a href="chatroom.html">
+          <img
+            src="src/images/icon/icon-message-circle.png"
+            alt="현재 프로필 사용자에게 메시지 전송하기"
+            class="contact-icon"
+        /></a>
+
+        <button type="button" class="m-btn">팔로우</button>
+
+        <a href="#">
+          <img
+            src="src/images/icon/icon-share.png"
+            alt="현재 프로필을 SNS에 공유하기"
+            class="contact-icon"
+        /></a>
+      </div>
+    </section>
+    <div class="container">
+      <section class="product">
+        <h2 class="product-sale">판매 중인 상품</h2>
+        <ul class="product-list">
+        
+        </ul>
+      </section>
+    </div>
+
+    <section class="container-feed">
+      <div class="product-menu">
+        <button class="product-view">
+          <img
+            src="src/images/icon/icon-post-list-on.png"
+            alt="글 리스트 형식으로 보기"
+          />
+        </button>
+
+        <button class="product-album">
+          <img
+            src="src/images/icon/icon-post-album-off.png"
+            alt="글 앨범 형식으로 보기"
+          />
+        </button>
+      </div>
+
+      <ul class="post-list">
+        <!-- <li class="post-list-item">
+          <img
+            src="src/images/s-basic-profile-img.png"
+            class="post-profile-img"
+          /> -->
+
+          <!-- post-modal -->
+          <!-- <div class="post-modal-hidden">
+            <div class="modal__background">
+              <div class="post-modal">
+                <ul class="post-modal__wrapper">
+                    <li class="post-modal-close">X</li>
+                    <li class="post-modal__choice">
+                        <button type="button" class="post-modal__btn-delete">삭제</button>
+                    </li>
+                    <li class="post-modal__choice">
+                        <button type="button" class="post-modal__btn-fix">수정</button>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button type='button' class="btn-post-menu">
+            <img
+              src="src/images/icon/s-icon-more-vertical.png"
+              alt="게시글 메뉴 열기"
+            />
+          </button>
+        </li> -->
+      </ul>
+
+      <div class="album-wrap hide">
+        <ul class="post-album">
+        </ul>
+      </div>
+              
+
+      <!-- tab-menu -->
+      <nav class="nav-tab-menu">
+        <ul class="nav-tab-menu__list">
+          <li class="nav-tab-menu__item">
+            <a
+              href="home.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="chatroom.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__chat"
+            >
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="upload.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__post"
+            >
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="myPP.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__profile"
+            >
+              <p class="nav-tab-menu__txt">프로필</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+
+
+
+    <script src="src/js/your-profile.js" type="module"></script>
+    <script src="src/js/modal.js"></script>
+  </body>
+</html>

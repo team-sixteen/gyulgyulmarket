@@ -1,0 +1,11 @@
+.ms-btn:active {
+  opacity: 0.5;
+}
+
+.profile-setting-wrap {
+  justify-content: flex-start;
+}
+
+.nav-top__btn--goback {
+  cursor: pointer;
+}

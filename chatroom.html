@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatRoom</title>
+    <link rel="stylesheet" href="../src/style/reset.css" />
+    <link rel="stylesheet" href="src/style/chatRoom.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
+  </head>
+  <body>
+    <h1 class="hide-text">채팅방 화면</h1>
+
+    <header>
+      <!-- top-basic-nav -->
+      <header class="nav-top">
+        <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+          <img
+            src="./src/images/icon/icon-arrow-left.png"
+            alt="뒤로 가기"
+            class="nav-top__img-icon-arrow-left"
+          />
+          <span class="other-name">애월읍 위니브 감귤농장</span>
+        </a>
+
+        <a href="#" class="nav-top__btn--more"
+          ><img
+            src="./src/images/icon/icon-more-vertical.png"
+            alt="메뉴 더보기"
+            class="nav-top__img-icon-more"
+        /></a>
+      </header>
+    </header>
+    <main>
+      <div class="otherSend-wrap">
+        <img
+          src="src/images/s-basic-profile-img.png"
+          alt="상대방 프로필"
+          class="other-img"
+        />
+        <div class="other-text-wrap">
+          <p class="other-chat-text">
+            옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다.
+            이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는
+            풍부하게 뛰노는 인생의 힘있다.
+          </p>
+          <small class="other-text-time">12:39</small>
+        </div>
+      </div>
+
+      <div class="selfSend-wrap">
+        <p class="self-chat-text">네 말씀하세요.</p>
+        <small class="self-text-time">12:50</small>
+      </div>
+    </main>
+    <footer>
+      <!-- comment -->
+      <div class="module-inp-cmmt">
+        <img
+          src="src/images/upload-file.png"
+          alt="내 프로필 이미지"
+          class="img-upload"
+        />
+        <fieldset class="module-inp-cmmt__form">
+          <label for="inpCmmt"></label>
+          <input
+            type="text"
+            id="inpCmmt"
+            placeholder="메시지 입력하기..."
+            class="module-inp-cmmt__inp"
+          />
+          <button type="submit" class="module-inp-cmmt__btn-upload">
+            전송
+          </button>
+        </fieldset>
+      </div>
+    </footer>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/chatRoom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>귤귤마켓</title>
+    <link rel="stylesheet" href="src/style/reset.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
+    <link rel="stylesheet" href="src/style/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="home-container">
+      <header class="nav-top main-nav search">
+        <span class="nav-top__txt-home-feed">귤귤마켓 피드</span>
+        <img src="src/images/icon/icon-search.png" alt="계정 검색하기" />
+      </header>
+      <!-- 계정검색 -->
+      <form class="nav-top search-nav hide">
+        <a
+          href="#"
+          onClick="location.reload()"
+          class="nav-top__btn--goback__search"
+          ><img src="src/images/icon/icon-arrow-left.png" alt="검색 취소"
+        /></a>
+        <input
+          type="text"
+          maxlength="10"
+          class="nav-top__inp-sch"
+          id="inpSch"
+          placeholder="계정 검색"
+        />
+      </form>
+
+      <div class="homefeed-list-wrap">
+        <ul class="home-list"></ul>
+      </div>
+
+      <div class="cont-user-search">
+        <ul class="item-user-search__list"></ul>
+      </div>
+
+      <section class="cont-user-follow">
+        <div class="cont-user-follow__wrapper">
+          <img src="src/images/symbol-logo-gray.png" alt="" />
+          <h2 class="cont-user-follow__txt">유저를 검색해 팔로우 해보세요!</h2>
+          <button type="button" class="m-btn search">검색하기</button>
+        </div>
+      </section>
+
+      <section class="cont-home-feed"></section>
+      <nav class="nav-tab-menu">
+        <ul class="nav-tab-menu__list">
+          <li class="nav-tab-menu__item">
+            <a
+              href="home.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="chatroom.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__chat"
+            >
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="upload.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__post"
+            >
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="myPP.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__profile"
+            >
+              <p class="nav-tab-menu__txt">프로필</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="src/js/home.js" type="module"></script>
+  </body>
+</html>

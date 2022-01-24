@@ -1,0 +1,109 @@
+html,
+body {
+  max-width: 440px;
+  height: 100%;
+  font-size: 10px;
+  margin: 0 auto;
+}
+
+.profile-setting-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.profile-setting-wrap h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+}
+.explain-profile {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #767676;
+}
+.profile-img-wrap {
+  width: 110px;
+  margin-bottom: 15px;
+  cursor: auto;
+  position: relative;
+}
+
+.profile-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.upload-img-btn {
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.upload-img-btn img {
+  height: 100%;
+}
+
+#upload-img {
+  display: none;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  min-width: 350px;
+  max-width: 500px;
+  padding: 20px 0;
+  align-items: center;
+  text-align: left;
+}
+fieldset > ul {
+  margin-top: 15px;
+}
+
+li .block-input {
+  margin-bottom: 10px;
+}
+li > label {
+  float: left;
+  color: #767676;
+}
+li .text-field {
+  display: block;
+  width: 322px;
+  height: 33px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  outline: none;
+}
+
+.profile-error {
+  display: none;
+  margin-top: 5px;
+  color: red;
+}
+
+.profile-error.username.on, .profile-error.accountname.on {
+  display: block;
+}
+
+.btn-for-start > button {
+  width: 322px;
+  height: 48px;
+  border-radius: 44px;
+  background: #f26e22;
+  color: #ffffff;
+}

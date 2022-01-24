@@ -1,0 +1,36 @@
+html,
+body {
+  width: 100%;
+  /* height: 100%; */
+  /* box-sizing: border-box; */
+  font-size: 10px;
+  background-color: #ffffff;
+}
+
+.nav-top {
+    justify-content: left;
+}
+
+.item-user-follow {
+    margin-bottom: 16px;
+}
+
+.item-user-follow__username {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.nav-txt {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 10px;
+    color: #000000;
+}
+
+.profile-list-container {
+    margin: 24px 16px 242px 16px;
+    box-sizing: border-box;
+}
+

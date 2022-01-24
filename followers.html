@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>귤귤마켓 - 프로필 리스트</title>
+    <link rel="stylesheet" href="src/style/reset.css" />
+    <link rel="stylesheet" href="src/style/style_module.css" />
+    <link rel="stylesheet" href="src/style/follow_list.css" />
+    <link rel="stylesheet" href="src/style/common.css" />
+  </head>
+  <body>
+    <header class="nav-top">
+      <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+        <img src="src/images/icon/icon-arrow-left.png" alt="뒤로가기" />
+      </a>
+      <span class="nav-txt">Followers</span>
+    </header>
+
+    <ul class="profile-list-container"></ul>
+
+    <nav class="nav-tab-menu">
+      <ul class="nav-tab-menu__list">
+        <li class="nav-tab-menu__item">
+          <a
+            href="home.html"
+            class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+          >
+            <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+          </a>
+        </li>
+        <li class="nav-tab-menu__item">
+          <a
+            href="chatroom.html"
+            class="nav-tab-menu__wrapper nav-tab-menu__chat"
+          >
+            <p class="nav-tab-menu__txt">채팅</p>
+          </a>
+        </li>
+        <li class="nav-tab-menu__item">
+          <a
+            href="upload.html"
+            class="nav-tab-menu__wrapper nav-tab-menu__post"
+          >
+            <p class="nav-tab-menu__txt">게시물 작성</p>
+          </a>
+        </li>
+        <li class="nav-tab-menu__item">
+          <a
+            href="myPP.html"
+            class="nav-tab-menu__wrapper nav-tab-menu__profile"
+          >
+            <p class="nav-tab-menu__txt">프로필</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="src/js/followers.js" type="module"></script>
+  </body>
+</html>

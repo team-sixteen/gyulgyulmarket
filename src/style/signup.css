@@ -1,0 +1,88 @@
+html,
+body {
+  max-width: 440px;
+  height: 100%;
+  font-size: 10px;
+  margin: 0 auto;
+}
+
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.login-wrap h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  min-width: 350px;
+  max-width: 500px;
+  align-items: center;
+  text-align: left;
+  padding: 20px 0;
+}
+fieldset > ul {
+  margin-top: 15px;
+}
+
+
+.block-input {
+  margin-bottom: 10px;
+}
+input::placeholder::before {
+  content: '';
+  font-size: 14px;
+  line-height: 14px;
+  color: #dbdbdb;
+}
+
+.block-input > label {
+  color: #767676;
+}
+
+.text-field {
+  display: block;
+  width: 322px;
+  height: 33px;
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  outline: none;
+}
+input {
+  width: 70%;
+}
+.error-id, .error-password {
+  margin-top: 5px;
+  color: red;
+  display: none;
+}
+
+.error-id.on , .error-password.on {
+  display: block;
+}
+
+.btn-for-join > button {
+  width: 322px;
+  height: 48px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 44px;
+  background: #f26e22;
+  color: #ffffff;
+}
+

@@ -1,168 +1,183 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="./src/style/reset.css">
-    <link rel="stylesheet" href="./src/style/my_profile.css">
-    <link rel="stylesheet" href="./src//style/style_module.css">
-    <!-- <link rel="stylesheet" href="./src/style/profile.css"> -->
-    <link rel="stylesheet" href="./src/style/modal.css">
+    <link rel="stylesheet" href="./src/style/reset.css" />
+    <link rel="stylesheet" href="./src/style/my_profile.css" />
+    <link rel="stylesheet" href="./src//style/style_module.css" />
+    <link rel="stylesheet" href="./src/style/profile.css" />
+    <link rel="stylesheet" href="./src/style/modal.css" />
 
-    
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-   
-</head>
-<body>
+  </head>
+  <body>
     <article class="modal-logout">
-        <section class="logout-box">
+      <section class="logout-box">
+        <div class="bar"></div>
+        <ul>
+          <li>설정 및 개인정보</li>
+          <li class="logout-btn">로그아웃</li>
+        </ul>
+        <section class="logout-check">
+          <p>로그아웃하시겠어요?</p>
+          <button class="btn1">취소</button>
+          <button class="real-logout">로그아웃</button>
+        </section>
+      </section>
+    </article>
+    <div class="nav-top">
+      <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+        <img
+          src="src/images/icon/icon-arrow-left.png"
+          alt="뒤로 가기"
+          class="nav-top__img-icon-arrow-left"
+        />
+      </a>
+
+      <a href="#" class="nav-top__btn--more">
+        <img
+          src="src/images/icon/icon-more-vertical.png"
+          alt="메뉴 더보기"
+          class="nav-top__img-icon-more"
+        />
+      </a>
+    </div>
+    <main>
+      <article class="modal-del">
+        <section class="del-box">
           <div class="bar"></div>
           <ul>
-            <li>설정 및 개인정보</li>
-            <li class="logout-btn">로그아웃</li>
+            <li>수정</li>
+            <li class="del-btn">삭제</li>
           </ul>
-          <section class="logout-check">
-            <p>로그아웃하시겠어요?</p>
+          <section class="del-check">
+            <p>게시글을 삭제할까요?</p>
             <button class="btn1">취소</button>
-            <button class="real-logout">로그아웃</button>
+            <button class="real-del">삭제</button>
           </section>
         </section>
       </article>
-      <div class="nav-top">
-        <a href="#" onClick="history.back()" class="nav-top__btn--goback">
+      <section class="main-profile">
+        <div class="profile-conf">
+          <div class="followers">
+            <p>2133</p>
+            <small>followers</small>
+          </div>
           <img
-            src="src/images/icon/icon-arrow-left.png"
-            alt="뒤로 가기"
-            class="nav-top__img-icon-arrow-left"
+            src=""
+            alt=""
+            class="profile-img"
+            onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
           />
-        </a>
-  
-        <a href="#" class="nav-top__btn--more">
-          <img
-            src="src/images/icon/icon-more-vertical.png"
-            alt="메뉴 더보기"
-            class="nav-top__img-icon-more"
-          />
-        </a>
-      </div>
-    <main>
-        <article class="modal-del">
-            <section class="del-box">
-              <div class="bar"></div>
-              <ul>
-                <li>수정</li>
-                <li class="del-btn">삭제</li>
-              </ul>
-              <section class="del-check">
-                <p>게시글을 삭제할까요?</p>
-                <button class="btn1">취소</button>
-                <button class="real-del">삭제</button>
-              </section>
-            </section>
-        </article>
-        <section class="main-profile">
-            <div class="profile-conf">
-                <div class="followers">
-                    <p>2133</p>
-                    <small>followers</small>
-                </div>
-                <img src="" alt="" class="profile-img" onerror="this.src='http://146.56.183.55:5050/Ellipse.png';">
-                <div class="followings">
-                    <p>128</p>
-                    <small>followings</small>
-                </div>
-            </div>
-            <h2 class="profile-accountname">애월읍 위니브 감귤농장</h2>
-            <small class="profile-username">@ weniv_Mandarin</small>
-            <p class="profile-intro">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
-            <div class="profile-btns">
-                <a href="./profile_modification.html">프로필 수정</a>
-                <a href="./add_product.html">상품 등록</a>
-            </div>                
-        </section>
+          <div class="followings">
+            <p>128</p>
+            <small>followings</small>
+          </div>
+        </div>
+        <h2 class="profile-accountname">애월읍 위니브 감귤농장</h2>
+        <small class="profile-username">@ weniv_Mandarin</small>
+        <p class="profile-intro">
+          애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장
+        </p>
+        <div class="profile-btns">
+          <a href="./profile_modification.html">프로필 수정</a>
+          <a href="./add_product.html">상품 등록</a>
+        </div>
+      </section>
 
-        <section class="sect-sell">
-            <h3>판매 중인 상품</h3>
-            <ul class="sell-list">
-                <!-- <li>
+      <section class="sect-sell">
+        <h3>판매 중인 상품</h3>
+        <ul class="sell-list">
+          <!-- <li>
                     <img src="" alt="">
                     <p>한라봉</p>
                     <em>34,000원</em>
                 </li> -->
-            </ul>
-        </section>
+        </ul>
+      </section>
 
-        <article class="sect-post">
-            <button class="post-form-album"><img src="src/images/icon/icon-post-album-off.png" alt=""></button> 
-            <button class="post-form-list"><img src="src/images/icon/icon-post-list-on.png" alt=""></button>
-            <ul class="post-box-ul">
-                <li class="post-box-list">
-                    <img src="./src/images/icon/icon-more-vertical.png" alt="" class="moreBtn">
-                    <section class="post-content">
-                        <img src="" alt="">
-                        <h4>애월읍 위니브 감귤농장</h4>
-                        <small>@ weniv_Mandarin</small>
-                        <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
-                        <img src="" alt="" class="post-img">
-                        <button><img src="" alt=""> 58</button>
-                        <button><img src="" alt=""> 12</button>
-                        <p class="post-date">2020년 10월 21일</p>
-                    </section>
-                </li>
-            </ul>
+      <article class="sect-post">
+        <button class="post-form-album">
+          <img src="src/images/icon/icon-post-album-off.png" alt="" />
+        </button>
+        <button class="post-form-list">
+          <img src="src/images/icon/icon-post-list-on.png" alt="" />
+        </button>
+        <ul class="post-box-ul">
+          <li class="post-box-list">
+            <img
+              src="./src/images/icon/icon-more-vertical.png"
+              alt=""
+              class="moreBtn"
+            />
+            <section class="post-content">
+              <img src="" alt="" />
+              <h4>애월읍 위니브 감귤농장</h4>
+              <small>@ weniv_Mandarin</small>
+              <p>
+                옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여,
+                뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할
+                넣는 풍부하게 뛰노는 인생의 힘있다.
+              </p>
+              <img src="" alt="" class="post-img" />
+              <button><img src="" alt="" /> 58</button>
+              <button><img src="" alt="" /> 12</button>
+              <p class="post-date">2020년 10월 21일</p>
+            </section>
+          </li>
+        </ul>
 
-            <ul class="post-box-album hide">
-                <li href="#none"><img src="" alt=""></li>
+        <ul class="post-box-album hide">
+          <li href="#none"><img src="" alt="" /></li>
+        </ul>
+      </article>
 
-            </ul>
-        </article>
-
-        <nav class="nav-tab-menu">
-          <ul class="nav-tab-menu__list">
-            <li class="nav-tab-menu__item">
-              <a
-                href="home.html"
-                class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
-              >
-                <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
-              </a>
-            </li>
-            <li class="nav-tab-menu__item">
-              <a
-                href="chatroom.html"
-                class="nav-tab-menu__wrapper nav-tab-menu__chat"
-              >
-                <p class="nav-tab-menu__txt">채팅</p>
-              </a>
-            </li>
-            <li class="nav-tab-menu__item">
-              <a
-                href="upload.html"
-                class="nav-tab-menu__wrapper nav-tab-menu__post"
-              >
-                <p class="nav-tab-menu__txt">게시물 작성</p>
-              </a>
-            </li>
-            <li class="nav-tab-menu__item">
-              <a
-                href="myPP.html"
-                class="nav-tab-menu__wrapper nav-tab-menu__profile"
-              >
-                <p class="nav-tab-menu__txt">프로필</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <nav class="nav-tab-menu">
+        <ul class="nav-tab-menu__list">
+          <li class="nav-tab-menu__item">
+            <a
+              href="home.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__home nav-tab-menu__home--active"
+            >
+              <p class="nav-tab-menu__txt nav-tab-menu__txt--active">홈</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="chatroom.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__chat"
+            >
+              <p class="nav-tab-menu__txt">채팅</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="upload.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__post"
+            >
+              <p class="nav-tab-menu__txt">게시물 작성</p>
+            </a>
+          </li>
+          <li class="nav-tab-menu__item">
+            <a
+              href="myPP.html"
+              class="nav-tab-menu__wrapper nav-tab-menu__profile"
+            >
+              <p class="nav-tab-menu__txt">프로필</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </main>
 
-
     <script src="./src/js/my-profile.js" type="module"></script>
-</body>
+  </body>
 </html>

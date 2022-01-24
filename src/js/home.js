@@ -142,35 +142,36 @@ const resultUser = document.querySelector('div.cont-user-search');
 async function findUser() {
   console.log('aaa');
   console.log(findUserInput.value);
-  const res = await fetch(
-    `${BASE_URL}/user/searchuser/?keyword=${findUserInput.value}`,
-    {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${Auth.getToken()}`,
-        'Content-Type': 'application/json',
+  if (findUserInput.value.length > 0) {
+    const res = await fetch(
+      `${BASE_URL}/user/searchuser/?keyword=${findUserInput.value}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${Auth.getToken()}`,
+          'Content-Type': 'application/json',
+        },
       },
-    },
-  );
-  const searchData = await res.json();
-  console.log(searchData);
-  const DData = searchData.filter((word) => {
-    return word.username.includes(`${findUserInput.value}`)
-      ? true
-      : word.accountname.includes(`${findUserInput.value}`)
-      ? true
-      : false;
-  });
-  console.log('------');
-  console.log(DData);
+    );
+    const searchData = await res.json();
+    console.log(searchData);
+    const DData = searchData.filter((word) => {
+      return word.username.includes(`${findUserInput.value}`)
+        ? true
+        : word.accountname.includes(`${findUserInput.value}`)
+        ? true
+        : false;
+    });
+    console.log('------');
+    console.log(DData);
 
-  const DOMStrings = DData.map((data) => {
-    const search_id = data._id;
-    const search_username = data.username;
-    const search_accountname = data.accountname;
-    const search_image = data.image;
+    const DOMStrings = DData.map((data) => {
+      const search_id = data._id;
+      const search_username = data.username;
+      const search_accountname = data.accountname;
+      const search_image = data.image;
 
-    return `
+      return `
           <li class="item-user-search">
           <a class="item-user-search__wrapper" data-id="${search_id}" data-useraccount="${search_accountname}">
           <img
@@ -183,17 +184,18 @@ async function findUser() {
         </span>
       </a>
     </li>`;
-  }).join('');
-  const list = document.querySelector('.item-user-search__list');
-  list.innerHTML = DOMStrings;
-  [...list.children].forEach((child) => {
-    child.children[0].addEventListener('click', ({ currentTarget }) => {
-      console.log(currentTarget);
-      const { useraccount } = currentTarget.dataset;
+    }).join('');
+    const list = document.querySelector('.item-user-search__list');
+    list.innerHTML = DOMStrings;
+    [...list.children].forEach((child) => {
+      child.children[0].addEventListener('click', ({ currentTarget }) => {
+        console.log(currentTarget);
+        const { useraccount } = currentTarget.dataset;
 
-      location.href = `${window.location.origin}/profile.html?${useraccount}`;
+        location.href = `${window.location.origin}/profile.html?${useraccount}`;
+      });
     });
-  });
+  }
 }
 //../../profile.html
 // const selectUser = document.querySelector('.item-user-search__list');

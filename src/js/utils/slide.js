@@ -68,7 +68,6 @@ export default class Slider {
     }
   }
   render() {
-    
     this.$ul.innerHTML = this.imgs
       .map((img, idx) => {
         return `

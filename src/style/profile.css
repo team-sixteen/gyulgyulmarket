@@ -7,7 +7,6 @@ body {
   background-color: #fff;
 }
 
-
 .profile-menu-wrap {
   display: flex;
   justify-content: space-between;
@@ -477,7 +476,7 @@ body {
 }
 
 /* 마이프로필 */
-.user-contact a {
+.user-contact .contact-a {
   color: #767676;
   font-weight: bold;
   font-size: 14px;

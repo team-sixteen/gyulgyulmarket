@@ -37,16 +37,13 @@ let JWT_TOKEN = document.cookie
 console.log(JWT_TOKEN);
 
 async function followersData() {
-  const res = await fetch(
-    `http://146.56.183.55:5050/profile/${urlQuery}/follower`,
-    {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${JWT_TOKEN}`,
-      },
+  const res = await fetch(`${BASE_URL}/profile/${urlQuery}/follower`, {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${JWT_TOKEN}`,
     },
-  );
+  });
   const json = await res.json();
   console.log(json);
 

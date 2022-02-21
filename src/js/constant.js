@@ -1,5 +1,5 @@
-export const BASE_URL = 'http://146.56.183.55:5050';
-export const MAX_AGE = 60*60*24;
+export const BASE_URL = 'https://api.mandarin.cf/';
+export const MAX_AGE = 60 * 60 * 24;
 export const TOKEN_KEY = 'gyulgyul-token';
 export const ACCOUNT_NAME = 'accountname';
 export const NAV_MENU_PATH = [

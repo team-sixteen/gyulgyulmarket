@@ -37,16 +37,13 @@ let JWT_TOKEN = document.cookie
 console.log(JWT_TOKEN);
 
 async function followersData() {
-  const res = await fetch(
-    `http://146.56.183.55:5050/profile/${urlQuery}/following`,
-    {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${JWT_TOKEN}`,
-      },
+  const res = await fetch(`${BASE_URL}/profile/${urlQuery}/following`, {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${JWT_TOKEN}`,
     },
-  );
+  });
   const json = await res.json();
   console.log(json);
 
@@ -56,7 +53,7 @@ async function followersData() {
       return `
         <li class="item-user-follow" data-accountname="${item.accountname}">
             <div class="item-user-follow__wrapper">
-                <img src="${item.image}" onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지" class="item-user-follow__img-user">
+                <img src="${item.image}" onerror="this.src='${BASE_URL}/Ellipse.png';" alt="프로필이미지" class="item-user-follow__img-user">
                 <ul class="item-user-follow__list">
                     <li class="item-user-follow__username">${item.accountname}</li>
                     <li class="item-user-follow__userid">${item.intro}</li>
@@ -77,12 +74,8 @@ async function followersData() {
   console.log(followingList.children);
   [...followingList.children].forEach((item) => {
     item.addEventListener('click', ({ currentTarget }) => {
-      // console.log(currentTarget.dataset.accountname)
       location.href = `${window.location.origin}/profile.html?${currentTarget.dataset.accountname}`;
-      // location.href = `http://127.0.0.1:5500/followers.html?${currentTarget.dataset.accountname}`;
     });
-    //로컬스토리지에 스택을 쌓아야했어요
-    // 그ㅡ forEach마다 클릭이벤트 주신거 확인
   });
 }
 followersData();

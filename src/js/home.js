@@ -52,7 +52,7 @@ async function init() {
           <img
             src="${item.author.image}"
             class="post-profile-img"
-            onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
+            onerror="this.src='${BASE_URL}/Ellipse.png';"
           />
           <div>
             <div class="post-profile-text">
@@ -176,7 +176,7 @@ async function findUser() {
           <a class="item-user-search__wrapper" data-id="${search_id}" data-useraccount="${search_accountname}">
           <img
             src="${search_image}"
-            onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지"
+            onerror="this.src='${BASE_URL}/Ellipse.png';" alt="프로필이미지"
             class="item-user-search__img-user"/>
         <span class="item-user-search-box">
         <span class="item-user-search__username">${search_username}</span>
@@ -197,12 +197,7 @@ async function findUser() {
     });
   }
 }
-//../../profile.html
-// const selectUser = document.querySelector('.item-user-search__list');
-// selectUser.addEventListener('click', (e) => {
-//   console.log(e.target.dataset.useraccount);
-//   localStorage.setItem('YourProfile_accountname', e.target.dataset.useraccount);
-// });
+
 //  1.  해당함수 변수 선언
 console.log('home.js입장');
 let search_btn = document.querySelector('button.m-btn');

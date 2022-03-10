@@ -35,7 +35,9 @@ class Upload {
       const closeBtn = e.target.closest('.upload-slide-img-delete');
       if (closeBtn) {
         this.$sliderContainer.removeImg(closeBtn.id);
-        this.imgs = this.imgs.filter((img, idx) => idx != closeBtn.id ? img : null);
+        this.imgs = this.imgs.filter((img, idx) =>
+          idx != closeBtn.id ? img : null,
+        );
       }
     });
 
@@ -77,15 +79,15 @@ class Upload {
 
     return fetch(`${BASE_URL}/image/uploadfiles`, {
       method: 'POST',
-      body: data
+      body: data,
     })
-    .then(res => {
-      return res.json();
-    })
-    .then(res => res)
-    .catch(err => {
-      console.error(err);
-    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => res)
+      .catch((err) => {
+        console.error(err);
+      });
   }
 }
 
@@ -94,6 +96,6 @@ class Upload {
   if (!user.isLogin) {
     window.location.href = './login.html';
   }
-  
+
   new Upload(document.querySelector('.upload-container'), user);
 })();

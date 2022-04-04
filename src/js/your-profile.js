@@ -7,10 +7,8 @@ import Slider from './utils/slide.js';
  * AUth 클래스
  */
 const urlQuery = window.location.search.split('?')[1];
-
 console.log(urlQuery);
-console.log('나와');
-
+console.log(window.location.search);
 async function init() {
   // getProfile 의 기능
   // 토큰과 accountname을 파악해서
@@ -30,22 +28,6 @@ async function init() {
   console.log('로그인은 성공');
   let localStorage_yourProfile = localStorage.getItem('yourProfile');
 
-  // fetch(
-  //   `${BASE_URL}/profile/${localStorage_yourProfile}`,
-  //   {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: `Bearer ${Auth.getToken()}`,
-  //       'Content-Type': 'application/json',
-  //     },
-  //   }
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res))
-  //     .catch((error) => {
-  //       console.error(error);
-  //     }),
-  // );
-  // 프로필 설정
   (async function profile() {
     const res = await fetch(`${BASE_URL}/profile/${urlQuery}`, {
       method: 'get',
@@ -67,16 +49,6 @@ async function init() {
       json.profile.followingCount;
     document.querySelector('.user-profile-info').innerText = json.profile.intro;
     document.querySelector('.profile-img').src = json.profile.image;
-
-    //에러 시 추가로 어떻게 할지 정하기 .
-    // document.querySelector('.profile-img').innerHTML = (
-    //   <img
-    //     src="${json.profile.image}"
-    //     onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
-    //     alt="프로필이미지"
-    //     class="item-user-search__img-user"
-    //   />
-    // );
     await getProductData();
   })();
 
@@ -304,20 +276,8 @@ async function init() {
         }
       }
     });
-
-    // if(!!item.image){
-    //   albumchild.innerHTML += `
-    //     <li class="post-album-item">
-    //       <img
-    //         src="http://146.56.183.55:5050/${item.image}"
-    //         class=""
-    //       />
-    //     </li>
-    //   `
-    // }
   }
   feed();
-  // getProductData();
 }
 
 init();

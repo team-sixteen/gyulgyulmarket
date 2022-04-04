@@ -53,7 +53,7 @@ async function followersData() {
       return `
                 <li class="item-user-follow" data-accountname="${item.accountname}">
                     <div class="item-user-follow__wrapper">
-                        <img src="${item.image}" onerror="this.src='http://146.56.183.55:5050/Ellipse.png';" alt="프로필이미지" class="item-user-follow__img-user">
+                        <img src="${item.image}" onerror="this.src='${BASE_URL}/Ellipse.png';" alt="프로필이미지" class="item-user-follow__img-user">
                         <ul class="item-user-follow__list">
                             <li class="item-user-follow__username">${item.accountname}</li>
                             <li class="item-user-follow__userid">${item.intro}</li>
@@ -68,9 +68,7 @@ async function followersData() {
   console.log(followerList.children);
   [...followerList.children].forEach((item) => {
     item.addEventListener('click', ({ currentTarget }) => {
-      // console.log(currentTarget.dataset.accountname)
       location.href = `${window.location.origin}/profile.html?${currentTarget.dataset.accountname}`;
-      // location.href = `http://127.0.0.1:5500/followers.html?${currentTarget.dataset.accountname}`;
     });
   });
 }

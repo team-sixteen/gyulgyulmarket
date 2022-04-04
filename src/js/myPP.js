@@ -69,16 +69,6 @@ async function init() {
       json.profile.followingCount;
     document.querySelector('.user-profile-info').innerText = json.profile.intro;
     document.querySelector('.profile-img').src = json.profile.image;
-
-    //에러 시 추가로 어떻게 할지 정하기 .
-    // document.querySelector('.profile-img').innerHTML = (
-    //   <img
-    //     src="${json.profile.image}"
-    //     onerror="this.src='http://146.56.183.55:5050/Ellipse.png';"
-    //     alt="프로필이미지"
-    //     class="item-user-search__img-user"
-    //   />
-    // );
     await getProductData();
   })();
 
@@ -301,7 +291,7 @@ async function init() {
         modalDel.classList.add('on');
         realDel.addEventListener('click', () => {
           async function postDelete() {
-            const res = await fetch(`http://146.56.183.55:5050/post/${data}`, {
+            const res = await fetch(`${BASE_URL}/post/${data}`, {
               method: 'delete',
               headers: {
                 'Content-Type': 'application/json',
@@ -325,22 +315,9 @@ async function init() {
         //   const data = parent.dataset
         //   location.href=`./post.html?${data.id}`
         // }
-
         e.target.closest('.post-list-item').dataset;
-        // location.href=`./post.html?${e.target.closest('.post-list-item').dataset.id}`
       }
     });
-
-    // if(!!item.image){
-    //   albumchild.innerHTML += `
-    //     <li class="post-album-item">
-    //       <img
-    //         src="http://146.56.183.55:5050/${item.image}"
-    //         class=""
-    //       />
-    //     </li>
-    //   `
-    // }
   }
   feed();
   // getProductData();

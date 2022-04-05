@@ -192,7 +192,7 @@ async function findUser() {
         console.log(currentTarget);
         const { useraccount } = currentTarget.dataset;
 
-        location.href = `/profile.html?${useraccount}`;
+        location.href = `${window.location.href}/profile.html?${useraccount}`;
       });
     });
   }
